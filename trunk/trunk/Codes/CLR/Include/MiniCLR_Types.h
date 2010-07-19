@@ -5,7 +5,7 @@
 #ifndef _MINICLR_TYPES_H_
 #define _MINICLR_TYPES_H_
 
-#include <MiniClr_PlatformDef.h>
+#include "MiniClr_PlatformDef.h"
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -14,13 +14,13 @@
 #pragma pack(push, TINYCLR_TYPES_H, 4)
 #endif
 
-enum CLR_OPCODE
+typedef enum _CLR_OPCODE
 {
 #define OPDEF(c,s,pop,push,args,type,l,s1,s2,ctrl) c,
 #include <opcode.def>
 #undef OPDEF
 CEE_COUNT,        /* number of instructions and macros pre-defined */
-};
+}CLR_OPCODE;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //The basic data types
@@ -49,7 +49,7 @@ typedef double           CLR_DOUBLE_TEMP_CAST;
 
 #define CLR_SIG_INVALID  0xFFFF
 
-enum CLR_LOGICAL_OPCODE
+typedef enum _CLR_LOGICAL_OPCODE
 {
     LO_Not                       = 0x00,
     LO_And                       = 0x01,
@@ -141,11 +141,11 @@ enum CLR_LOGICAL_OPCODE
 
     LO_FIRST                     = LO_Not,
     LO_LAST                      = LO_EndFilter,
-};
+}CLR_LOGICAL_OPCODE;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-enum CLR_OpcodeParam
+typedef enum _CLR_OpcodeParam
 {
     CLR_OpcodeParam_Field         =  0,
     CLR_OpcodeParam_Method        =  1,
@@ -164,14 +164,14 @@ enum CLR_OpcodeParam
     CLR_OpcodeParam_ShortI        = 14,
     CLR_OpcodeParam_ShortR        = 15,
     CLR_OpcodeParam_ShortVar      = 16,
-};
+}CLR_OpcodeParam;
 
 #define CanCompressOpParamToken(opParam) (opParam >= CLR_OpcodeParam_Field && opParam <= CLR_OpcodeParam_String)
 #define IsOpParamToken(opParam) (opParam >= CLR_OpcodeParam_Field && opParam <= CLR_OpcodeParam_Sig)
 
 //--//
 
-enum CLR_FlowControl
+typedef enum _CLR_FlowControl
 {
     CLR_FlowControl_NEXT        = 0,
     CLR_FlowControl_CALL        = 1,
@@ -181,7 +181,7 @@ enum CLR_FlowControl
     CLR_FlowControl_THROW       = 5,
     CLR_FlowControl_BREAK       = 6,
     CLR_FlowControl_META        = 7,
-};
+}CLR_FlowControl;
 
 //--//
 
@@ -189,7 +189,7 @@ enum CLR_FlowControl
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-enum CLR_TABLESENUM
+typedef enum _CLR_TABLESENUM
 {
     TBL_AssemblyRef    = 0x00000000,
     TBL_TypeRef        = 0x00000001,
@@ -208,9 +208,9 @@ enum CLR_TABLESENUM
     TBL_ResourcesFiles = 0x0000000E,
     TBL_EndOfAssembly  = 0x0000000F,
     TBL_Max            = 0x00000010,        
-};
+}CLR_TABLESENUM;
 
-enum CLR_CorCallingConvention
+typedef enum _CLR_CorCallingConvention
 {
     /////////////////////////////////////////////////////////////////////////////////////////////
     //
@@ -236,9 +236,9 @@ enum CLR_CorCallingConvention
     // End of overlap with CorCallingConvention.
     //
     /////////////////////////////////////////////////////////////////////////////////////////////
-};
+}CLR_CorCallingConvention;
 
-enum CLR_DataType // KEEP IN SYNC WITH Microsoft.SPOT.DataType!!
+typedef enum _CLR_DataType // KEEP IN SYNC WITH Microsoft.SPOT.DataType!!
 {
     DATATYPE_VOID                       , // 0 bytes
 
@@ -339,9 +339,9 @@ enum CLR_DataType // KEEP IN SYNC WITH Microsoft.SPOT.DataType!!
     DATATYPE_TYPE_PINNED         = 0x05 | DATATYPE_TYPE_MODIFIER,
     DATATYPE_TYPE_R4_HFA         = 0x06 | DATATYPE_TYPE_MODIFIER, // used only internally for R4 HFA types
     DATATYPE_TYPE_R8_HFA         = 0x07 | DATATYPE_TYPE_MODIFIER, // used only internally for R8 HFA types
-};
+}CLR_DataType;
 
-enum CLR_ReflectionType
+typedef enum _CLR_ReflectionType
 {
     REFLECTION_INVALID      = 0x00,
     REFLECTION_ASSEMBLY     = 0x01,
@@ -350,152 +350,152 @@ enum CLR_ReflectionType
     REFLECTION_CONSTRUCTOR  = 0x04,
     REFLECTION_METHOD       = 0x05,
     REFLECTION_FIELD        = 0x06,
-};
+}CLR_ReflectionType;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline CLR_TABLESENUM CLR_TypeFromTk( CLR_UINT32 tk ) { return (CLR_TABLESENUM)(tk >> 24);       }
-inline CLR_UINT32     CLR_DataFromTk( CLR_UINT32 tk ) { return                  tk & 0x00FFFFFF; }
-
-inline CLR_UINT32 CLR_TkFromType( CLR_TABLESENUM tbl, CLR_UINT32 data ) { return ((((CLR_UINT32)tbl) << 24) & 0xFF000000) | (data & 0x00FFFFFF); }
-
-//--//
-
-inline CLR_UINT32 CLR_UncompressStringToken( CLR_UINT32 tk )
-{
-    return CLR_TkFromType( TBL_Strings, tk );
-}
-
-inline CLR_UINT32 CLR_UncompressTypeToken( CLR_UINT32 tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 3 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec };
-
-    return CLR_TkFromType( c_lookup[ (tk >> 14) & 3 ], 0x3fff & tk );
-}
-
-inline CLR_UINT32 CLR_UncompressFieldToken( CLR_UINT32 tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_FieldDef, TBL_FieldRef };
-
-    return CLR_TkFromType( c_lookup[ (tk >> 15) & 1 ], 0x7fff & tk );
-}
-
-inline CLR_UINT32 CLR_UncompressMethodToken( CLR_UINT32 tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_MethodDef, TBL_MethodRef };
-    return CLR_TkFromType( c_lookup[ (tk >> 15) & 1 ], 0x7fff & tk );
-}
-
-#if defined(PLATFORM_WINDOWS)
-
-CLR_UINT32 CLR_ReadTokenCompressed( CLR_PMETADATA& ip, CLR_OPCODE opcode );
-
-#endif
-
-//--//
-
-HRESULT CLR_CompressTokenHelper( const CLR_TABLESENUM *tables, CLR_UINT16 cTables, CLR_UINT32& tk );
-
-inline HRESULT CLR_CompressStringToken( CLR_UINT32& tk )
-{
-   static const CLR_TABLESENUM c_lookup[ 1 ] = { TBL_Strings };
-
-   return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
-}
-
-inline HRESULT CLR_CompressTypeToken( CLR_UINT32& tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 3 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec };
-
-    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
-}
-
-inline HRESULT CLR_CompressFieldToken( CLR_UINT32& tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_FieldDef, TBL_FieldRef };
-
-    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
-}
-
-inline HRESULT CLR_CompressMethodToken( CLR_UINT32& tk )
-{
-    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_MethodDef, TBL_MethodRef };
-
-    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
-}
+//INLINE CLR_TABLESENUM CLR_TypeFromTk( CLR_UINT32 tk ) { return (CLR_TABLESENUM)(tk >> 24);       }
+//INLINE CLR_UINT32     CLR_DataFromTk( CLR_UINT32 tk ) { return                  tk & 0x00FFFFFF; }
+//
+//INLINE CLR_UINT32 CLR_TkFromType( CLR_TABLESENUM tbl, CLR_UINT32 data ) { return ((((CLR_UINT32)tbl) << 24) & 0xFF000000) | (data & 0x00FFFFFF); }
+//
+////--//
+//
+//INLINE CLR_UINT32 CLR_UncompressStringToken( CLR_UINT32 tk )
+//{
+//    return CLR_TkFromType( TBL_Strings, tk );
+//}
+//
+//INLINE CLR_UINT32 CLR_UncompressTypeToken( CLR_UINT32 tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 3 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec };
+//
+//    return CLR_TkFromType( c_lookup[ (tk >> 14) & 3 ], 0x3fff & tk );
+//}
+//
+//INLINE CLR_UINT32 CLR_UncompressFieldToken( CLR_UINT32 tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_FieldDef, TBL_FieldRef };
+//
+//    return CLR_TkFromType( c_lookup[ (tk >> 15) & 1 ], 0x7fff & tk );
+//}
+//
+//INLINE CLR_UINT32 CLR_UncompressMethodToken( CLR_UINT32 tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_MethodDef, TBL_MethodRef };
+//    return CLR_TkFromType( c_lookup[ (tk >> 15) & 1 ], 0x7fff & tk );
+//}
+//
+//#if defined(PLATFORM_WINDOWS)
+//
+//CLR_UINT32 CLR_ReadTokenCompressed( CLR_PMETADATA ip, CLR_OPCODE opcode );
+//
+//#endif
 
 //--//
 
-inline bool CLR_CompressData( CLR_UINT32 val, CLR_UINT8*& p )
-{
-    CLR_UINT8* ptr = p;
+//HRESULT CLR_CompressTokenHelper( const CLR_TABLESENUM *tables, CLR_UINT16 cTables, CLR_UINT32& tk );
+//
+//INLINE HRESULT CLR_CompressStringToken( CLR_UINT32& tk )
+//{
+//   static const CLR_TABLESENUM c_lookup[ 1 ] = { TBL_Strings };
+//
+//   return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
+//}
+//
+//INLINE HRESULT CLR_CompressTypeToken( CLR_UINT32& tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 3 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec };
+//
+//    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
+//}
+//
+//INLINE HRESULT CLR_CompressFieldToken( CLR_UINT32& tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_FieldDef, TBL_FieldRef };
+//
+//    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
+//}
+//
+//INLINE HRESULT CLR_CompressMethodToken( CLR_UINT32& tk )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 2 ] = { TBL_MethodDef, TBL_MethodRef };
+//
+//    return CLR_CompressTokenHelper( c_lookup, ARRAYSIZE(c_lookup), tk );
+//}
 
-    if(val <= 0x7F)
-    {
-        *ptr++ = (CLR_UINT8)(val);
-    }
-    else if(val <= 0x3FFF)
-    {
-        *ptr++ = (CLR_UINT8)((val >> 8) | 0x80);
-        *ptr++ = (CLR_UINT8)((val     )       );
-    }
-    else if(val <= 0x1FFFFFFF)
-    {
-        *ptr++ = (CLR_UINT8)((val >> 24) | 0xC0);
-        *ptr++ = (CLR_UINT8)((val >> 16)       );
-        *ptr++ = (CLR_UINT8)((val >>  8)       );
-        *ptr++ = (CLR_UINT8)((val      )       );
-    }
-    else
-    {
-        return false;
-    }
+//--//
 
-    p = ptr;
-
-    return true;
-}
-
-inline CLR_UINT32 CLR_UncompressData( const CLR_UINT8*& p )
-{
-    CLR_PMETADATA ptr = p;
-    CLR_UINT32    val = *ptr++;
-
-    // Handle smallest data inline.
-    if((val & 0x80) == 0x00)        // 0??? ????
-    {
-    }
-    else if((val & 0xC0) == 0x80)  // 10?? ????
-    {
-        val  =             (val & 0x3F) << 8;
-        val |= (CLR_UINT32)*ptr++           ;
-    }
-    else // 110? ????
-    {
-        val  =             (val & 0x1F) << 24;
-        val |= (CLR_UINT32)*ptr++       << 16;
-        val |= (CLR_UINT32)*ptr++       <<  8;
-        val |= (CLR_UINT32)*ptr++       <<  0;
-    }
-
-    p = ptr;
-
-    return val;
-}
-
-inline CLR_DataType CLR_UncompressElementType( const CLR_UINT8*& p )
-{
-    return (CLR_DataType)*p++;
-}
-
-inline CLR_UINT32 CLR_TkFromStream( const CLR_UINT8*& p )
-{
-    static const CLR_TABLESENUM c_lookup[ 4 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec, TBL_Max };
-
-    CLR_UINT32 data = CLR_UncompressData( p );
-
-    return CLR_TkFromType( c_lookup[ data & 3 ], data >> 2 );
-}
+//INLINE bool CLR_CompressData( CLR_UINT32 val, CLR_UINT8* p )
+//{
+//    CLR_UINT8* ptr = p;
+//
+//    if(val <= 0x7F)
+//    {
+//        *ptr++ = (CLR_UINT8)(val);
+//    }
+//    else if(val <= 0x3FFF)
+//    {
+//        *ptr++ = (CLR_UINT8)((val >> 8) | 0x80);
+//        *ptr++ = (CLR_UINT8)((val     )       );
+//    }
+//    else if(val <= 0x1FFFFFFF)
+//    {
+//        *ptr++ = (CLR_UINT8)((val >> 24) | 0xC0);
+//        *ptr++ = (CLR_UINT8)((val >> 16)       );
+//        *ptr++ = (CLR_UINT8)((val >>  8)       );
+//        *ptr++ = (CLR_UINT8)((val      )       );
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//
+//    p = ptr;
+//
+//    return true;
+//}
+//
+//INLINE CLR_UINT32 CLR_UncompressData( const CLR_UINT8* p )
+//{
+//    CLR_PMETADATA ptr = p;
+//    CLR_UINT32    val = *ptr++;
+//
+//    // Handle smallest data inline.
+//    if((val & 0x80) == 0x00)        // 0??? ????
+//    {
+//    }
+//    else if((val & 0xC0) == 0x80)  // 10?? ????
+//    {
+//        val  =             (val & 0x3F) << 8;
+//        val |= (CLR_UINT32)*ptr++           ;
+//    }
+//    else // 110? ????
+//    {
+//        val  =             (val & 0x1F) << 24;
+//        val |= (CLR_UINT32)*ptr++       << 16;
+//        val |= (CLR_UINT32)*ptr++       <<  8;
+//        val |= (CLR_UINT32)*ptr++       <<  0;
+//    }
+//
+//    p = ptr;
+//
+//    return val;
+//}
+//
+//INLINE CLR_DataType CLR_UncompressElementType( const CLR_UINT8* p )
+//{
+//    return (CLR_DataType)*p++;
+//}
+//
+//INLINE CLR_UINT32 CLR_TkFromStream( const CLR_UINT8* p )
+//{
+//    static const CLR_TABLESENUM c_lookup[ 4 ] = { TBL_TypeDef, TBL_TypeRef, TBL_TypeSpec, TBL_Max };
+//
+//    CLR_UINT32 data = CLR_UncompressData( p );
+//
+//    return CLR_TkFromType( c_lookup[ data & 3 ], data >> 2 );
+//}
 
 //--//--//--//
 #if defined(PLATFORM_WINDOWS)
@@ -559,35 +559,35 @@ inline CLR_UINT32 CLR_TkFromStream( const CLR_UINT8*& p )
 
 //--//
 
-inline CLR_OPCODE CLR_ReadNextOpcode( CLR_PMETADATA& ip )
-{
-    CLR_PMETADATA ptr    = ip;
-    CLR_OPCODE       opcode = CLR_OPCODE(*ptr++);
-
-    if(opcode == CEE_PREFIX1)
-    {
-        opcode = CLR_OPCODE(*ptr++ + 256);
-    }
-
-    ip = ptr;
-
-    return opcode;
-}
-
-inline CLR_OPCODE CLR_ReadNextOpcodeCompressed( CLR_PMETADATA& ip )
-{
-    CLR_PMETADATA ptr    = ip;
-    CLR_OPCODE       opcode = CLR_OPCODE(*ptr++);
-
-    if(opcode == CEE_PREFIX1)
-    {
-        opcode = CLR_OPCODE(*ptr++ + 256);
-    }
-
-    ip = ptr;
-
-    return opcode;
-}
+//INLINE CLR_OPCODE CLR_ReadNextOpcode( CLR_PMETADATA ip )
+//{
+//    CLR_PMETADATA ptr    = ip;
+//    CLR_OPCODE       opcode = (CLR_OPCODE)(*ptr++);
+//
+//    if(opcode == CEE_PREFIX1)
+//    {
+//        opcode = (CLR_OPCODE)(*ptr++ + 256);
+//    }
+//
+//    ip = ptr;
+//
+//    return opcode;
+//}
+//
+//INLINE CLR_OPCODE CLR_ReadNextOpcodeCompressed( CLR_PMETADATA ip )
+//{
+//    CLR_PMETADATA ptr    = ip;
+//    CLR_OPCODE       opcode = (CLR_OPCODE)(*ptr++);
+//
+//    if(opcode == CEE_PREFIX1)
+//    {
+//        opcode = (CLR_OPCODE)(*ptr++ + 256);
+//    }
+//
+//    ip = ptr;
+//
+//    return opcode;
+//}
 
 //--//
 
@@ -618,18 +618,20 @@ CLR_PMETADATA CLR_SkipBodyOfOpcodeCompressed( CLR_PMETADATA ip, CLR_OPCODE opcod
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-struct CLR_RECORD_VERSION
+typedef struct _CLR_RECORD_VERSION
 {
     CLR_UINT16 iMajorVersion;
     CLR_UINT16 iMinorVersion;
     CLR_UINT16 iBuildNumber;
     CLR_UINT16 iRevisionNumber;
-};
+}CLR_RECORD_VERSION;
 
-struct CLR_RECORD_ASSEMBLY
+
+
+typedef struct _CLR_RECORD_ASSEMBLY
 {
-    static const CLR_UINT32 c_Flags_NeedReboot = 0x00000001;
-    static const CLR_UINT32 c_Flags_Patch      = 0x00000002;
+#define  CLR_ASSEMBLY_FLAGS_NEEDREBOOT	1
+#define  CLR_ASSEMBLY_FLAGS_PATCH				2
 
     CLR_UINT8          marker[ 8 ];
     //
@@ -658,90 +660,90 @@ struct CLR_RECORD_ASSEMBLY
     CLR_UINT8          paddingOfTables[ ((TBL_Max-1)+3)/4*4 ];
     //--//
 
-    bool GoodHeader  () const;
-    bool GoodAssembly() const;
+//    bool GoodHeader  () ;
+//    bool GoodAssembly() ;
+//
+//#if defined(PLATFORM_WINDOWS)
+//    void ComputeCRC();
+//#endif
+//
+//    CLR_OFFSET_LONG SizeOfTable( CLR_TABLESENUM tbl ) { return startOfTables[ tbl+1 ] - startOfTables[ tbl ] - paddingOfTables[ tbl ]; }
+//
+//    CLR_OFFSET_LONG TotalSize() { return startOfTables[ TBL_EndOfAssembly ]; }
+//
+//    //--//
+//
+//    static CLR_UINT32 ComputeAssemblyHash( LPCSTR name, const CLR_RECORD_VERSION* ver );
+}CLR_RECORD_ASSEMBLY;
 
-#if defined(PLATFORM_WINDOWS)
-    void ComputeCRC();
-#endif
-
-    CLR_OFFSET_LONG SizeOfTable( CLR_TABLESENUM tbl ) const { return startOfTables[ tbl+1 ] - startOfTables[ tbl ] - paddingOfTables[ tbl ]; }
-
-    CLR_OFFSET_LONG TotalSize() const { return startOfTables[ TBL_EndOfAssembly ]; }
-
-    //--//
-
-    static CLR_UINT32 ComputeAssemblyHash( LPCSTR name, const CLR_RECORD_VERSION& ver );
-};
-
-struct CLR_RECORD_ASSEMBLYREF
+typedef struct _CLR_RECORD_ASSEMBLYREF
 {
     CLR_STRING         name;            // TBL_Strings
     CLR_UINT16         pad;
     //
     CLR_RECORD_VERSION version;
-};
+}CLR_RECORD_ASSEMBLYREF;
 
-struct CLR_RECORD_TYPEREF
+typedef struct _CLR_RECORD_TYPEREF
 {
     CLR_STRING name;            // TBL_Strings
     CLR_STRING nameSpace;       // TBL_Strings
     //
     CLR_IDX    scope;           // TBL_AssemblyRef | TBL_TypeRef // 0x8000
     CLR_UINT16 pad;
-};
+}CLR_RECORD_TYPEREF;
 
-struct CLR_RECORD_FIELDREF
+typedef struct _CLR_RECORD_FIELDREF
 {
     CLR_STRING name;            // TBL_Strings
     CLR_IDX    container;       // TBL_TypeRef
     //
     CLR_SIG    sig;             // TBL_Signatures
     CLR_UINT16 pad;
-};
+}CLR_RECORD_FIELDREF;
 
-struct CLR_RECORD_METHODREF
+typedef struct _CLR_RECORD_METHODREF
 {
     CLR_STRING name;            // TBL_Strings
     CLR_IDX    container;       // TBL_TypeRef
     //
     CLR_SIG    sig;             // TBL_Signatures
     CLR_UINT16 pad;
-};
+}CLR_RECORD_METHODREF;
 
-struct CLR_RECORD_TYPEDEF
+typedef struct _CLR_RECORD_TYPEDEF
 {
-    static const CLR_UINT16 TD_Scope_Mask              = 0x0007;
-    static const CLR_UINT16 TD_Scope_NotPublic         = 0x0000; // Class is not public scope.
-    static const CLR_UINT16 TD_Scope_Public            = 0x0001; // Class is public scope.
-    static const CLR_UINT16 TD_Scope_NestedPublic      = 0x0002; // Class is nested with public visibility.
-    static const CLR_UINT16 TD_Scope_NestedPrivate     = 0x0003; // Class is nested with private visibility.
-    static const CLR_UINT16 TD_Scope_NestedFamily      = 0x0004; // Class is nested with family visibility.
-    static const CLR_UINT16 TD_Scope_NestedAssembly    = 0x0005; // Class is nested with assembly visibility.
-    static const CLR_UINT16 TD_Scope_NestedFamANDAssem = 0x0006; // Class is nested with family and assembly visibility.
-    static const CLR_UINT16 TD_Scope_NestedFamORAssem  = 0x0007; // Class is nested with family or assembly visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_MASK												0x0007
+#define CLR_TYPEDEF_FLAGS_SCOPE_NOT_PUBLIC									0x0000 // Class is not public scope.
+#define CLR_TYPEDEF_FLAGS_SCOPE_PUBLIC											0x0001 // Class is public scope.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_PUBLIC								0x0002 // Class is nested with public visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_PRIVATE							0x0003 // Class is nested with private visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_FAMILY								0x0004 // Class is nested with family visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_ASSEMBLY							0x0005 // Class is nested with assembly visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_FAMILY_AND_ASSEMBLY	0x0006 // Class is nested with family and assembly visibility.
+#define CLR_TYPEDEF_FLAGS_SCOPE_NESTED_FAMILY_OR_ASSEMBLY		0x0007 // Class is nested with family or assembly visibility.
 
-    static const CLR_UINT16 TD_Serializable            = 0x0008;
+#define CLR_TYPEDEF_FLAGS_SERIALIZABLE											0x0008
 
-    static const CLR_UINT16 TD_Semantics_Mask          = 0x0030;
-    static const CLR_UINT16 TD_Semantics_Class         = 0x0000;
-    static const CLR_UINT16 TD_Semantics_ValueType     = 0x0010;
-    static const CLR_UINT16 TD_Semantics_Interface     = 0x0020;
-    static const CLR_UINT16 TD_Semantics_Enum          = 0x0030;
+#define CLR_TYPEDEF_FLAGS_SEMANTICS_MASK										0x0030
+#define CLR_TYPEDEF_FLAGS_SEMANTICS_CLASS										0x0000
+#define CLR_TYPEDEF_FLAGS_SEMANTICS_VALUETYPE								0x0010
+#define CLR_TYPEDEF_FLAGS_SEMANTICS_INTERFACE								0x0020
+#define CLR_TYPEDEF_FLAGS_SEMANTICS_ENUM										0x0030
 
-    static const CLR_UINT16 TD_Abstract                = 0x0040;
-    static const CLR_UINT16 TD_Sealed                  = 0x0080;
+#define CLR_TYPEDEF_FLAGS_ABSTRACT													0x0040
+#define CLR_TYPEDEF_FLAGS_SEALED														0x0080
 
-    static const CLR_UINT16 TD_SpecialName             = 0x0100;
-    static const CLR_UINT16 TD_Delegate                = 0x0200;
-    static const CLR_UINT16 TD_MulticastDelegate       = 0x0400;
+#define CLR_TYPEDEF_FLAGS_SPECIALNAME												0x0100
+#define CLR_TYPEDEF_FLAGS_DELEGATE													0x0200
+#define CLR_TYPEDEF_FLAGS_MULTICAST_DELEGATE								0x0400
 
-    static const CLR_UINT16 TD_Patched                 = 0x0800;
+#define CLR_TYPEDEF_FLAGS_PATCHED														0x0800
 
-    static const CLR_UINT16 TD_BeforeFieldInit         = 0x1000;
-    static const CLR_UINT16 TD_HasSecurity             = 0x2000;
-    static const CLR_UINT16 TD_HasFinalizer            = 0x4000;
-    static const CLR_UINT16 TD_HasAttributes           = 0x8000;
+#define CLR_TYPEDEF_FLAGS_BEFORE_FIELDINIT									0x1000
+#define CLR_TYPEDEF_FLAGS_HAS_SECURITY											0x2000
+#define CLR_TYPEDEF_FLAGS_HAS_FINALIZER											0x4000
+#define CLR_TYPEDEF_FLAGS_HAS_ATTRIBUTES										0x8000
 
 
     CLR_STRING name;            // TBL_Strings
@@ -767,34 +769,35 @@ struct CLR_RECORD_TYPEDEF
 
     //--//
 
-    bool IsEnum    () const { return (flags & (TD_Semantics_Mask                 )) == TD_Semantics_Enum; }
-    bool IsDelegate() const { return (flags & (TD_Delegate | TD_MulticastDelegate)) != 0                ; }
-};
+    //bool IsEnum    () { return (flags & (TD_Semantics_Mask                 )) == TD_Semantics_Enum; }
+    //bool IsDelegate() { return (flags & (TD_Delegate | TD_MulticastDelegate)) != 0                ; }
+}CLR_RECORD_TYPEDEF;
 
-struct CLR_RECORD_FIELDDEF
+typedef struct _CLR_RECORD_FIELDDEF
 {
-    static const CLR_UINT16 FD_Scope_Mask         = 0x0007;
-    static const CLR_UINT16 FD_Scope_PrivateScope = 0x0000;     // Member not referenceable.
-    static const CLR_UINT16 FD_Scope_Private      = 0x0001;     // Accessible only by the parent type.
-    static const CLR_UINT16 FD_Scope_FamANDAssem  = 0x0002;     // Accessible by sub-types only in this Assembly.
-    static const CLR_UINT16 FD_Scope_Assembly     = 0x0003;     // Accessibly by anyone in the Assembly.
-    static const CLR_UINT16 FD_Scope_Family       = 0x0004;     // Accessible only by type and sub-types.
-    static const CLR_UINT16 FD_Scope_FamORAssem   = 0x0005;     // Accessibly by sub-types anywhere, plus anyone in assembly.
-    static const CLR_UINT16 FD_Scope_Public       = 0x0006;     // Accessibly by anyone who has visibility to this scope.
 
-    static const CLR_UINT16 FD_NotSerialized      = 0x0008;     // Field does not have to be serialized when type is remoted.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_MASK									0x0007
+#define  CLR_FIELDDEF_FLAGS_SCOPE_PRIVATE_SCOPE					0x0000     // Member not referenceable.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_PRIVATE								0x0001     // Accessible only by the parent type.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_FAMILY_AND_ASSEMBLY		0x0002     // Accessible by sub-types only in this Assembly.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_ASSEMBLY							0x0003     // Accessibly by anyone in the Assembly.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_FAMILY								0x0004     // Accessible only by type and sub-types.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_FAMILY_OR_ASSEMBLY		0x0005     // Accessibly by sub-types anywhere, plus anyone in assembly.
+#define  CLR_FIELDDEF_FLAGS_SCOPE_PUBLIC								0x0006     // Accessibly by anyone who has visibility to this scope.
 
-    static const CLR_UINT16 FD_Static             = 0x0010;     // Defined on type, else per instance.
-    static const CLR_UINT16 FD_InitOnly           = 0x0020;     // Field may only be initialized, not written to after init.
-    static const CLR_UINT16 FD_Literal            = 0x0040;     // Value is compile time constant.
+#define  CLR_FIELDDEF_FLAGS_NOT_SERIALIZED							0x0008     // Field does not have to be serialized when type is remoted.
 
-    static const CLR_UINT16 FD_SpecialName        = 0x0100;     // field is special.  Name describes how.
-    static const CLR_UINT16 FD_HasDefault         = 0x0200;     // Field has default.
-    static const CLR_UINT16 FD_HasFieldRVA        = 0x0400;     // Field has RVA.
+#define  CLR_FIELDDEF_FLAGS_STATIC											0x0010     // Defined on type, else per instance.
+#define  CLR_FIELDDEF_FLAGS_INITONLY										0x0020     // Field may only be initialized, not written to after init.
+#define  CLR_FIELDDEF_FLAGS_LITERAL											0x0040     // Value is compile time constant.
 
-    static const CLR_UINT16 FD_NoReflection       = 0x0800;     // field does not allow reflection
+#define  CLR_FIELDDEF_FLAGS_SPECIAL_NAME								0x0100     // field is special.  Name describes how.
+#define  CLR_FIELDDEF_FLAGS_HAS_DEFAULT									0x0200     // Field has default.
+#define  CLR_FIELDDEF_FLAGS_HAS_FIELD_RVA								0x0400     // Field has RVA.
 
-    static const CLR_UINT16 FD_HasAttributes      = 0x8000;
+#define  CLR_FIELDDEF_FLAGS_NO_REFLECTION								0x0800     // field does not allow reflection
+
+#define  CLR_FIELDDEF_FLAGS_HAS_ATTRIBUTES							0x8000
 
 
     CLR_STRING name;            // TBL_Strings
@@ -802,48 +805,49 @@ struct CLR_RECORD_FIELDDEF
     //
     CLR_SIG    defaultValue;    // TBL_Signatures
     CLR_UINT16 flags;
-};
+}CLR_RECORD_FIELDDEF;
 
-struct CLR_RECORD_METHODDEF
+typedef struct _CLR_RECORD_METHODDEF
 {
-    static const CLR_UINT32 MD_Scope_Mask           = 0x00000007;
-    static const CLR_UINT32 MD_Scope_PrivateScope   = 0x00000000;     // Member not referenceable.
-    static const CLR_UINT32 MD_Scope_Private        = 0x00000001;     // Accessible only by the parent type.
-    static const CLR_UINT32 MD_Scope_FamANDAssem    = 0x00000002;     // Accessible by sub-types only in this Assembly.
-    static const CLR_UINT32 MD_Scope_Assem          = 0x00000003;     // Accessibly by anyone in the Assembly.
-    static const CLR_UINT32 MD_Scope_Family         = 0x00000004;     // Accessible only by type and sub-types.
-    static const CLR_UINT32 MD_Scope_FamORAssem     = 0x00000005;     // Accessibly by sub-types anywhere, plus anyone in assembly.
-    static const CLR_UINT32 MD_Scope_Public         = 0x00000006;     // Accessibly by anyone who has visibility to this scope.
 
-    static const CLR_UINT32 MD_Static               = 0x00000010;     // Defined on type, else per instance.
-    static const CLR_UINT32 MD_Final                = 0x00000020;     // Method may not be overridden.
-    static const CLR_UINT32 MD_Virtual              = 0x00000040;     // Method virtual.
-    static const CLR_UINT32 MD_HideBySig            = 0x00000080;     // Method hides by name+sig, else just by name.
+#define  CLR_METHODDEF_FLAGS_SCOPE_MASK									0x00000007
+#define  CLR_METHODDEF_FLAGS_SCOPE_PRIVATE_SCOPE				0x00000000     // Member not referenceable.
+#define  CLR_METHODDEF_FLAGS_SCOPE_PRIVATE							0x00000001     // Accessible only by the parent type.
+#define  CLR_METHODDEF_FLAGS_SCOPE_FAMILY_AND_ASSEMBLY	0x00000002     // Accessible by sub-types only in this Assembly.
+#define  CLR_METHODDEF_FLAGS_SCOPE_ASSEMBLY							0x00000003     // Accessibly by anyone in the Assembly.
+#define  CLR_METHODDEF_FLAGS_SCOPE_FAMILY								0x00000004     // Accessible only by type and sub-types.
+#define  CLR_METHODDEF_FLAGS_SCOPE_FAMILY_OR_ASSEMBLY		0x00000005     // Accessibly by sub-types anywhere, plus anyone in assembly.
+#define  CLR_METHODDEF_FLAGS_SCOPE_PUBLIC								0x00000006     // Accessibly by anyone who has visibility to this scope.
 
-    static const CLR_UINT32 MD_VtableLayoutMask     = 0x00000100;
-    static const CLR_UINT32 MD_ReuseSlot            = 0x00000000;     // The default.
-    static const CLR_UINT32 MD_NewSlot              = 0x00000100;     // Method always gets a new slot in the vtable.
-    static const CLR_UINT32 MD_Abstract             = 0x00000200;     // Method does not provide an implementation.
-    static const CLR_UINT32 MD_SpecialName          = 0x00000400;     // Method is special.  Name describes how.
-    static const CLR_UINT32 MD_NativeProfiled       = 0x00000800;
+#define  CLR_METHODDEF_FLAGS_STATIC											0x00000010     // Defined on type, else per instance.
+#define  CLR_METHODDEF_FLAGS_FINAL											0x00000020     // Method may not be overridden.
+#define  CLR_METHODDEF_FLAGS_VIRTUAL										0x00000040     // Method virtual.
+#define  CLR_METHODDEF_FLAGS_HIDE_BY_SIG								0x00000080     // Method hides by name+sig, else just by name.
 
-    static const CLR_UINT32 MD_Constructor          = 0x00001000;
-    static const CLR_UINT32 MD_StaticConstructor    = 0x00002000;
-    static const CLR_UINT32 MD_Finalizer            = 0x00004000;    
+#define  CLR_METHODDEF_FLAGS_VTABLELAYOUT_MASK					0x00000100
+#define  CLR_METHODDEF_FLAGS_REUSE_SLOT									0x00000000     // The default.
+#define  CLR_METHODDEF_FLAGS_NEW_SLOT										0x00000100     // Method always gets a new slot in the vtable.
+#define  CLR_METHODDEF_FLAGS_ABSTRACT										0x00000200     // Method does not provide an implementation.
+#define  CLR_METHODDEF_FLAGS_SPECIAL_NAME								0x00000400     // Method is special.  Name describes how.
+#define  CLR_METHODDEF_FLAGS_NATIVE_PROFILED						0x00000800
 
-    static const CLR_UINT32 MD_DelegateConstructor  = 0x00010000;
-    static const CLR_UINT32 MD_DelegateInvoke       = 0x00020000;
-    static const CLR_UINT32 MD_DelegateBeginInvoke  = 0x00040000;
-    static const CLR_UINT32 MD_DelegateEndInvoke    = 0x00080000;
+#define  CLR_METHODDEF_FLAGS_CONSTRUCTOR								0x00001000
+#define  CLR_METHODDEF_FLAGS_STATIC_CONSTRUCTOR					0x00002000
+#define  CLR_METHODDEF_FLAGS_FINALIZER									0x00004000    
 
-    static const CLR_UINT32 MD_Synchronized         = 0x01000000;
-    static const CLR_UINT32 MD_GloballySynchronized = 0x02000000;
-    static const CLR_UINT32 MD_Patched              = 0x04000000;
-    static const CLR_UINT32 MD_EntryPoint           = 0x08000000;
-    static const CLR_UINT32 MD_RequireSecObject     = 0x10000000;     // Method calls another method containing security code.
-    static const CLR_UINT32 MD_HasSecurity          = 0x20000000;     // Method has security associate with it.
-    static const CLR_UINT32 MD_HasExceptionHandlers = 0x40000000;
-    static const CLR_UINT32 MD_HasAttributes        = 0x80000000;
+#define  CLR_METHODDEF_FLAGS_DELEGATE_CONSTRUCTOR				0x00010000
+#define  CLR_METHODDEF_FLAGS_DELEGATE_INVOKE						0x00020000
+#define  CLR_METHODDEF_FLAGS_DELEGATE_BEGIN_INVOKE			0x00040000
+#define  CLR_METHODDEF_FLAGS_DELEGATE_END_INVOKE				0x00080000
+
+#define  CLR_METHODDEF_FLAGS_SYNCHRONIZED								0x01000000
+#define  CLR_METHODDEF_FLAGS_GLOBALLY_SYNCHRONIZED			0x02000000
+#define  CLR_METHODDEF_FLAGS_PATCHED										0x04000000
+#define  CLR_METHODDEF_FLAGS_ENTRYPOINT									0x08000000
+#define  CLR_METHODDEF_FLAGS_REQUIRE_SECOBJECT					0x10000000     // Method calls another method containing security code.
+#define  CLR_METHODDEF_FLAGS_HAS_SECURITY								0x20000000     // Method has security associate with it.
+#define  CLR_METHODDEF_FLAGS_HAS_EXCEPTION_HANDLERS			0x40000000
+#define  CLR_METHODDEF_FLAGS_HAS_ATTRIBUTES							0x80000000
 
 
     CLR_STRING name;            // TBL_Strings
@@ -858,30 +862,30 @@ struct CLR_RECORD_METHODDEF
     //
     CLR_SIG    locals;          // TBL_Signatures
     CLR_SIG    sig;             // TBL_Signatures
-};
+}CLR_RECORD_METHODDEF;
 
-struct CLR_RECORD_ATTRIBUTE
+typedef struct _CLR_RECORD_ATTRIBUTE
 {
     CLR_UINT16 ownerType;       // one of TBL_TypeDef, TBL_MethodDef, or TBL_FieldDef.
     CLR_UINT16 ownerIdx;        // TBL_TypeDef | TBL_MethodDef | TBL_FielfDef
     CLR_UINT16 constructor;
     CLR_SIG    data;            // TBL_Signatures
 
-    CLR_UINT32 Key() const { return *(CLR_UINT32*)&ownerType; }
-};
+    //CLR_UINT32 Key() { return *(CLR_UINT32*)&ownerType; }
+}CLR_RECORD_ATTRIBUTE;
 
-struct CLR_RECORD_TYPESPEC
+typedef struct _CLR_RECORD_TYPESPEC
 {
     CLR_SIG    sig;             // TBL_Signatures
     CLR_UINT16 pad;
-};
+}CLR_RECORD_TYPESPEC;
 
-struct CLR_RECORD_EH
+typedef struct _CLR_RECORD_EH
 {
-    static const CLR_UINT16 EH_Catch    = 0x0000;
-    static const CLR_UINT16 EH_CatchAll = 0x0001;
-    static const CLR_UINT16 EH_Finally  = 0x0002;
-    static const CLR_UINT16 EH_Filter   = 0x0003;
+#define  CLR_EH_FLAGS_CATCH		0x0000
+#define  CLR_EH_FLAGS_CATCHALL 0x0001
+#define  CLR_EH_FLAGS_FINALLY	0x0002
+#define  CLR_EH_FLAGS_FILTER		0x0003
 
     //--//
 
@@ -897,14 +901,14 @@ struct CLR_RECORD_EH
 
     //--//
 
-    static CLR_PMETADATA ExtractEhFromByteCode( CLR_PMETADATA ipEnd, const CLR_RECORD_EH*& ptrEh, CLR_UINT32& numEh );
+    //static CLR_PMETADATA ExtractEhFromByteCode( CLR_PMETADATA ipEnd, const CLR_RECORD_EH* ptrEh, CLR_UINT32* numEh );
 
-    CLR_UINT32 GetToken() const;
-};
+    //CLR_UINT32 GetToken() ;
+}CLR_RECORD_EH;
 
-struct CLR_RECORD_RESOURCE_FILE
+typedef struct _CLR_RECORD_RESOURCE_FILE
 {
-    static const CLR_UINT32 CURRENT_VERSION = 2;
+#define  CLR_RESOURCE_FILE_FLAGS_CURREN_VERSION 2
 
     CLR_UINT32 version;
     CLR_UINT32 sizeOfHeader;
@@ -913,18 +917,18 @@ struct CLR_RECORD_RESOURCE_FILE
     CLR_STRING name;            // TBL_Strings
     CLR_UINT16 pad;
     CLR_UINT32 offset;          // TBL_Resource
-};
+}CLR_RECORD_RESOURCE_FILE;
 
-struct CLR_RECORD_RESOURCE
+typedef struct _CLR_RECORD_RESOURCE
 {
-    static const CLR_UINT8 RESOURCE_Invalid  = 0x00;
-    static const CLR_UINT8 RESOURCE_Bitmap   = 0x01;
-    static const CLR_UINT8 RESOURCE_Font     = 0x02;
-    static const CLR_UINT8 RESOURCE_String   = 0x03;
-    static const CLR_UINT8 RESOURCE_Binary   = 0x04;
+#define  CLR_RESOURCE_FLAGS_INVALID				0x00
+#define  CLR_RESOURCE_FLAGS_BITMAP				0x01
+#define  CLR_RESOURCE_FLAGS_FONT					0x02
+#define  CLR_RESOURCE_FLAGS_STRING				0x03
+#define  CLR_RESOURCE_FLAGS_BINARY				0x04
+#define  CLR_RESOURCE_FLAGS_PADDING_MASK	0x03
 
-    static const CLR_UINT8 FLAGS_PaddingMask = 0x03;
-    static const CLR_INT16 SENTINEL_ID       = 0x7FFF;
+#define  CLR_RESOURCE_FLAGS_SENTINEL_ID		0x7FFF
 
     //
     // Sorted on id
@@ -933,7 +937,7 @@ struct CLR_RECORD_RESOURCE
     CLR_UINT8  kind;
     CLR_UINT8  flags;
     CLR_UINT32 offset;
-};
+}CLR_RECORD_RESOURCE;
 
 
 #if defined(PLATFORM_WINDOWS)
