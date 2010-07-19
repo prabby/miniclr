@@ -39,11 +39,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // WINDOWS
-
+#if defined(PLATFORM_WINDOWS)
+#define  INLINE  __inline
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // ARM
+#if defined(arm) || defined(__arm) || defined(__GNUC__)
 
+#endif
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -57,25 +61,6 @@
 
 #else
 
-#include <tinyhal_types.h>
-
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-#ifndef MAKE_HRESULT
-#define MAKE_HRESULT(sev,fac,code) \
-      ((HRESULT) (((unsigned long)(sev)<<31) | ((unsigned long)(fac)<<16) | ((unsigned long)(code))) )
-#endif
-
-#ifndef SEVERITY_SUCCESS
-#define SEVERITY_SUCCESS    0
-#endif
-
-#ifndef SEVERITY_ERROR
-#define SEVERITY_ERROR      1
-#endif
 
 #endif
 
