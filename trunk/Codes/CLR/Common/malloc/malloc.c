@@ -18,8 +18,8 @@
 programs can do a little mallocing without mmaping in more space.  */
 //HEAP_DECLARE_STATIC_FREE_AREA (initial_fa, 256);
 //struct heap_free_area *__malloc_heap = HEAP_INIT_WITH_FA (initial_fa);
-static struct heap_free_area s_malloc_heap = {0,0,0};
-struct heap_free_area * __malloc_heap = &s_malloc_heap;
+//static struct heap_free_area g_malloc_heap = {0,0,0};
+struct heap_free_area * __malloc_heap = 0;
 
 static void *
 __malloc_from_heap (size_t size, struct heap_free_area **heap)
@@ -73,11 +73,35 @@ __free_to_heap (void *mem, struct heap_free_area **heap)
 void 
 crt_heap_init(void * heap_start,size_t size)
 {
-	if(!heap_start || !size)
+	unsigned int ui_start = (unsigned int)heap_start;
+	unsigned int ui_end = ui_start + size;
+
+	if(!heap_start || !size || (size < HEAP_MIN_SIZE + MALLOC_ALIGNMENT))
 		return ;
 
+	/*heap_start not alignment*/
+	if(ui_start & (MALLOC_ALIGNMENT - 1)){
+		ui_start = HEAP_ADJUST_SIZE(ui_start);
+		size = ui_end - ui_start;
+		ui_end = ui_start + size;
+		heap_start = (void*)ui_start;
+	}
+
+	/*alignment size*/
+	if(size & (MALLOC_ALIGNMENT - 1))
+		size = HEAP_ADJUST_SIZE(size - MALLOC_ALIGNMENT);
+	
+	if(ui_end & (MALLOC_ALIGNMENT - 1))
+		ui_end = HEAP_ADJUST_SIZE(ui_end - HEAP_MIN_SIZE - MALLOC_ALIGNMENT);
+	else
+		ui_end -= HEAP_MIN_SIZE;
+	
+	__malloc_heap = (struct heap_free_area*)ui_end;
+	crt_memset(__malloc_heap,0,sizeof(struct heap_free_area));
+
+
 	/* Put BLOCK into the heap.  */
-	__heap_free (&__malloc_heap, heap_start, size);
+	__heap_free (&__malloc_heap, heap_start, ui_end - ui_start);
 }
 
 void *
