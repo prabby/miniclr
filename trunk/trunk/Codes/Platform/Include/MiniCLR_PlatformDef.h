@@ -53,16 +53,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // INCLUDES
 #if defined(PLATFORM_WINDOWS)
-//Unsafe string functions be avoided, but there isn't a safe crt for the arm, so 
-//a bunch of macros, cleanup code needs to be done first
-
 #include <windows.h>
-
-
 #else
 
-
 #endif
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//C Runtime library
+#include "miniclr_libc.h"
 
 #endif // _MINICLR_PLATFORMDEF_H_
 

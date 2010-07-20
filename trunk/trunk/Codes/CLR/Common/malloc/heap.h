@@ -88,7 +88,7 @@ struct heap_free_area
 
 
 /* The minimum allocatable size.  */
-#define HEAP_MIN_SIZE	HEAP_ADJUST_SIZE (sizeof (struct heap_free_area))
+#define HEAP_MIN_SIZE	 HEAP_ADJUST_SIZE (sizeof (struct heap_free_area))
 
 /* The minimum size of a free area; if allocating memory from a free-area
    would make the free-area smaller than this, the allocation is simply
