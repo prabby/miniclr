@@ -21,6 +21,12 @@ programs can do a little mallocing without mmaping in more space.  */
 //static struct heap_free_area g_malloc_heap = {0,0,0};
 struct heap_free_area * __malloc_heap = 0;
 
+#if defined(CLR_MALLOC_HEAP_SIZE_AND_POINT)
+void * __malloc_heap_point = 0;
+size_t __malloc_heap_size = 0;
+#endif
+
+
 static void *
 __malloc_from_heap (size_t size, struct heap_free_area **heap)
 {
@@ -97,7 +103,7 @@ crt_heap_init(void * heap_start,size_t size)
 		ui_end -= HEAP_MIN_SIZE;
 	
 	__malloc_heap = (struct heap_free_area*)ui_end;
-	crt_memset(__malloc_heap,0,sizeof(struct heap_free_area));
+	memset(__malloc_heap,0,sizeof(struct heap_free_area));
 
 
 	/* Put BLOCK into the heap.  */
@@ -170,7 +176,7 @@ crt_realloc (void *mem, size_t new_size)
 			void *new_mem = crt_malloc (new_size - MALLOC_HEADER_SIZE);
 			if (new_mem)
 			{
-				memcpy (new_mem, mem, size - MALLOC_HEADER_SIZE);
+				crt_memcpy (new_mem, mem, size - MALLOC_HEADER_SIZE);
 				crt_free (mem);
 			}
 			mem = new_mem;
@@ -188,3 +194,19 @@ crt_realloc (void *mem, size_t new_size)
 	return mem;
 }
 
+
+void * crt_calloc(size_t nmemb, size_t lsize)
+{
+	void *result;
+	size_t size=lsize * nmemb;
+
+	/* guard vs integer overflow, but allow nmemb
+	* to fall through and call malloc(0) */
+	if (nmemb && lsize != (size / nmemb)) 
+		return 0;
+
+	if ((result=crt_malloc(size)) != NULL) {
+		crt_memset(result, 0, size);
+	}
+	return result;
+}
