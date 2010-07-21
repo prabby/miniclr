@@ -99,7 +99,7 @@ struct heap_free_area
    returning the tail-end of a previous allocation), but __heap_alloc will
    try to get rid of them when possible.  */
 #define HEAP_MIN_FREE_AREA_SIZE  \
-  HEAP_ADJUST_SIZE (sizeof (struct heap_free_area) + 32)
+  HEAP_ADJUST_SIZE (sizeof (struct heap_free_area) /*+ 32*/)
 
 
 /* branch-prediction macros; they may already be defined by libc.  */

@@ -167,6 +167,13 @@ extern int __malloc_mmb_debug;
 
 extern struct heap_free_area * __malloc_heap;
 
+#if defined(CLR_MALLOC_HEAP_SIZE_AND_POINT)
+extern void * __malloc_heap_point;
+extern size_t __malloc_heap_size;
+__inline__ void *	crt_heap_point(){return __malloc_heap_point;};
+__inline__ size_t crt_heap_size() {return __malloc_heap_size;};
+#endif
+
 void		crt_heap_init(void * heap_start,size_t size);
 
 void *	crt_malloc (size_t size);
@@ -174,5 +181,7 @@ void *	crt_malloc (size_t size);
 void		crt_free (void *mem);
 
 void *	crt_realloc (void *mem, size_t new_size);
+
+void *	crt_calloc(size_t nmemb, size_t lsize);
 
 #endif //define __CRT_MALLOC_H
