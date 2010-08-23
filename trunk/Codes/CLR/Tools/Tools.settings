@@ -1,0 +1,85 @@
+<Project DefaultTargets="-NOBUILD-" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+  <ItemGroup> <!-- CLR core, primarily to provide the TinyCLR type system -->
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\StartupLib\dotnetmf.proj"  />
+    <PlatformIndependentLibs Include="ClrStartup.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Core\dotnetmf.proj" />
+    <PlatformIndependentLibs Include="Core.$(LIB_EXT)"/>
+  </ItemGroup>
+
+  <ItemGroup> <!-- Libs needed by MetadataProcessor for manipulating assemblies -->
+    <RequiredProjects        Include="$(SPOCLIENT)\Support\CRC\dotnetmf.proj" />
+    <PlatformIndependentLibs Include="CRC.$(LIB_EXT)"/>
+
+    <RequiredProjects Include="$(SPOCLIENT)\Crypto\dotnetmf.proj"/>
+    <!-- crypto.lib included by pragma, no declaration here necessary -->
+
+    <RequiredProjects        Include="$(SPOCLIENT)\Clr\Tools\CorHelper\dotNetMF.proj"/>
+    <DriverLibs              Include="CorHelper.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\Clr\Tools\Parser\dotNetMF.proj"/>
+    <DriverLibs              Include="Parser.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\Support\WireProtocol\dotnetmf.proj" />
+    <PlatformIndependentLibs Include="WireProtocol.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Diagnostics\dotnetmf.proj" />
+    <PlatformIndependentLibs Include="Diagnostics.$(LIB_EXT)"/>
+  </ItemGroup>
+
+  <ItemGroup> <!-- SimpleHeap is used by graphics to store data for bitmaps -->
+    <RequiredProjects        Include="$(SPOCLIENT)\DeviceCode\pal\SimpleHeap\dotNetMF.proj"/>
+    <DriverLibs              Include="SimpleHeap.$(LIB_EXT)"/>
+  </ItemGroup>
+
+  <ItemGroup> <!-- graphics libs needed by BuildHelper (for munging bitmaps) and TFConvert (for compressing font files) -->
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Graphics\dotNetMF.proj" />
+    <PlatformIndependentLibs Include="graphics.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Graphics\GIF\dotNetMF.proj" />
+    <PlatformIndependentLibs Include="Graphics_Gif.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Graphics\Jpeg\dotNetMF.proj" />
+    <PlatformIndependentLibs Include="Graphics_Jpeg.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Graphics\Bmp\dotNetMF.proj" />
+    <PlatformIndependentLibs Include="Graphics_Bmp.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\DeviceCode\pal\Graphics\dotnetmf.proj"/>
+    <DriverLibs              Include="graphics_pal.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\DeviceCode\pal\Time\Stubs\dotnetmf.proj"/>
+    <DriverLibs              Include="time_pal_stubs.$(LIB_EXT)"/>	
+  </ItemGroup>
+
+  <ItemGroup> <!-- stub libs to satisfy various other libs that think they're in a VM -->
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\core\Hardware\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="Hardware_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\core\I2C\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="I2C_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Messaging\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="Messaging_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Core\IOPort\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="IOPort_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\core\HeapPersistence\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="HeapPersistence_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Debugger\dotNetMF_stub.proj" />
+    <PlatformIndependentLibs Include="debugger_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Core\RPC\dotnetmf_stub.proj" />
+    <PlatformIndependentLibs Include="RPC_stub.$(LIB_EXT)"/>
+
+    <RequiredProjects        Include="$(SPOCLIENT)\CLR\Tools\StubWinHal\dotnetmf.proj"/>
+    <PlatformIndependentLibs Include="StubWinHal.$(LIB_EXT)"/>
+  </ItemGroup>
+
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+
+</Project>
+
