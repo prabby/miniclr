@@ -1,0 +1,20 @@
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+  <Fragment>
+    <DirectoryRef Id="ToolsDir">
+      <Directory Id="ToolsFontsDir" Name="Fonts">
+        <Directory Id="TrueTypeDir" Name="TrueType">
+          <Component Id="COMPONENT_TRUETYPEFONTS" DiskId="1" Guid="5d6ec78d-c106-44c8-9c11-7cd17dfa1bec">
+            <File Id="FILE_KOOTEN_TTF" Name="Kooten.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Kooten.ttf" />
+            <File Id="FILE_LINDS_TTF" Name="Linds.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Linds.ttf" />
+            <File Id="FILE_MIRAMO_TTF" Name="Miramo.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Miramo.ttf" />
+            <File Id="FILE_MIRAMOB_TTF" Name="Miramob.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Miramob.ttf" />
+            <File Id="FILE_PERIC_TTF" Name="Peric.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Peric.ttf" />
+            <File Id="FILE_PERIC1_TTF" Name="Pericl.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Pericl.ttf" />
+            <File Id="FILE_PESCA_TTF" Name="Pesca.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Pesca.ttf" />
+            <File Id="FILE_PESCAB_TTF" Name="Pescab.ttf" src="$(env.SPOCLIENT)\CLR\Tools\TFConvert\Fonts\TrueType\Pescab.ttf" />
+          </Component>
+        </Directory>
+      </Directory>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

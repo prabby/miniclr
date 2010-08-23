@@ -1,0 +1,186 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "CorLib.h"
+
+
+HRESULT Library_corlib_native_System_RuntimeType::get_Assembly___SystemReflectionAssembly( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    CLR_RT_TypeDef_Instance td;
+    
+    TINYCLR_CHECK_HRESULT(GetTypeDescriptor( stack.Arg0(), td, NULL ));
+
+    {
+        CLR_RT_Assembly_Index idx; idx.Set( td.Assembly() );
+        CLR_RT_HeapBlock&     top = stack.PushValue();
+
+        top.SetReflection( idx );
+    }
+    
+    TINYCLR_NOCLEANUP();
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::get_Name___STRING( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    TINYCLR_CHECK_HRESULT(GetName( stack.Arg0(), false, stack.PushValueAndClear() ));
+  
+    TINYCLR_NOCLEANUP();
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::get_FullName___STRING( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    TINYCLR_CHECK_HRESULT(GetName( stack.Arg0(), true, stack.PushValueAndClear() ));
+ 
+    TINYCLR_NOCLEANUP();
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::get_BaseType___SystemType( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    CLR_RT_TypeDef_Instance td;
+    CLR_UINT32              levels;
+    CLR_RT_HeapBlock&       top = stack.PushValueAndClear();
+
+    TINYCLR_CHECK_HRESULT(GetTypeDescriptor( stack.Arg0(), td, &levels ));
+        
+    if(levels > 0)
+    {
+        top.SetReflection( g_CLR_RT_WellKnownTypes.m_Array );
+    }
+    else if(td.SwitchToParent())
+    {
+        top.SetReflection( td );
+    }
+
+    TINYCLR_NOCLEANUP();
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetMethods___SZARRAY_SystemReflectionMethodInfo__SystemReflectionBindingFlags( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    return Library_corlib_native_System_Type::GetMethods( stack, NULL, stack.Arg1().NumericByRef().s4, NULL, 0, true );
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetField___SystemReflectionFieldInfo__STRING__SystemReflectionBindingFlags( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    return Library_corlib_native_System_Type::GetFields( stack, stack.Arg1().RecoverString(), stack.Arg2().NumericByRef().s4, false );
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetFields___SZARRAY_SystemReflectionFieldInfo__SystemReflectionBindingFlags( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    return Library_corlib_native_System_Type::GetFields( stack, NULL, stack.Arg1().NumericByRef().s4, true );
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetInterfaces___SZARRAY_SystemType( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    CLR_RT_TypeDef_Instance td;    
+    CLR_RT_HeapBlock& top = stack.PushValueAndClear();
+    CLR_RT_HeapBlock* ptr;
+    
+    TINYCLR_CHECK_HRESULT(GetTypeDescriptor( stack.Arg0(), td ));
+
+    //
+    // Scan the list of interfaces.
+    //
+    CLR_RT_SignatureParser          parser; parser.Initialize_Interfaces( td.m_assm, td.m_target );
+    CLR_RT_SignatureParser::Element res;
+    
+    TINYCLR_CHECK_HRESULT(CLR_RT_HeapBlock_Array::CreateInstance( top, parser.Available(), g_CLR_RT_WellKnownTypes.m_Type ));
+    
+    ptr = (CLR_RT_HeapBlock*)top.DereferenceArray()->GetFirstElement();
+
+    while(parser.Available() > 0)
+    {
+        TINYCLR_CHECK_HRESULT(parser.Advance( res ));        
+
+        ptr->SetReflection( res.m_cls );
+
+        ptr++;
+    }    
+
+    TINYCLR_NOCLEANUP();
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetElementType___SystemType( CLR_RT_StackFrame& stack )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+                
+    CLR_RT_TypeDescriptor   desc;
+    CLR_RT_TypeDescriptor   descSub;    
+    CLR_RT_HeapBlock& top = stack.PushValueAndClear();
+
+    TINYCLR_CHECK_HRESULT(desc.InitializeFromReflection( stack.Arg0().ReflectionDataConst() ));
+
+    if(desc.GetElementType( descSub ))
+    {
+        top.SetReflection( descSub.m_reflex );
+    }
+        
+    TINYCLR_NOCLEANUP();
+}
+
+//--//
+
+HRESULT Library_corlib_native_System_RuntimeType::GetTypeDescriptor( CLR_RT_HeapBlock& arg, CLR_RT_TypeDef_Instance& inst, CLR_UINT32* levels )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    return CLR_RT_ReflectionDef_Index::Convert( arg, inst, levels ) ? S_OK : CLR_E_NULL_REFERENCE;
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetTypeDescriptor( CLR_RT_HeapBlock& arg, CLR_RT_TypeDef_Instance& inst )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    CLR_UINT32 levels;
+
+    TINYCLR_CHECK_HRESULT(GetTypeDescriptor( arg, inst, &levels ));
+
+    if(levels > 0)
+    {
+        inst.InitializeFromIndex( g_CLR_RT_WellKnownTypes.m_Array );
+    }
+
+    TINYCLR_NOCLEANUP();    
+}
+
+HRESULT Library_corlib_native_System_RuntimeType::GetName( CLR_RT_HeapBlock& arg, bool fFullName, CLR_RT_HeapBlock& res )
+{
+    NATIVE_PROFILE_CLR_CORE();
+    TINYCLR_HEADER();
+
+    CLR_RT_TypeDef_Instance td;
+    CLR_UINT32              levels;
+    char                    rgBuffer[ 256 ];
+    LPSTR                   szBuffer;
+    size_t                  iBuffer;
+
+    TINYCLR_CHECK_HRESULT(GetTypeDescriptor( arg, td, &levels ));
+    
+    szBuffer = rgBuffer;
+    iBuffer  = MAXSTRLEN(rgBuffer);
+
+    TINYCLR_CHECK_HRESULT(g_CLR_RT_TypeSystem.BuildTypeName( td, szBuffer, iBuffer, fFullName ? CLR_RT_TypeSystem::TYPENAME_FLAGS_FULL : 0, levels ));
+
+    TINYCLR_SET_AND_LEAVE(CLR_RT_HeapBlock_String::CreateInstance( res, rgBuffer ));
+
+    TINYCLR_NOCLEANUP();
+}
