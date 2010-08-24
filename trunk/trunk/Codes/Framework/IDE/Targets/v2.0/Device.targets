@@ -1,0 +1,241 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Import Project="Tasks.settings" />
+
+    <PropertyGroup>
+        <MetaDataProcessorDependsOn>Compile</MetaDataProcessorDependsOn>
+        <CoreBuildDependsOn>$(CoreBuildDependsOn);MetaDataProcessor</CoreBuildDependsOn>
+        <PrepareForRunDependsOn>MetaDataProcessor;$(PrepareForRunDependsOn);CopyTinyCLRFiles</PrepareForRunDependsOn>
+        <CleanDependsOn>CleanTinyCLR;$(CleanDependsOn)</CleanDependsOn>
+        <ResolveReferencesDependsOn>$(ResolveReferencesDependsOn);ResolveRuntimeDependencies</ResolveReferencesDependsOn>
+        <TinyCLR_StartProgram Condition=" '$(StartAction)'== 'Program' ">$(StartProgram)</TinyCLR_StartProgram>
+        <TinyCLR_IntermediateAssembly>$(ProjectDir)$(IntermediateOutputPath)$(TargetName)</TinyCLR_IntermediateAssembly>
+        <TinyCLR_Assembly>$(ProjectDir)$(OutDir)$(TargetName)</TinyCLR_Assembly>
+        <UseVSHostingProcess>false</UseVSHostingProcess>
+        <NoStdLib>true</NoStdLib>
+        <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+        <MaxTargetPath>260</MaxTargetPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+	<Reference Include="mscorlib">
+            <InProject>false</InProject>
+        </Reference>
+    </ItemGroup>
+
+    <!--
+        Override frameworks.targets version
+		Get the path to the target .NET framework SDK directory.
+    -->
+    <Target
+        Name="GetFrameworkPaths"
+        DependsOnTargets="$(GetFrameworkPathsDependsOn)"
+     >
+         <GetDeviceFrameworkPaths
+            RuntimeVersion="$(TargetFrameworkVersion)"
+         >
+            <Output TaskParameter="FrameworkAssembliesPath" PropertyName="TargetFrameworkDirectory"/>
+        </GetDeviceFrameworkPaths>
+    </Target>
+
+    <Target
+		Name="MetaDataProcessor"
+		Inputs="$(TinyCLR_IntermediateAssembly)$(TargetExt);
+			@(ReferencePath);
+			@(ReferenceDependencyPaths);
+			@(ReferenceSatellitePaths);
+			@(TinyCLR_Resources)"
+		Outputs="$(TinyCLR_IntermediateAssembly).pe"
+		DependsOnTargets="$(MetaDataProcessorDependsOn)"
+		>
+        <!-- Should we also use ReferenceCopyLocalPaths, dlls that got copied to output directory?? -->
+        <MetaDataProcessor
+			LoadHints="@(ReferencePath);@(ReferenceDependencyPaths);@(ReferenceSatellitePaths)"
+			Parse="$(TinyCLR_IntermediateAssembly)$(TargetExt)"
+			Compile="$(TinyCLR_IntermediateAssembly).pe"
+			ImportResources="@(TinyCLR_Resources)"
+			Minimize="true"
+		>
+        </MetaDataProcessor>
+
+        <CreateItem Include="$(TinyCLR_IntermediateAssembly).pe" Condition="Exists('$(TinyCLR_IntermediateAssembly).pe')">
+            <Output TaskParameter="Include" ItemName="FileWrites" />
+        </CreateItem>
+    </Target>
+
+    <Target
+		Name="CopyTinyCLRFiles"
+		>
+        <Copy
+	      	    SourceFiles="$(TinyCLR_IntermediateAssembly).pe"
+	            DestinationFiles="$(TinyCLR_Assembly).pe"
+	            SkipUnchangedFiles="true"
+            		/>
+        <Copy
+	            Condition="Exists('$(TinyCLR_IntermediateAssembly).pdbx')"
+                    SourceFiles="$(TinyCLR_IntermediateAssembly).pdbx"
+	            DestinationFiles="$(TinyCLR_Assembly).pdbx"
+	            SkipUnchangedFiles="true"
+				/>
+<!--
+	These two tasks will also copy the .pe and .pdbx files for references
+	that are marked as CopyLocal. A couple of notes.  @(ReferenceCopyLocalPaths) can contain the
+	.dll and .pdb files, so there is likely duplicate copying going on here: the copy command
+	is a little smart, but we are still doing a bit more work than necessary.
+	Also, if the pdbx files are in a separate directory from the .dll, then this may fail.
+	I haven't tried yet.
+
+-->
+        <Copy
+            SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).pe')"
+            DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename).pe')"
+            SkipUnchangedFiles="true"
+            />
+        <Copy
+            SourceFiles="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).pdbx')"
+            DestinationFiles="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename).pdbx')"
+            SkipUnchangedFiles="true"
+            />
+    </Target>
+
+    <Target
+		Name="CleanTinyCLR"
+		DependsOnTargets="$(CleanTinyCLRDependsOn)"
+		>
+        <Delete
+			Files=
+			 "$(TinyCLR_Assembly)$(TinyCLR_PdbxExt);
+	                  $(TinyCLR_IntermediateAssembly)$(TinyCLR_PdbxExt);
+
+			  $(TinyCLR_Assembly).pe;
+		          $(TinyCLR_IntermediateAssembly).pe;"
+			/>
+    </Target>
+    <Target
+		Name="ResolveRuntimeDependencies"
+
+	>
+        <CreateItem
+		Include="$(TinyCLR_StartProgram)"
+		Condition=" '$(TinyCLR_StartProgram)' != '' "
+        >
+            <Output TaskParameter="Include" ItemName="TinyCLR_StartProgramItem"/>
+        </CreateItem>
+
+        <CreateProperty Value="$(IntermediateOutputPath)TinyCLR_DebugReferences.cache">
+            <Output TaskParameter="Value" PropertyName="TinyCLR_DebugReferencesStateFile" />
+        </CreateProperty>
+
+        <ResolveAssemblyReference
+            Assemblies="@(Reference)"
+            AssemblyFiles="$(TinyCLR_StartProgram);@(_ResolvedProjectReferencePaths)"
+            InstalledAssemblyTables="@(InstalledAssemblyTables)"
+            TargetFrameworkDirectories="@(_ReferenceInstalledAssemblyDirectory)"
+            CandidateAssemblyFiles="@(Content);@(None)"
+            SearchPaths="{CandidateAssemblyFiles};
+                         $(ReferencePath);
+                         {HintPathFromItem};
+                         $(TargetFrameworkDirectory);
+                         {Registry:$(FrameworkRegistryBase),$(TargetFrameworkVersion),$(AssemblyFoldersSuffix)$(AssemblyFoldersExConditions)};
+                         {AssemblyFolders};
+                         {GAC};
+                         {RawFileName};
+                         $(OutputPath);
+                         @(TinyCLR_StartProgramItem->'%(RootDir)%(Directory)')"
+            TargetProcessorArchitecture="$(ProcessorArchitecture)"
+            AppConfigFile="@(_ResolveAssemblyReferencesApplicationConfigFileForExes)"
+            AutoUnify="$(AutoUnifyAssemblyReferences)"
+            FindDependencies="true"
+            FindSatellites="true"
+            FindRelatedFiles="true"
+            Silent="!$(BuildingProject)"
+            StateFile="$(TinyCLR_DebugReferencesStateFile)"
+            >
+            <Output TaskParameter="ResolvedFiles" ItemName="TinyCLR_StartProgram_ResolvedFiles"/>
+            <Output TaskParameter="ResolvedDependencyFiles" ItemName="TinyCLR_StartProgram_ResolvedDependencyFiles"/>
+            <Output TaskParameter="RelatedFiles" ItemName="TinyCLR_ReferenceRelatedPaths"/>
+            <Output TaskParameter="SatelliteFiles" ItemName="TinyCLR_ReferenceSatellitePaths"/>
+            <Output TaskParameter="CopyLocalFiles" ItemName="TinyCLR_ReferenceCopyLocalPaths"/>
+            <Output TaskParameter="SuggestedRedirects" ItemName="TinyCLR_SuggestedBindingRedirects"/>
+            <Output TaskParameter="FilesWritten" ItemName="FileWrites"/>
+        </ResolveAssemblyReference>
+
+        <ResolveRuntimeDependencies
+			Assembly="$(TinyCLR_Assembly)$(TargetExt)"
+	  		AssemblyReferences="@(ReferencePath);@(ReferenceDependencyPaths);@(ReferenceSatellitePaths)"
+			StartProgram="$(TinyCLR_StartProgram)"
+			StartProgramReferences="@(TinyCLR_StartProgram_ResolvedFiles);@(TinyCLR_StartProgram_ResolvedDependencyFiles)"
+		/>
+    </Target>
+
+    <Target
+            Name="CoreResGen"
+            DependsOnTargets="$(CoreResGenDependsOn)"
+    >
+        <GenerateTinyResource
+            Sources="@(ResxWithNoCulture)"
+            Condition=" '@(ResxWithNoCulture)' != '' "
+            References="@(ReferencePath)"
+            UseSourcePath="$(UseSourcePath)"
+            StateFile="$(IntermediateOutputPath)TinyResGen.cache"
+            OutputResources="@(ManifestResourceWithNoCultureName->'$(IntermediateOutputPath)%(Identity).tinyresources')"
+            >
+
+            <Output
+                TaskParameter="OutputResources"
+                ItemName="TinyCLR_Resources"/>
+        </GenerateTinyResource>
+    </Target>
+
+
+    <!-- Overriding common targets.  Deployment manifests are not supported -->
+    <Target
+        Name="GenerateDeploymentManifest"
+    />
+
+    <Target
+        Name="_CopyManifestFiles"
+        Condition=" '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' "
+        DependsOnTargets="PrepareForBuild">
+
+        <Copy
+            SourceFiles="@(ApplicationManifest)"
+            DestinationFolder="$(OutDir)"
+            SkipUnchangedFiles="true"
+            Condition="'$(GenerateClickOnceManifests)'=='true' or '$(_DeploymentCopyApplicationManifest)'=='true'">
+
+            <Output TaskParameter="DestinationFiles" ItemName="_DeploymentMainApplicationManifest"/>
+            <Output TaskParameter="DestinationFiles" ItemName="FileWrites"/>
+
+        </Copy>
+
+        <Message Importance="Normal" Condition="'$(_DeploymentCopyApplicationManifest)'=='true'" Text="$(MSBuildProjectName) -&gt; @(_DeploymentMainApplicationManifest->'%(FullPath)')" />
+
+    </Target>
+
+
+    <!--
+	 Overridding common target. Deployment dependencies are computed differently than for the desktop.  All dependent assemblies
+         are added to the manifest.  DependencyType is always set to install because nothing is currently assumed to be present on the
+	 device/emulator.  Also TargetPath is added to get a full path for all dependent assemblies.  The manifest is in no way related to
+         ClickOnce deployment.  It is only a nice file format that already exists that can be reused.
+     -->
+
+    <Target
+        Name="_DeploymentComputeClickOnceManifestInfo"
+        Condition="'$(GenerateClickOnceManifests)'=='true'"
+        DependsOnTargets="_DeploymentGenerateTrustInfo"
+    >
+
+      <CreateItem Include="@(ReferencePath);@(ReferenceDependencyPaths);@(ReferenceSatellitePaths)"
+	AdditionalMetadata="DependencyType=Install;TargetPath=%(FullPath)"
+	>
+          <Output TaskParameter="Include" ItemName="_DeploymentManifestDependencies"/>
+      </CreateItem>
+
+      <CreateProperty Value="ClickOnce">
+          <Output TaskParameter="Value" PropertyName="_DeploymentManifestType"/>
+      </CreateProperty>
+
+    </Target>
+</Project>

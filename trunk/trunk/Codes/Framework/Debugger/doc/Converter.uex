@@ -1,0 +1,10 @@
+<docs>
+  <doc for="IConverter">
+    <exclude/>
+  </doc>
+
+  <doc for="Converter">
+    <exclude/>
+  </doc>
+
+</docs>

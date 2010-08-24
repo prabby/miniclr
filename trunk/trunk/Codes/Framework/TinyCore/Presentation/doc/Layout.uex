@@ -1,0 +1,239 @@
+<docs>
+  <doc for="HorizontalJustification">
+    <summary>
+    An enumeration of the possible horizontal justification properties.
+    </summary>
+  </doc>
+
+  <doc for="HorizontalJustification.Left">
+    <summary>
+    Aligns to the left edge.
+    </summary>
+  </doc>
+
+  <doc for="HorizontalJustification.Center">
+    <summary>
+    Aligns to the center of the available space horizontally.
+    </summary>
+  </doc>
+
+  <doc for="HorizontalJustification.Right">
+    <summary>
+    Aligns to the right edge.
+    </summary>
+  </doc>
+
+  <doc for="HorizontalJustification.Full">
+    <summary>
+    Aligns to the left and right edge.
+    </summary>
+  </doc>
+
+  <doc for="VerticalJustification">
+    <summary>
+    An enumeration of the possible vertical justification properties.
+    </summary>
+  </doc>
+
+  <doc for="VerticalJustification.Top">
+    <summary>
+    Aligns to the top edge.
+    </summary>
+  </doc>
+
+  <doc for="VerticalJustification.Center">
+    <summary>
+    Aligns to the center of the avialable space vertically.
+    </summary>
+  </doc>
+
+  <doc for="VerticalJustification.Bottom">
+    <summary>
+    Aligns to the bottom edge.
+    </summary>
+  </doc>
+
+  <doc for="VerticalJustification.Full">
+    <summary>
+    Aligns to the top and bottom edges.
+    </summary>
+  </doc>
+
+  <doc for="ILayoutManager">
+    <summary>
+    Provides the base interface for a layout manager.
+    </summary>
+  </doc>
+
+  <doc for="ILayoutManager.View">
+    <summary>
+    Sets the view to be managed.
+    </summary>
+  </doc>
+
+  <doc for="ILayoutManager.Layout">
+    <summary>
+    Provide layout behavior.
+    </summary>
+  </doc>
+
+  <doc for="ILayoutManager.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="HorizontalContainer">
+    <summary>
+    Defines a container view that has a vertical layout manager for stacking views vertically.
+    </summary>
+    <remarks>
+    It also implements a layout style, so the container sizes fit the components.
+    </remarks>
+  </doc>
+
+  <doc for="HorizontalContainer.HorizontalContainer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.HorizontalContainer class with the specified spacing between elements.
+    </summary>
+    <param name="spacing">The amount of spacing between elements, in pixels.</param>
+  </doc>
+
+  <doc for="VerticalContainer">
+    <summary>
+    Defines a container view that has a horizontal layout manager for stacking views horizontally.
+    </summary>
+    <remarks>
+    It also implements a layout style, so the container sizes fit the components.
+    </remarks>
+  </doc>
+
+  <doc for="VerticalContainer.VerticalContainer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.VerticalContainer class with the specified spacing between elements.
+    </summary>
+    <param name="spacing">The amount of spacing between elements, in pixels.</param>
+  </doc>
+
+  <doc for="LayoutManager">
+    <summary>
+    Defines a class that manages the layout of the elements within a view.
+    </summary>
+  </doc>
+
+  <doc for="LayoutManager.m_view">
+    <summary>
+    The view to manage.
+    </summary>
+  </doc>
+
+  <doc for="LayoutManager.View">
+    <summary>
+    Sets the view to manage.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager">
+    <summary>
+    Defines a class the manages the layout of multiple vertical or horizontal elements within a view.
+    </summary>
+    <remarks>
+    It is recommended that Microsoft.SPOT.HorizontalLayoutManager or Microsoft.SPOT.VerticalLayoutManager is used instead of this class.
+    </remarks>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.m_spacing">
+    <summary>
+    The amount of space between the vertical or horizontal elements, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.m_idim">
+    <summary>
+    Specifies a layout;  0 being horizontal, 1 being vertical.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.FitWidth">
+    <summary>
+    Indicates whether the view elements fit to the width of the view.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.FitHeight">
+    <summary>
+    Indicates whether the view elements fit to the height of the view.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.Center">
+    <summary>
+    Indicates whether the view elements are centered.
+    </summary>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.HorizVertLayoutManager">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.HorizVertLayoutManager class.
+    </summary>
+    <param name="spacing">The amount of space between the vertical or horizontal elements, in pixels.</param>
+    <param name="idim">Specifies a layout;  0 being horizontal, 1 being vertical.</param>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="HorizVertLayoutManager.Layout">
+    <summary>
+    Provide layout behavior.
+    </summary>
+  </doc>
+
+  <doc for="HorizontalLayoutManager">
+    <summary>
+    Lays out views from left to right, given a particular spacing.
+    </summary>
+    <remarks>
+    If there are one or more views that do not have preferred widths,
+    the space that is not used by those views with preferred widths
+    is split equally between them.
+    </remarks>
+  </doc>
+
+  <doc for="HorizontalLayoutManager.HorizontalLayoutManager">
+    <summary>
+    Initializes a new instance of the HorizontalLayoutManager class.
+    </summary>
+    <param name="spacing">The amount of space between the horizontal elements, in pixels.</param>
+  </doc>
+
+  <doc for="VerticalLayoutManager">
+    <summary>
+    Lays out views from top to bottom, given a particular spacing.
+    </summary>
+    <remarks>
+    If there are one or more views that do not have preferred heights,
+    the space that is not used by those views with preferred heights
+    is split equally between them.
+    </remarks>
+  </doc>
+
+  <doc for="VerticalLayoutManager.VerticalLayoutManager">
+    <summary>
+    Initializes a new instance of the VerticalLayoutManager class.
+    </summary>
+    <param name="spacing">The amount of space between the vertical elements, in pixels.</param>
+  </doc>
+
+</docs>

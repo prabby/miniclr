@@ -1,0 +1,54 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>MicroBee.802.15.4.MF</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Emic.MicroBee</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66E93520-CC2D-4011-B8B9-0D57AD99D9C7}</ProjectGuid>
+    <DefineConstants>TRACE;DEBUG;MICROFRAMEWORK;RTEXTENSIONS</DefineConstants>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>,1668,0067</NoWarn>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\Targets\Microsoft.SPOT.CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="Crc.cs" />
+    <Compile Include="Frame.cs" />
+    <Compile Include="MAC\Frames\BeaconFrame.cs" />
+    <Compile Include="MAC\Frames\CommandFrames.cs" />
+    <Compile Include="MAC\Frames\Header.cs" />
+    <Compile Include="MAC\IMac.cs" />
+    <Compile Include="MAC\Mac.cs" />
+    <Compile Include="MAC\MacReceive.cs" />
+    <Compile Include="MAC\MacState.cs" />
+    <Compile Include="MAC\PhySendReceive.cs" />
+    <Compile Include="MAC\TaskProcessor.cs" />
+    <Compile Include="MAC\TaskQueue.cs" />
+    <Compile Include="MAC\TaskTypes.cs" />
+    <Compile Include="PHY\IPhy.cs" />
+    <Compile Include="PHY\CC2420\CC2420.Driver.cs" />
+    <Compile Include="PHY\CC2420\CC2420.HAL.cs" />
+    <Compile Include="PHY\CC2420\CC2420.PinConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo_MF.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Hardware.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Native">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Native.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Net">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NetworkLayer_MF.csproj" />
+    <Content Include="TestNetworkLayer_MF.csproj" />
+  </ItemGroup>
+</Project>

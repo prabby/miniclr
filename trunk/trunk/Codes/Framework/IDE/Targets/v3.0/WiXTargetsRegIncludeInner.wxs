@@ -1,0 +1,37 @@
+﻿<?xml version='1.0'?>
+<Include>
+    <?include defines.wxs?>
+
+    <Registry
+        Root="HKLM"
+        Key ="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v3_0.01"
+        Type ="string"
+        Value ="[#$(var.IDDevice_tar)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v3_0.02"
+        Type="string"
+        Value ="[#$(var.IDTasks_set)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v3_0.03"
+        Type="string"
+        Value ="[#$(var.IDCSharp_tar)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v3_0.04"
+        Type="string"
+        Value ="[#$(var.IDEmulator_tar)]"
+        />
+
+</Include>

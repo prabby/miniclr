@@ -1,0 +1,104 @@
+<docs>
+  <doc for="CreateListItem">
+    <summary>
+    Represents the method that will create a string representation for a specified an object.
+    </summary>
+    <returns>The string representation of the object.</returns>
+  </doc>
+
+  <doc for="BrowsableIterator">
+    <summary>
+    An iterator with a browsable interface.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.BrowsableIterator">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BrowsableIterator class.
+    </summary>
+    <param name="it">The iterator to apply a browsable interface to.</param>
+    <param name="l">The method that will be called to create a string representation of the current iterator item.</param>
+  </doc>
+
+  <doc for="BrowsableIterator.Clone">
+    <summary>
+    Creates a shallow copy of the Microsoft.SPOT.BrowsableIterator.
+    </summary>
+    <returns>A BrowsableIterator in object form.</returns>
+  </doc>
+
+  <doc for="BrowsableIterator.MoveFirst">
+    <summary>
+    Move to the first iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.MoveNext">
+    <summary>
+    Move to the next iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.MovePrev">
+    <summary>
+    Move to the previous iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.MoveLast">
+    <summary>
+    Move to the last iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.Index">
+    <summary>
+    Gets or sets the zero-based index of the current iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.Source">
+    <summary>
+    Gets the iterator.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.Current">
+    <summary>
+    Gets the string representation of the iterator item.
+    </summary>
+  </doc>
+
+  <doc for="BrowsableIterator.OnInvalidation">
+    <summary>
+    Sets the method that is to be called when the iterator is invalidated.  Not applicable in this case.
+    </summary>
+  </doc>
+
+  <doc for="ListBrowser">
+    <summary>
+    Implements a popup browser.
+    </summary>
+  </doc>
+
+  <doc for="ListBrowser.ListBrowser">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ListBrowser class.
+    </summary>
+  </doc>
+
+  <doc for="ListBrowser.OnKey">
+    <summary>
+    Process key events.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="ListBrowser.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+</docs>

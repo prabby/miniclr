@@ -1,0 +1,78 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>MicroBee.Network.MF</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Emic.MicroBee.Network</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D254F100-F4BA-4863-9B7D-88CA3830557F}</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <DefineConstants>TRACE;MICROFRAMEWORK</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\BuildOutput\public\Debug\Client\dll\</OutputPath>
+    <DefineConstants>DEBUG;MICROFRAMEWORK;TRACE;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\Targets\Microsoft.SPOT.CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="AddressServer.cs" />
+    <Compile Include="Fragmentation\BitArray.cs" />
+    <Compile Include="Fragmentation\DataRequestQueue.cs" />
+    <Compile Include="Fragmentation\Fragment.cs" />
+    <Compile Include="Fragmentation\Fragmentation.cs" />
+    <Compile Include="Fragmentation\FragmentationMessage.cs" />
+    <Compile Include="Fragmentation\FragmentationMessageTimer.cs" />
+    <Compile Include="Fragmentation\FragmentationMesssageAssociations.cs" />
+    <Compile Include="Fragmentation\IFragmentation.cs" />
+    <Compile Include="Fragmentation\NotifyingQueue.cs" />
+    <Compile Include="Fragmentation\TransmissionCharacteristicStorage.cs" />
+    <Compile Include="MessageContext.cs" />
+    <Compile Include="Messages_6LoWPAN.cs" />
+    <Compile Include="Messages_custom.cs" />
+    <Compile Include="NeighbourTable.cs" />
+    <Compile Include="NetworkLayer.cs" />
+    <Compile Include="NetworkMgmt.cs" />
+    <Compile Include="Properties_MF\AssemblyInfo.cs" />
+    <Compile Include="INetwork.cs" />
+    <Compile Include="Routing.cs" />
+    <Compile Include="RoutingTable.cs" />
+    <Compile Include="Singleton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Hardware.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Native">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Native.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Net">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Net.dll</HintPath>
+    </Reference>
+     <Reference Include="802_15_4_MF">
+      <HintPath>$(BUILD_TREE_DLL)\MicroBee.802.15.4.MF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Physical\CC2420\802_15_4_MF.csproj">
+      <Project>{66E93520-CC2D-4011-B8B9-0D57AD99D9C7}</Project>
+      <Name>802_15_4_MF</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

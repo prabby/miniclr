@@ -1,0 +1,53 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>TestNetworkLayer</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestNetworkLayer</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CFAA1822-3484-47AB-85FA-D596874D9F5F}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\Targets\Microsoft.SPOT.CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="Network.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Hardware.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Native">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Native.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Net">
+      <HintPath>$(BUILD_TREE_DLL)\Microsoft.SPOT.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="802_15_4_MF">
+      <HintPath>$(BUILD_TREE_DLL)\MicroBee.802.15.4.MF.dll</HintPath>
+    </Reference>
+    <Reference Include="NetworkLayer_MF">
+      <HintPath>$(BUILD_TREE_DLL)\MicroBee.Network.MF.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Stack\Physical\CC2420\802_15_4_MF.csproj">
+      <Project>{66E93520-CC2D-4011-B8B9-0D57AD99D9C7}</Project>
+      <Name>802_15_4_MF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Stack\Network\NetworkLayer_MF.csproj">
+      <Project>{D254F100-F4BA-4863-9B7D-88CA3830557F}</Project>
+      <Name>NetworkLayer_MF</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

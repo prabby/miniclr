@@ -1,0 +1,502 @@
+<docs>
+  <doc for="KeyEvent">
+    <summary>
+    Represents the method that will handle key events.
+    </summary>
+  </doc>
+
+  <doc for="IterateDescendentsCallback">
+    <exclude/>
+    <summary>
+    Represents the method that will iterate through a view's child views and call a specified method.
+    </summary>
+  </doc>
+
+  <doc for="View">
+    <summary>
+    Base class for all views in the system.
+    Views display data and accept user input to edit or select the data.
+    </summary>
+    <remarks>
+      <para>
+      A <b>View</b> control is a container for a group of controls.  
+      A <b>View</b> control can contain any controls derived from the <b>View</b> class.
+      </para>
+      <para>
+      The <b>View</b> class provides the ablility to manipulate and manage multiple <b>View</b> controls and is the foundation for a windowed user interface.
+      </para>
+    </remarks>
+  </doc>
+
+  <doc for="View.Left">
+    <summary>
+    The left x-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.Top">
+    <summary>
+    The top y-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.Width">
+    <summary>
+    The width of the view, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="View.Height">
+    <summary>
+    The hight of the view, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="View.LayoutManager">
+    <summary>
+    Gets or sets the layout manager used by this view.
+    </summary>
+    <remarks>
+    The <b>LayoutManager</b> can be <b>null</b>.
+    Subclasses can choose to either implement this interface,
+    then assigm m_lm to themselves, or to provide some other class
+    that implements the interface.
+    </remarks>
+  </doc>
+
+  <doc for="View.Right">
+    <summary>
+    Gets the right x-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.Bottom">
+    <summary>
+    Gets the bottom y-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.XCenter">
+    <summary>
+    Gets the center x-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.YCenter">
+    <summary>
+    Gets the center y-coordinate of the view.
+    </summary>
+  </doc>
+
+  <doc for="View.Form">
+    <summary>
+    Gets the form this view has been added to.
+    </summary>
+  </doc>
+
+  <doc for="View.View">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.View class.
+    </summary>
+  </doc>
+
+  <doc for="View.View1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.View class with the specified location and dimentions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="View.Dispose">
+    <summary>
+    Free resources that are no longer needed.
+    </summary>
+    <remarks>
+    The view and any child views are disposed of.  
+    To avoid disposing of a child view, remove it before calling Dispose.
+    </remarks>
+  </doc>
+
+  <doc for="View.SetRect">
+    <summary>
+    Set the location and dimensions of the view.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="View.SetSize">
+    <summary>
+    Set the size of the view.
+    </summary>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="View.DisplayRectangle">
+    <summary>
+    Returns the the client rectangle of the display area of the control. 
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+    <remarks>
+    For the base control class, this is equal to the client rectangle.
+    However, inheriting controls may want to change this if their client area differs from their display area.
+    The display rectangle is the smallest Rectangle that encloses a control and is used to lay out its sub-views.
+    </remarks>
+  </doc>
+
+  <doc for="View.Parent">
+    <summary>
+    Gets or sets the parent view.
+    </summary>
+  </doc>
+
+  <doc for="View.TopLevelView">
+    <summary>
+    Gets the parent view that is not parented by another view.
+    </summary>
+  </doc>
+
+  <doc for="View.Invalid">
+    <summary>
+    Indicates whether the view is invalid or not.
+    </summary>
+  </doc>
+
+  <doc for="View.InvalidLayout">
+    <summary>
+    Indicates whether the current layout is invalid.
+    </summary>
+  </doc>
+
+  <doc for="View.OnPaint">
+    <summary>
+    Draw the visible widgets belonging to this class on the bitmap provided.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <remarks>
+    This method needs to be overridden in a derived class to do the real painting.
+    </remarks>
+  </doc>
+
+  <doc for="View.OnPaintEvent">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <remarks>
+    Actual drawing code should go into OnPaint, unless some special manipulation is required.
+    When overriding this method be sure to call the base class.
+    </remarks>
+  </doc>
+
+  <doc for="View.OnVisibleChanged">
+    <summary>
+    Called when the visible status of this view changes.
+    </summary>
+    <param name="fVisible">Indicates whether the view is visible.</param>
+  </doc>
+
+  <doc for="View.OnParentVisibleChanged">
+    <summary>
+    Called when the visibility of the parent view changes.
+    </summary>
+    <param name="fVisible">Indicates whether the parent view is visible.</param>
+    <remarks>
+    Default implementation passes the visibility changed message to the OnVisibleChanged method.
+    </remarks>
+  </doc>
+
+  <doc for="View.Visible">
+    <summary>
+    Indicates whether the view is visible.
+    </summary>
+    <remarks>
+    This means it should be drawn if the parent view is visible,
+    it does not mean it is necessarily visible to the user.
+    </remarks>
+  </doc>
+
+  <doc for="View.Inverse">
+    <summary>
+    Indicates whether the view is displayed in inverse colors.
+    </summary>
+  </doc>
+
+  <doc for="View.Disabled">
+    <summary>
+    Indicates that a view is disabled.
+    </summary>
+  </doc>
+
+  <doc for="View.PreferredSizeBiggestChild">
+    <summary>
+    Indicates that a view should set its preferred size to that of its largest child view,
+    regardless of whether the child views are visible or not.
+    </summary>
+  </doc>
+
+  <doc for="View.Focus">
+    <summary>
+    Indicates if the view has input focus.
+    </summary>
+  </doc>
+
+  <doc for="View.OnFocusChanged">
+    <summary>
+    Callback for when focus changes.
+    </summary>
+    <param name="fFocus">Indicates whether the view has input focus.</param>
+  </doc>
+
+  <doc for="View.InvalidateLayout">
+    <summary>
+    Invalidates the layout of this view.
+    </summary>
+  </doc>
+
+  <doc for="View.OnInvalidLayout">
+    <summary>
+    Called when the view has been invalidated.
+    </summary>
+  </doc>
+
+  <doc for="View.DoLayout">
+    <summary>
+    Apply the layout.
+    </summary>
+    <remarks>
+    It is recommended that this function not be overridden.
+    </remarks>
+  </doc>
+
+  <doc for="View.Invalidate">
+    <summary>
+    Invalidates the view client area which causes it to be redrawn at the next paint operation.
+    </summary>
+  </doc>
+
+  <doc for="View.Validate">
+    <summary>
+    Validates the view client area indicating that it does not need to be redrawn.
+    </summary>
+  </doc>
+
+  <doc for="View.Layout">
+    <summary>
+    Provide layout behavior.
+    </summary>
+    <remarks>
+    Override this method to provide custom layout behaviour for a derived class.
+    </remarks>
+  </doc>
+
+  <doc for="View.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="View.ClearPreferredSize">
+    <summary>
+    Clear the preferred hight and width of this view.
+    </summary>
+  </doc>
+
+  <doc for="View.PreferredSize">
+    <summary>
+    Returns the preferred width and height this view would like to be given the maximums available.
+    ComputePreferredSize is called if the preferred size is not cached.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="View.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+    <remarks>
+    This computation is delegated to the layout manager if one exists for this view,
+    otherwise the default is to request all available space (width, height = -1).
+    Overridden in subclasses to specify the preferred width.
+    </remarks>
+  </doc>
+
+  <doc for="View.OnKey">
+    <summary>
+    Process key events.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="View.m_keyevent">
+    <summary>
+    The key event handler.
+    </summary>
+  </doc>
+
+  <doc for="View.KeyEvent">
+    <summary>
+    Add or remove callback methods for key events.
+    </summary>
+  </doc>
+
+  <doc for="View.OnKeyEvent">
+    <summary>
+    Called when a key event occurs.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="View.Views">
+    <summary>
+    Gets the collection of child views contained within the view.
+    </summary>
+    <remarks>
+    This is virtual so derived classes can prevent
+    other classes from examining the views they contain.
+    This helps place a child view in an untrusted parent view.
+    </remarks>
+  </doc>
+
+  <doc for="View.Activate">
+    <summary>
+    Activates the view and gives it input focus.
+    </summary>
+  </doc>
+
+  <doc for="View.ActivateView">
+    <summary>
+    Activates a child view and deactivates all others.
+    </summary>
+    <param name="view">The child view to activate.</param>
+  </doc>
+
+  <doc for="View.FindAncestor">
+    <summary>
+    Find an ancestor view of the specified type in the parent view lineage.
+    </summary>
+    <param name="type">The type of the ancestor to find.</param>
+    <returns>The ancestor view if found;  otherwise, null.</returns>
+  </doc>
+
+  <doc for="View.IterateDescendents">
+    <summary>
+    Call a method for each child view.
+    </summary>
+    <param name="idc">The method to call.</param>
+    <param name="fIncludeThis">Specifies whether the method is called for this view as well as the child views.</param>
+  </doc>
+
+  <doc for="ViewCollection">
+    <summary>
+    A collection of views.
+    </summary>
+  </doc>
+
+  <doc for="View.ViewCollection.ViewCollection">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.View.ViewCollection class with the provided parent view.
+    </summary>
+    <param name="owner">The parent, or owner, view.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Add">
+    <summary>
+    Adds an array of views to the collection.
+    </summary>
+    <param name="views">The views to add to the collection.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Add1">
+    <summary>
+    Adds the specified view to the view collection.
+    </summary>
+    <param name="view">The view to add to the collection.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Insert">
+    <summary>
+    Insert a view at a specific index in the view collection.
+    </summary>
+    <param name="index">The zero-based index to place the view.</param>
+    <param name="view">The view to insert into the collection.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Add2">
+    <summary>
+    Adds the specified view to the view collection and specify if it is visible and if it has focus.
+    </summary>
+    <param name="view">The view to add to the collection.</param>
+    <param name="fVisible">Indicates whether the view is visible.</param>
+    <param name="fFocus">Indicates whether the view has focus.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Remove">
+    <summary>
+    Removes the specified view from the view collection.
+    </summary>
+    <param name="view">The view to remove from the collection.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.Remove1">
+    <summary>
+    Removes the specified view from the view collection.
+    </summary>
+    <param name="view">The view to remove from the collection.</param>
+    <param name="fDispose">Indicates whether to dispose of the view once it is removed from the collection.</param>
+  </doc>
+
+  <doc for="View.ViewCollection.this">
+    <summary>
+    Gets or sets a view at a specific index.
+    </summary>
+  </doc>
+
+  <doc for="View.ViewCollection.IndexOf">
+    <summary>
+    Returns the index of a specified view.
+    </summary>
+    <param name="view">The view.</param>
+    <returns>The index of the view within the collection.</returns>
+  </doc>
+
+  <doc for="View.ViewCollection.Count">
+    <summary>
+    Gets the number of views in this collection.
+    </summary>
+  </doc>
+
+  <doc for="View.ViewCollection.Clear">
+    <summary>
+    Remove all views from the collection.
+    </summary>
+  </doc>
+
+  <doc for="View.ViewCollection.Clear1">
+    <summary>
+    Remove all views from the collection.  Dispose the views if specified.
+    </summary>
+    <param name="fDispose">Dispose of the views once they are removed.</param>
+  </doc>
+
+</docs>

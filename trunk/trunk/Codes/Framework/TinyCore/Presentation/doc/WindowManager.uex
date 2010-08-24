@@ -1,0 +1,119 @@
+<docs>
+  <doc for="OnHibernate">
+    <exclude/>
+  </doc>
+
+  <doc for="KeyArgs">
+    <summary>
+    Describes a key press event.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.Code">
+    <summary>
+    The key code associated with this event.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.State">
+    <summary>
+    The state of the key.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.Time">
+    <summary>
+    The time of the key event.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.KeyAction">
+    <summary>
+    Indicates how this key event was handled.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.KeyArgs">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.KeyArgs class.
+    </summary>
+    <param name="code">The key code for this key event.</param>
+    <param name="state">The key state for this key event.</param>
+    <param name="time">The time of the key event.</param>
+  </doc>
+
+  <doc for="KeyArgs.IsButtonStateDown">
+    <summary>
+    Indicates whether the key is in a down state.
+    </summary>
+  </doc>
+
+  <doc for="KeyArgs.IsButtonCodeUpDown">
+    <summary>
+    Indicates whether the key is either an up or down event.
+    </summary>
+  </doc>
+
+  <doc for="Manager">
+    <exclude/>
+    <summary>
+    The Manager class manages windowing, key events, alerts, network, etc.
+    </summary>
+  </doc>
+
+  <doc for="Manager.ChannelChanger">
+    <summary>
+    Gets the ChannelChanger instance that manages the channels.
+    </summary>
+  </doc>
+
+  <doc for="Manager.BatteryModel">
+    <summary>
+    Gets the BatteryModel instance that manages the battery state.
+    </summary>
+  </doc>
+
+  <doc for="Manager.Run">
+    <summary>
+    Begins running the manager and the message loop to service button presses and drawing.
+    This method does not return.
+    </summary>
+  </doc>
+
+  <doc for="Manager.Focus">
+    <summary>
+    Gets or sets the IWindow that has focus.
+    </summary>
+  </doc>
+
+  <doc for="Manager.OnHibernate">
+  </doc>
+
+  <doc for="Manager.Hibernate">
+    <summary>
+    Place the system in a sleep mode.
+    This method will not return until the system is woken from the sleep mode.
+    </summary>
+  </doc>
+
+  <doc for="Manager.InjectKeyStrokes">
+  </doc>
+
+  <doc for="Manager.PersonalMessageReceived">
+    <summary>
+    Called when a personal message is received.
+    </summary>
+    <param name="sourceID">The source ID.</param>
+    <param name="msgID">The message ID.</param>
+    <param name="data">The message data in object form.</param>
+    <returns>true if the message caused a device state change;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="Manager.StartSystem">
+    <summary>
+    Start the SPOT application running the specified OEM interface and its custom system features.
+    </summary>
+    <param name="iOEM">The BaseOEM to run.</param>
+  </doc>
+
+</docs>

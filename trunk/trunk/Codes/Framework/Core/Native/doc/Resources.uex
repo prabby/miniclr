@@ -1,0 +1,211 @@
+<docs>
+  <doc for="BinaryResourceAttribute">
+    <summary>
+    Indicates that a binary EmbeddedResource should be extracted and placed in the assembly.
+    </summary>
+  </doc>
+
+  <doc for="BinaryResourceAttribute.m_id">
+    <summary>
+    The name of the EmbeddedResource.
+    </summary>
+  </doc>
+
+  <doc for="BinaryResourceAttribute.BinaryResourceAttribute">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BinaryResourceAttribute class.
+    </summary>
+    <param name="id">The name of the EmbeddedResource.</param>
+  </doc>
+
+  <doc for="StringResourceAttribute">
+    <summary>
+    Indicates that a string EmbeddedResource should be extracted and placed in the assembly.
+    </summary>
+  </doc>
+
+  <doc for="StringResourceAttribute.m_value">
+    <summary>
+    The value of the string EmbeddedResource.
+    </summary>
+  </doc>
+
+  <doc for="StringResourceAttribute.StringResourceAttribute">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.StringResourceAttribute class containing the provided string.
+    </summary>
+    <param name="val">The string resouce.</param>
+  </doc>
+
+  <doc for="GenericResources">
+    <summary>
+    Provides a method to retrieve embedded resources such as strings, bitmaps, fonts, and binaries.
+    This class cannot be inherited.
+    </summary>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_Invalid">
+    <summary>
+    A Language Id flag representing that the current language is invalid.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_Default">
+    <summary>
+    A Language Id flag representing the default language of the device.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_French">
+    <summary>
+    A Language Id flag representing the French language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_German">
+    <summary>
+    A Language Id flag representing the German language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_Italian">
+    <summary>
+    A Language Id flag representing the Italian language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_Spanish">
+    <summary>
+    A Language Id flag representing the Spanish language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_English">
+    <summary>
+    A Language Id flag representing the English language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English_US"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.LanguageID_English_US">
+    <summary>
+    A Language Id flag representing the US version of the English language.
+    </summary>
+    <remarks>
+    This flag is intended to be used with the <see cref="LanguageId">LanguageId</see> property.
+    </remarks>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageId"/>
+  </doc>
+
+  <doc for="GenericResources.Get">
+    <summary>
+    Get an embedded resource.
+    </summary>
+    <param name="en">An enumeration value representing an embedded resource.</param>
+    <returns>The embedded resource in object format.</returns>
+  </doc>
+
+  <doc for="GenericResources.LanguageId">
+    <summary>
+    Get or sets the <i>LanguageId</i> that specifies what language the user interface displays.
+    </summary>
+    <example>
+      The following example shows the system language being set to French.
+      <code lang="C#">
+        GenericResources.LanguageId = GenericResources.LanguageID_French;
+      </code>
+    </example>
+    <seealso cref="LanguageID_Invalid"/>
+    <seealso cref="LanguageID_Default"/>
+    <seealso cref="LanguageID_French"/>
+    <seealso cref="LanguageID_German"/>
+    <seealso cref="LanguageID_Italian"/>
+    <seealso cref="LanguageID_Spanish"/>
+    <seealso cref="LanguageID_English"/>
+    <seealso cref="LanguageID_English_US"/>
+  </doc>
+
+</docs>

@@ -1,0 +1,10 @@
+<docs>
+  <doc for="ASCII">
+    <exclude/>
+  </doc>
+
+  <doc for="Native">
+    <exclude/>
+  </doc>
+
+</docs>

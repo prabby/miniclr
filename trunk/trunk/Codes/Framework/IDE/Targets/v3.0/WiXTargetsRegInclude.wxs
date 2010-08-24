@@ -1,0 +1,14 @@
+﻿<?xml version='1.0'?>
+<Include>
+  <?include defines.wxs?>
+  <!-- Visal C# Express 2008 -->
+  <?include vs_skus\VCSharpExpress9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v3.0\WixTargetsRegIncludeInner.wxs?>
+  <!-- VisualStudio 2008 -->
+  <?include vs_skus\VisualStudio9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v3.0\WixTargetsRegIncludeInner.wxs?>
+  <!-- VisualStudio 2010 -->
+  <?include vs_skus\VisualStudio10.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v3.0\WixTargetsRegIncludeInner.wxs?>
+
+</Include>

@@ -1,0 +1,74 @@
+<docs>
+  <doc for="GenericAsyncStream">
+    <exclude/>
+  </doc>
+
+  <doc for="AsyncFileStream">
+    <exclude/>
+  </doc>
+
+  <doc for="AsyncSerialStream">
+    <exclude/>
+  </doc>
+
+  <doc for="PortDefinition_Serial">
+    <summary>
+    Instance of <see cref="PortDefinition">PortDefinition</see> describing the connection to a device over a serial connection.
+    </summary>
+    <seealso cref="PortDefinition"/>
+  </doc>
+
+  <doc for="PortDefinition_Serial.PortDefinition_Serial">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <param name="baudRate"></param>
+  </doc>
+
+  <doc for="PortDefinition_Serial.BaudRate">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition_Serial.Open">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+
+  <doc for="UsbDeviceDiscovery">
+    <exclude/>
+  </doc>
+
+  <doc for="AsyncUsbStream">
+    <exclude/>
+  </doc>
+
+  <doc for="PortDefinition_Usb">
+    <summary>
+    Instance of <see cref="PortDefinition">PortDefinition</see> describing the connection to a device over a USB connection.
+    </summary>
+    <seealso cref="PortDefinition"/>
+  </doc>
+
+  <doc for="PortDefinition_Usb.PortDefinition_Usb">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <param name="properties"></param>
+  </doc>
+
+  <doc for="PortDefinition_Usb.UniqueId">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition_Usb.Open">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+
+</docs>

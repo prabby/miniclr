@@ -1,0 +1,50 @@
+<docs>
+  <doc for="IControllerHost">
+    <exclude/>
+  </doc>
+
+  <doc for="IController">
+    <exclude/>
+  </doc>
+
+  <doc for="IControllerHostLocal">
+    <exclude/>
+  </doc>
+
+  <doc for="IControllerLocal">
+    <exclude/>
+  </doc>
+
+  <doc for="IControllerHostRemote">
+    <exclude/>
+  </doc>
+
+  <doc for="IControllerRemote">
+    <exclude/>
+  </doc>
+
+  <doc for="FifoBuffer">
+    <exclude/>
+  </doc>
+
+  <doc for="Controller">
+    <exclude/>
+  </doc>
+
+  <doc for="MessageRaw">
+    <exclude/>
+  </doc>
+
+  <doc for="MessageBase">
+    <exclude/>
+  </doc>
+
+  <doc for="IncomingMessage">
+    <exclude/>
+  </doc>
+
+  <doc for="OutgoingMessage">
+    <exclude/>
+  </doc>
+
+</docs>

@@ -1,0 +1,35 @@
+<docs>
+    <doc for="ConstraintException">
+        <summary>
+            Represents the exception that is thrown when attempting an action that violates a constraint.
+        </summary>
+        <remarks>
+            When this exception is caught, if the ExecutionConstraint that caused this exception has not 
+            been un-installed the catch block implementation has an small additional amount of time to
+            handle the exception.  If it takes too long the exception will be re-thrown automatically.
+        </remarks>
+    </doc>
+    <doc for="ExecutionConstraint">
+        <exclude/>
+        <summary>
+            Provides a method to require a thread to complete an operation within specific constraints.
+            This class cannot be inherited.
+        </summary>
+    </doc>
+    <doc for="ExecutionConstraint.Install">
+        <summary>
+            Creates a subthread within the calling thread with a constraint to complete an operation within a specific time and at a specific priority.
+            If the timeout expires, a ConstraintException exception is thrown.  The time is wall-clock time, not thread execution time.
+        </summary>
+        <param name="timeout">The number of ticks before a ConstraintException exception is thrown.  -1 indicates the current constraint exception is to be un-installed.</param>
+        <param name="priority">The priority of the thread.</param>
+        <remarks>Only threads with priority above zero can raise their priority.</remarks>
+        <exception cref="System.Exception">
+            <para><i>timeout</i> is less than -1.</para>
+            <para>- or -</para>
+            <para>The system is unable to determine the thread that is installing this constraint.</para>
+            <para>- or -</para>
+            <para>The thread installing this contraint does not own the subthread that the constraint is being placed upon.</para>
+        </exception>
+    </doc>
+</docs>

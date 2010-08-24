@@ -1,0 +1,33 @@
+<docs>
+    <doc for="Math.Cos">
+        <summary>
+            Returns the cosine of the specified angle.
+        </summary>
+        <param name="angle">An angle, measured in radians.</param>
+        <return>The cosine of angle.</return>
+    </doc>
+    <doc for="Math.Sin">
+        <summary>
+            Returns the sine of the specified angle.
+        </summary>
+        <param name="angle">An angle, measured in radians.</param>
+        <return>The sine of angle.</return>
+    </doc>
+    <doc for="Math.Randomize">
+        <summary>
+            Sets a random starting point for random number generation.
+        </summary>
+    </doc>
+    <doc for="Math.Random">
+        <summary>
+            Generates a pseudorandom number.
+        </summary>
+        <param name="modulo">A modulo to apply to the generated number.  The generated number will be greater than or equal to 0 and less than the modulo provided.</param>
+        <return>A pseudorandom number.</return>
+    </doc>
+    <doc for="Math">
+        <summary>
+            Provides static methods for common mathematical functions.
+        </summary>
+    </doc>
+</docs>

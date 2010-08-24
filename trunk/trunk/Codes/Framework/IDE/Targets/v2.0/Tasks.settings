@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+    <PropertyGroup>
+        <TasksAssembly>$(SPOCLIENT)\Product\v2.5\Executables\Tools\Microsoft.SPOT.Tasks.dll</TasksAssembly>
+    </PropertyGroup>
+
+    <UsingTask TaskName="Microsoft.SPOT.Tasks.GetDeviceFrameworkPaths" AssemblyFile="$(TasksAssembly)"/>
+    <UsingTask TaskName="Microsoft.SPOT.Tasks.ResolveRuntimeDependencies" AssemblyFile="$(TasksAssembly)"/>
+    <UsingTask TaskName="Microsoft.SPOT.Tasks.GenerateTinyResource" AssemblyFile="$(TasksAssembly)"/>
+    <UsingTask TaskName="Microsoft.SPOT.Tasks.MetaDataProcessor" AssemblyFile="$(TasksAssembly)"/>
+
+</Project>

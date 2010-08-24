@@ -1,0 +1,46 @@
+﻿<?xml version='1.0'?>
+<Include>
+    <?include defines.wxs?>
+
+    <Registry
+        Root="HKLM"
+        Key ="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v$(var.ProdVerMajor)_$(var.ProdVerMinor).01"
+        Type ="string"
+        Value ="[#$(var.IDDevice_tar)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v$(var.ProdVerMajor)_$(var.ProdVerMinor).02"
+        Type="string"
+        Value ="[#$(var.IDTasks_set)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v$(var.ProdVerMajor)_$(var.ProdVerMinor).03"
+        Type="string"
+        Value ="[#$(var.IDCSharp_tar)]"
+        />
+
+    <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v$(var.ProdVerMajor)_$(var.ProdVerMinor).04"
+        Type="string"
+        Value ="[#$(var.IDEmulator_tar)]"
+        />
+
+      <?ifdef INCLUDE_VB ?>
+      <Registry
+        Root="HKLM"
+        Key="$(var.VSSafeImports)"
+        Name=".NetMicroFramework_v$(var.ProdVerMajor)_$(var.ProdVerMinor).05"
+        Type="string"
+        Value ="[#$(var.IDVisualBa_tar)]"
+        />
+      <?endif?>
+</Include>

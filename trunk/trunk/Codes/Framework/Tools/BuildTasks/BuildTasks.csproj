@@ -1,0 +1,75 @@
+﻿<Project DefaultTargets="TinyCLR_Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <AssemblyName>Microsoft.SPOT.Tasks</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.SPOT.Tasks</RootNamespace>
+    <ProjectTypeGuids>{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B3D156D-B9D2-4F9C-BFDF-91FC42EE1280}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ComponentGuid>{1FCCFF77-F5DB-444F-88C3-2AAFBC2C6906}</ComponentGuid>
+    <InstallInGAC>true</InstallInGAC>
+    <DirectoryRef>ToolsDir</DirectoryRef>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\Targets\Microsoft.SPOT.CSharp.Host.Targets" />
+  <ItemGroup>
+    <Compile Include="BuildTaskResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuildTaskResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateInteropFeatureProj.cs" />
+    <Compile Include="GenerateAssemblyInfoFile.cs" />
+    <Compile Include="GenerateReleaseInfo.cs" />
+    <Compile Include="GenerateResource.cs" />
+    <Compile Include="GetDeviceFrameworkPath.cs" />
+    <Compile Include="MetaDataProcessor.cs" />
+    <Compile Include="RegisterEmulator.cs" />
+    <Compile Include="ResolveRuntimeDependencies.cs" />
+    <Compile Include="ScatterFile.cs" />
+    <Compile Include="ProcessScatterFile.cs" />
+    <Compile Include="RVDSLinkerScript.cs" />
+    <Compile Include="GCCLinkerScript.cs" />
+    <Compile Include="CreateLibManifest.cs" />
+    <Compile Include="SetEnvironmentVariable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Tasks.v3.5" />
+    <Reference Include="Microsoft.Build.Utilities.v3.5" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Tasks.Internal">
+      <HintPath>$(BUILD_TREE_SERVER)\DLL\Microsoft.SPOT.Tasks.Internal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BuildTaskResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BuildTaskResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CsAssemblyInfoTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VisualBasicAssemblyInfoTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ResourceAssemblyInfoTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

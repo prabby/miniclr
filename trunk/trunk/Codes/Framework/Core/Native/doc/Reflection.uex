@@ -1,0 +1,233 @@
+<docs>
+    <doc for="SerializationFlags">
+        <summary>
+            Defines a set of flags that specifies attributes of a serialization.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.Encrypted">
+        <summary>
+            The serialized object is encrypted.  Not Implemented.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.Compressed">
+        <summary>
+            The serialized object is compressed.  Not Implemented.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.Optional">
+        <summary>
+            The serialized object can be skipped if it cannot be deserialized.  Not Implemented.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.PointerNeverNull">
+        <summary>
+            The pointer to the serialized object is never null.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.ElementsNeverNull">
+        <summary>
+            The elements in the serialized object are never null.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.FixedType">
+        <summary>
+            The serialized object can only be an instance of the specified class, and not an instance of a derived class.
+        </summary>
+    </doc>
+    <doc for="SerializationFlags.DemandTrusted">
+        <summary>
+            Not Implemented.
+        </summary>
+    </doc>
+    <doc for="SerializationHintsAttribute">
+        <summary>
+            Indicates that a serializable object has known attributes and methods of serialization.
+        </summary>
+        <remarks>
+            Since these attributes are known the information will not be serialized, thus saving space in storage or data transfer.
+        </remarks>
+    </doc>
+    <doc for="SerializationHintsAttribute.Flags">
+        <summary>
+            Flags describing the serialization of this object.
+        </summary>
+    </doc>
+    <doc for="SerializationHintsAttribute.ArraySize">
+        <summary>
+            The size of the serialized array.  A value of -1 indicates that the array extends to the end of the stream.
+        </summary>
+    </doc>
+    <doc for="SerializationHintsAttribute.BitPacked">
+        <summary>
+            The number of bits in which this object is bit-packed.
+        </summary>
+    </doc>
+    <doc for="SerializationHintsAttribute.RangeBias">
+        <summary>
+            The bias adjustment for the serialized value.
+        </summary>
+        <remarks>
+            This is the calculated middle range in which the serialized value should lie.
+        </remarks>
+    </doc>
+    <doc for="SerializationHintsAttribute.Scale">
+        <summary>
+            The scale adjustment for the serialized value.
+        </summary>
+        <remarks>
+            For time, it's in ticks.
+        </remarks>
+    </doc>
+    <doc for="GloballySynchronizedAttribute">
+        <summary>
+            Indicates that a method is globally synchronized.  Applying this attribute to a method provides concurrency protection.
+        </summary>
+    </doc>
+    <doc for="PublishInApplicationDirectoryAttribute">
+        <exclude/>
+    </doc>
+    <doc for="UnknownTypeException">
+        <summary>
+            The exception thown when an error occurs due to an unknown type.
+        </summary>
+    </doc>
+    <doc for="UnknownTypeException.m_type">
+        <summary>
+            A reference to the unknown type.
+        </summary>
+    </doc>
+    <doc for="Reflection">
+        <exclude/>
+        <summary>
+            The Reflection class provides information about assemblies and the types defined within them,
+            and creating, invoking, and accessing type instances at run time.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo">
+        <summary>
+            Defines an Microsoft.SPOT.Reflection.Assembly, which is a 
+            self-describing building block of a common language runtime application.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.c_Flags_NeedReboot">
+        <summary>
+            A flag stating that loading this assembly requires a reboot.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.c_Flags_Patch">
+        <summary>
+            A flag stating that this assembly is a patch for another assembly.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.m_name">
+        <summary>
+            The assembly name.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.m_flags">
+        <summary>
+            Flags describing the assembly.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.m_size">
+        <summary>
+            The assembly size.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.m_hash">
+        <summary>
+            The assembly hash;  a unique idenifier.
+        </summary>
+    </doc>
+    <doc for="Reflection.AssemblyInfo.m_refs">
+        <summary>
+            An array of references to assemblies that this assembly is dependant upon.
+        </summary>
+    </doc>
+    <doc for="Reflection.GetTypesImplementingInterface">
+        <summary>
+            Gets the System.Type objects that implement the provided interface.
+        </summary>
+        <param name="itf">The System.Type of the interface to be searched for.</param>
+        <returns>An array of System.Type objects.</returns>
+    </doc>
+    <doc for="Reflection.IsTypeLoaded">
+        <summary>
+            Indicates whether a System.Type is loaded.
+        </summary>
+        <param name="t">The System.Type to check.</param>
+        <returns>true if the specified System.Type is loaded; otherwise, false.</returns>
+    </doc>
+    <doc for="Reflection.GetTypeHash">
+        <summary>
+            Gets the hash attribute for a System.Type.
+        </summary>
+        <param name="t">The System.Type.</param>
+        <returns>The hash representing the provided System.Type.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblyHash">
+        <summary>
+            Gets the hash attribute for a System.Reflection.Assembly.
+        </summary>
+        <param name="assm">The System.Reflection.Assembly.</param>
+        <returns>The hash representing the provided System.Reflection.Assembly.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblyLastUse">
+        <summary>
+            Gets a System.TimeSpan representing the time of the last use of the provided assembly.
+        </summary>
+        <param name="assm">The System.Reflection.Assembly.</param>
+        <returns>The time of the last use of the provided assembly.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblyPatch">
+        <summary>
+            Gets the assembly that is designated as a patch for the provided assembly.
+        </summary>
+        <param name="assm">The System.Reflection.Assembly.</param>
+        <returns>The patch assembly for the provided assembly.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblies">
+        <summary>
+            Gets all known assemblies.
+        </summary>
+        <returns>An array of all known assemblies.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblyInfo">
+        <summary>
+            Get a Microsoft.SPOT.Reflection.AssemblyInfo object from a byte array representing an assembly.
+        </summary>
+        <param name="assm">A byte array representing an assembly object.</param>
+        <param name="ai">An assembly object to be populated with data extracted from the byte array.</param>
+        <returns>true if the Microsoft.SPOT.Reflection.AssemblyInfo object contains valid data extracted from the byte array; otherwise, false.</returns>
+    </doc>
+    <doc for="Reflection.GetTypeFromHash">
+        <summary>
+            Gets the System.Type of the assembly object with the provided hash.
+        </summary>
+        <param name="hash">The hash value for the desired System.Type.</param>
+        <returns>The System.Type of the assembly object with the provided hash.</returns>
+    </doc>
+    <doc for="Reflection.GetAssemblyFromHash">
+        <summary>
+            Gets the System.Reflection.Assembly of the assembly object with the provided hash.
+        </summary>
+        <param name="hash">The hash value for the desired System.Reflection.Assembly.</param>
+        <returns>The System.Reflection.Assembly object with the provided hash.</returns>
+    </doc>
+    <doc for="Reflection.Serialize">
+        <summary>
+            Serializes an object of the provided type to a byte array of data.
+        </summary>
+        <param name="o">The object to be serialized.</param>
+        <param name="t">The System.Type of the object to be serialized.  Can be null.</param>
+        <returns>A byte array containing data that represents the serialized object.</returns>
+    </doc>
+    <doc for="Reflection.Deserialize">
+        <summary>
+            Deserializes a byte array of data into an object of the provided System.Type.
+        </summary>
+        <param name="v">A byte array containing data that represents the serialized object.</param>
+        <param name="t">The System.Type of the object to be deserialized.  Should be null if the serialized bytes contains the type.</param>
+        <returns>The deserialized object represented by the byte array.</returns>
+    </doc>
+</docs>

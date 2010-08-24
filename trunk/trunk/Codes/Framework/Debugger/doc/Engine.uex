@@ -1,0 +1,952 @@
+<docs>
+  <doc for="NoiseEventHandler">
+    <exclude/>
+    <summary>
+    </summary>
+    <param name="buf"></param>
+    <param name="offset"></param>
+    <param name="count"></param>
+  </doc>
+
+  <doc for="MessageEventHandler">
+    <exclude/>
+    <summary>
+    </summary>
+    <param name="msg"></param>
+    <param name="text"></param>
+  </doc>
+
+  <doc for="CommandEventHandler">
+    <exclude/>
+    <summary>
+    </summary>
+    <param name="msg"></param>
+    <param name="fReply"></param>
+  </doc>
+
+  <doc for="ThreadStatus">
+    <exclude/>
+  </doc>
+
+  <doc for="RemotedException">
+    <exclude/>
+  </doc>
+
+  <doc for="PortFilter">
+    <summary>
+    An enumeration describing the type of connection.
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition">
+    <summary>
+    Abstract class describing an instance of a connection.
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.m_displayName">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.m_port">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.m_properties">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.PortDefinition">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+  </doc>
+
+  <doc for="PortDefinition.Equals">
+    <summary>
+    </summary>
+    <param name="o"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.GetHashCode">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.CreateInstanceForSerial">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <param name="baudRate"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.CreateInstanceForUsb">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.CreateInstanceForEmulator">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.Enumerate">
+    <summary>
+    </summary>
+    <param name="args"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="PortDefinition.DisplayName">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.Properties">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.TryToOpen">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.Port">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.UniqueId">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition.Open">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+
+  <doc for="EndPoint">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="EndPoint.EndPoint">
+    <summary>
+    </summary>
+    <param name="type"></param>
+    <param name="id"></param>
+  </doc>
+
+  <doc for="EndPoint.Register">
+    <summary>
+    </summary>
+    <param name="eng"></param>
+  </doc>
+
+  <doc for="EndPoint.Deregister">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="EndPoint.GetMessage">
+    <summary>
+    </summary>
+    <param name="timeout"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="EndPoint.CheckDestination">
+    <summary>
+    </summary>
+    <param name="ep"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="EndPoint.SendMessage">
+    <summary>
+    </summary>
+    <param name="ep"></param>
+    <param name="timeout"></param>
+    <param name="payload"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="EndPoint.GetObject">
+    <summary>
+    Instantiate a remote object that has been created as an RPC server on the device.
+    </summary>
+    <param name="eng"></param>
+    <param name="type"></param>
+    <param name="id"></param>
+    <param name="classToRemote"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="EndPoint.GetObject1">
+    <summary>
+    </summary>
+    <param name="eng"></param>
+    <param name="ep"></param>
+    <param name="classToRemote"></param>
+    <returns></returns>
+  </doc>
+
+  <doc for="Message">
+    <exclude/>
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Message.Payload">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Message.Reply">
+    <summary>
+    </summary>
+    <param name="data"></param>
+  </doc>
+
+  <doc for="ProcessExitException">
+    <exclude/>
+  </doc>
+
+  <doc for="Engine">
+    <summary>
+    Class that facilitates all communication with a device.
+    </summary>
+  </doc>
+  
+  <doc for="Engine.Engine">
+    <summary>
+    </summary>
+    <param name="pd"></param>
+  </doc>
+  
+  <doc for="Engine.Engine1">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.SetController">
+    <summary>
+    </summary>
+    <param name="ctrl"></param>
+  </doc>
+  
+  <doc for="Engine.Start">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.Stop">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.LastActivity">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.LastNoise">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.PortDefinition">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.Silent">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.OnNoise">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.OnMessage">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.OnCommand">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.WaitForPort">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.ConfigureXonXoff">
+    <summary>
+    </summary>
+    <param name="fEnable"></param>
+  </doc>
+  
+  <doc for="Engine.OpenConnection">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SpuriousCharacters">
+    <summary>
+    </summary>
+    <param name="buf"></param>
+    <param name="offset"></param>
+    <param name="count"></param>
+  </doc>
+  
+  <doc for="Engine.ProcessMessage">
+    <summary>
+    </summary>
+    <param name="msg"></param>
+    <param name="fReply"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ProcessExited">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.CreateMessage">
+    <summary>
+    </summary>
+    <param name="cmd"></param>
+    <param name="flags"></param>
+    <param name="payload"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SyncMessage">
+    <summary>
+    </summary>
+    <param name="cmd"></param>
+    <param name="flags"></param>
+    <param name="payload"></param>
+    <param name="retries"></param>
+    <param name="timeout"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SyncMessage1">
+    <summary>
+    </summary>
+    <param name="cmd"></param>
+    <param name="flags"></param>
+    <param name="payload"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SyncMessages">
+    <summary>
+    </summary>
+    <param name="messages"></param>
+    <param name="retries"></param>
+    <param name="timeout"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SyncMessages1">
+    <summary>
+    </summary>
+    <param name="messages"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.IsConnected">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.TryToConnect">
+    <summary>
+    </summary>
+    <param name="retries"></param>
+    <param name="wait"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.TryToConnectQuiet">
+    <summary>
+    </summary>
+    <param name="retries"></param>
+    <param name="wait"></param>
+    <param name="silent"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SendRawBuffer">
+    <summary>
+    </summary>
+    <param name="buf"></param>
+  </doc>
+  
+  <doc for="Engine.ReadMemory">
+    <summary>
+    </summary>
+    <param name="address"></param>
+    <param name="length"></param>
+    <param name="buf"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.WriteMemory">
+    <summary>
+    </summary>
+    <param name="address"></param>
+    <param name="buf"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.EraseMemory">
+    <summary>
+    </summary>
+    <param name="address"></param>
+    <param name="length"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ExecuteMemory">
+    <summary>
+    </summary>
+    <param name="address"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.RebootDevice">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.MemoryMap">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetExecutionBasePtr">
+    <summary>
+    </summary>
+    <param name="ee"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SetExecutionMode">
+    <summary>
+    </summary>
+    <param name="iSet"></param>
+    <param name="iReset"></param>
+    <param name="iCurrent"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SetExecutionMode">
+    <summary>
+    </summary>
+    <param name="iSet"></param>
+    <param name="iReset"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.PauseExecution">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResumeExecution">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SetBreakpoints">
+    <summary>
+    </summary>
+    <param name="breakpoints"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetBreakpointStatus">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SetSecurityKey">
+    <summary>
+    </summary>
+    <param name="key"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.UnlockDevice">
+    <summary>
+    </summary>
+    <param name="blob"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.AllocateMemory">
+    <summary>
+    </summary>
+    <param name="size"></param>
+    <param name="address"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.CreateThread">
+    <summary>
+    </summary>
+    <param name="methodIndex"></param>
+    <param name="scratchPadLocation"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetThreadList">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetThreadStack">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.KillThread">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SuspendThread">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResumeThread">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetThreadException">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.UnwindThread">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.SetIPOfStackFrame">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <param name="IP"></param>
+    <param name="depthOfEvalStack"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetStackInfo">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetAssemblies">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResolveAllAssemblies">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResolveAssembly">
+    <summary>
+    </summary>
+    <param name="idx"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.StackValueKind">
+    <summary>
+    </summary>
+  </doc>
+  
+  <doc for="Engine.GetStackFrameInfo">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <param name="numOfArguments"></param>
+    <param name="numOfLocals"></param>
+    <param name="depthOfEvalStack"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResizeScratchPad">
+    <summary>
+    </summary>
+    <param name="size"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetStackFrameValue">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <param name="kind"></param>
+    <param name="index"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetStackFrameValueAll">
+    <summary>
+    </summary>
+    <param name="pid"></param>
+    <param name="depth"></param>
+    <param name="cValues"></param>
+    <param name="kind"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetArrayElement">
+    <summary>
+    </summary>
+    <param name="arrayReferenceId"></param>
+    <param name="index"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetScratchPadValue">
+    <summary>
+    </summary>
+    <param name="index"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.AllocateObject">
+    <summary>
+    </summary>
+    <param name="scratchPadLocation"></param>
+    <param name="td"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.AllocateString">
+    <summary>
+    </summary>
+    <param name="scratchPadLocation"></param>
+    <param name="val"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.AllocateArray">
+    <summary>
+    </summary>
+    <param name="scratchPadLocation"></param>
+    <param name="td"></param>
+    <param name="depth"></param>
+    <param name="numOfElements"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResolveType">
+    <summary>
+    </summary>
+    <param name="td"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResolveMethod">
+    <summary>
+    </summary>
+    <param name="md"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.ResolveField">
+    <summary>
+    </summary>
+    <param name="fd"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetTypeName">
+    <summary>
+    </summary>
+    <param name="td"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetMethodName">
+    <summary>
+    </summary>
+    <param name="md"></param>
+    <param name="fIncludeType"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetFieldName">
+    <summary>
+    </summary>
+    <param name="fd"></param>
+    <param name="td"></param>
+    <param name="offset"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetVirtualMethod">
+    <summary>
+    </summary>
+    <param name="md"></param>
+    <param name="obj"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetFrameBuffer">
+    <summary>
+    </summary>
+    <param name="widthInWords"></param>
+    <param name="heightInPixels"></param>
+    <param name="buf"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.InjectButtons">
+    <summary>
+    </summary>
+    <param name="pressed"></param>
+    <param name="released"></param>
+  </doc>
+  
+  <doc for="Engine.Logging_GetNumberOfRecords">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Logging_GetRecord">
+    <summary>
+    </summary>
+    <param name="position"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Logging_Erase">
+    <summary>
+    </summary>
+    <param name="flags"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Logging_GetRecords">
+    <summary>
+    </summary>
+    <param name="position"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Logging_ConvertToObject">
+    <summary>
+    </summary>
+    <param name="buf"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.GetThreads">
+    <summary>
+    </summary>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Deployment_GetStatus">
+    <summary>
+    </summary>
+    <param name="entrypoint"></param>
+    <param name="storageStart"></param>
+    <param name="storageLength"></param>
+    <returns></returns>
+  </doc>
+  
+  <doc for="Engine.Info_SetJMC">
+    <summary>
+    </summary>
+    <param name="fJMC"></param>
+    <param name="kind"></param>
+    <param name="index"></param>
+  </doc>
+  
+  <doc for="Engine.Deployment_Execute">
+    <summary>
+    </summary>
+    <param name="assemblies"></param>
+    <returns></returns>
+  </doc>
+    
+  <doc for="ConsoleOutputEventHandler">
+    <exclude/>
+    <summary>
+    </summary>
+    <param name="text"></param>
+  </doc>
+
+  <doc for="Emulator">
+    <summary>
+    Represents an emulator.
+    </summary>
+    <remarks>
+    An <b>Emulator</b> is needed to launch an emulator through code, but not needed if the emulator is launched separately and attached to the manager.
+    </remarks>
+  </doc>
+
+  <doc for="Emulator.Emulator">
+    <summary>
+    </summary>
+    <param name="process"></param>
+    <param name="pipe"></param>
+  </doc>
+
+  <doc for="Emulator.Emulator1">
+    <summary>
+    </summary>
+    <param name="exe"></param>
+    <param name="args"></param>
+  </doc>
+
+  <doc for="Emulator.Pipe">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Emulator.CreatePortDefinition">
+    <summary>
+    </summary>
+    <return></return>
+  </doc>
+
+  <doc for="Emulator.EnumeratePipes">
+    <summary>
+    </summary>
+    <return></return>
+  </doc>
+
+  <doc for="Emulator.OnConsoleOutput">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Emulator.Process">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Emulator.Start">
+    <summary>
+    </summary>
+    <param name="psi"></param>
+  </doc>
+
+  <doc for="Emulator.Start">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Emulator.WaitForExit">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="Emulator.Stop">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition_Emulator">
+    <summary>
+    Instance of <see cref="PortDefinition">PortDefinition</see> describing the connection to an emulator.
+    </summary>
+    <seealso cref="PortDefinition"/>
+  </doc>
+
+  <doc for="PortDefinition_Emulator.PortDefinition_Emulator">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="port"></param>
+    <param name="pid"></param>
+  </doc>
+
+  <doc for="PortDefinition_Emulator.PortDefinition_Emulator1">
+    <summary>
+    </summary>
+    <param name="displayName"></param>
+    <param name="pid"></param>
+  </doc>
+
+  <doc for="PortDefinition_Emulator.Pid">
+    <summary>
+    </summary>
+  </doc>
+
+  <doc for="PortDefinition_Emulator.Open">
+    <summary>
+    </summary>
+    <return></return>
+  </doc>
+
+  <doc for="EmulatorDiscovery">
+    <exclude/>
+  </doc>
+
+</docs>

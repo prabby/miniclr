@@ -1,0 +1,85 @@
+<docs>
+  <doc for="Battery">
+    <exclude/>
+    <summary>
+    Provides methods to query the state of the battery.  This class cannot be inherited.
+    </summary>
+  </doc>
+
+  <doc for="Battery.ChargerModel">
+    <exclude/>
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_Min">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_Low">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_Medium">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_Full">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_FullMin">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Charge_Hysteresis">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Timeout_Charging">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Timeout_Charged">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Timeout_Charger">
+  </doc>
+
+  <doc for="Battery.ChargerModel.Timeout_Backlight">
+  </doc>
+
+  <doc for="Battery.ReadVoltage">
+    <summary>
+    Get a voltage reading for the battery.
+    </summary>
+    <returns>The voltage of the battery.</returns>
+  </doc>
+
+  <doc for="Battery.ReadTemperature">
+    <summary>
+    Get a temperature reading for the battery.
+    </summary>
+    <returns>The temperature of the battery.</returns>
+  </doc>
+
+  <doc for="Battery.OnCharger">
+    <summary>
+    Returns a value indicating whether the hardware is on a battery charger.
+    </summary>
+    <returns>true if the hardware is on a battery charger;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="Battery.IsFullyCharged">
+    <summary>
+    Get the battery life left as a percentage; 100 being full of life, and 0 being no life.
+    </summary>
+    <returns>The battery life left as a percentage.</returns>
+  </doc>
+
+  <doc for="Battery.StateOfCharge">
+  </doc>
+
+  <doc for="Battery.WaitForEvent">
+    <summary>
+    Pause execution for a specified time and wait for a battery event.
+    </summary>
+    <param name="timeout">The amount of time to wait for an event, in ticks.</param>
+    <returns>true if an event occurs within the timeout amount of time;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="Battery.GetChargerModel">
+  </doc>
+
+</docs>
