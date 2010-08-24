@@ -1,0 +1,497 @@
+<docs>
+  <doc for="Resources">
+    Provides a method to retrieve embedded resources such as strings, bitmaps, fonts, and binaries.
+    This class cannot be inherited.
+  </doc>
+
+  <doc for="Tag">
+    <summary>
+    An enumeration of the available embedded resources.
+    </summary>
+  </doc>
+
+  <doc for="Tag.WAITINGFORDATA">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.ERASING">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DONE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.WARNING">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERYLOW">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERYVERYLOW">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIMEONLYMODE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SLEEPMODE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.RECHARGE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.IMMEDIATELY">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SWITCHINGTO">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.CHARGING">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.CHARGED">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.YES">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.NO">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.MANUAL">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.LOCAL">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_ON_S">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_OFF_S">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.MONTHS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DAYS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DAYSSHORT">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DATESEP">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_a">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_p">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_AM">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_PM">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_am_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_pm_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_SEP">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TIME_GMT">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_a_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_A">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_AM">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_am_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_p_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_P">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_PM">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.AMPM_pm_lc">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.FLASHFADE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.CROSSFADE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.NONE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.kmh">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.mph">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.kPa">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.On">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.Off">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SETTINGS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DELETEALL">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DELETED">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DEVICEIS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.LOCKED">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.RELOCATE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.NORECEPTION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.ok">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.RECEPTION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.DOWNLOADING">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.FILEAVAILABLE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.PERCENTCOMPLETE">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.NOINFO">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.EMPTY_STRING">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERY">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SIGNAL">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.NOSTATION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.CANNOT_SETTIME">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.A">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.B">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_ON">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_OFF">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_ALERTS_ALARMS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.LOWBATTERY">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SLEEP_QUESTION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SLEEP_CONFIRMATION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.USUNITS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.USDESCRIPTION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.METRICUNITS">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.METRICDESCRIPTION">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.SECOND_SHORT">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.VIBRATION_B">
+    <summary>A string.</summary>
+  </doc>
+
+  <doc for="Tag.TABARROW_DOWN">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.TABARROW_DOWN_MASK">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.TABARROW_UP">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.TABARROW_UP_MASK">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.NAVARROW_UP">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.NAVARROW_DOWN">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERY_CHARGING">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERY_FULL">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERY_LOW">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.EXCLAMATION">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.ROUNDED_CORNER">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.SOUND_ON_B">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.CHARGING_STATUS_ICON">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.CHARGING_STATUS_MASK">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.ERASE_ICON">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERYLOW_STATUS_ICON">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.BATTERYLOW_STATUS_MASK">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.DOWNLOADING_4">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.CAL2330">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.CAL2431">
+    <summary>A bitmap.</summary>
+  </doc>
+
+  <doc for="Tag.TINY_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.GLANCEABLE_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.DETAIL_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.EMPHASIZED_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.SINGLELETTER_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.NINATIME_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.SMALL_LOC">
+    <summary>A localized font.</summary>
+  </doc>
+
+  <doc for="Tag.TINY">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.GLANCEABLE">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.DETAIL">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.EMPHASIZED">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.SINGLELETTER">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.NINATIME">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Tag.SMALL">
+    <summary>A font.</summary>
+  </doc>
+
+  <doc for="Resources.GetString">
+    <summary>
+    Get an embedded string resource.
+    </summary>
+    <param name="t">The resource tag that represents the desired string resource.</param>
+    <returns>A string.</returns>
+  </doc>
+
+  <doc for="Resources.GetBitmap">
+    <summary>
+    Get an embedded bitmap resource.
+    </summary>
+    <param name="t">The resource tag that represents the desired bitmap resource.</param>
+    <returns>A bitmap.</returns>
+  </doc>
+
+  <doc for="Resources.GetFont">
+    <summary>
+    Get an embedded font resource.
+    </summary>
+    <param name="t">The resource tag that represents the desired font resource.</param>
+    <returns>A font.</returns>
+  </doc>
+
+  <doc for="Resources.GetSoundBitmap">
+    <summary>
+    Get the embedded bitmap resource representing the sound feature.
+    </summary>
+    <param name="fOn">Indicates whether the sound bitmap should illustrate that the sound is on (true) or off (false).</param>
+    <returns>A bitmap.</returns>
+  </doc>
+
+</docs>

@@ -1,0 +1,32 @@
+<docs>
+
+  <doc for="RpcServer">
+    <summary>
+    Provides an implementation for a server thread that accepts remote procedure call (RPC) messages
+    and invokes the methods received.
+    </summary>
+  </doc>
+
+  <doc for="RpcServer.RpcServer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.RpcServer class with the provided type, id, and target.
+    </summary>
+    <param name="selector">The type with which to associate this RpcServer.</param>
+    <param name="id">The ID with which to associate this RpcServer.</param>
+    <param name="target">The object on which to invoke the methods.</param>
+    <param name="remotedMethods">The type defining the methods to be called from the <i>target</i>.</param>
+  </doc>
+
+  <doc for="RpcServer.Start">
+    <summary>
+    Start the server.
+    </summary>
+  </doc>
+
+  <doc for="RpcServer.Stop">
+    <summary>
+    Stop the server.
+    </summary>
+  </doc>
+
+</docs>

@@ -1,0 +1,31 @@
+<docs>
+    <doc for="SystemID">
+        <exclude/>
+        <summary>
+            Stores information that is unique to different hardware systems.
+        </summary>
+        <remarks>
+			A developer can use this information to write conditional code that is dependant on a specific runtime environment.
+        </remarks>
+    </doc>
+    <doc for="SystemID.OEM">
+        <summary>
+            Gets a value representing a manufacturer.
+        </summary>
+    </doc>
+    <doc for="SystemID.Model">
+        <summary>
+            Gets a value representing a product model.
+        </summary>
+    </doc>
+    <doc for="SystemID.SKU">
+        <summary>
+            Gets a value representing a product SKU.
+        </summary>
+    </doc>
+    <doc for="SystemID.NetworkID">
+        <summary>
+            Gets a value representing a product network identifier.
+        </summary>
+    </doc>
+</docs>

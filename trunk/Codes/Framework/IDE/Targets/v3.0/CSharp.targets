@@ -1,0 +1,11 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <FrameworkRegistryBase Condition=" '$(FrameworkRegistryBase)' == '' ">Software\Microsoft\.NETMicroFramework</FrameworkRegistryBase>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v3.0</TargetFrameworkVersion>
+    <AssemblyFoldersSuffix Condition=" '$(AssemblyFoldersSuffix)' == '' ">AssemblyFoldersEx</AssemblyFoldersSuffix>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import  Project="Device.targets"/>
+</Project>

@@ -1,0 +1,20 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FrameworkRegistryBase Condition=" '$(FrameworkRegistryBase)' == '' ">Software\Microsoft\.NETMicroFramework</FrameworkRegistryBase>
+    <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v0.0</TargetFrameworkVersion>
+    <AssemblyFoldersSuffix Condition=" '$(AssemblyFoldersSuffix)' == '' ">AssemblyFoldersEx</AssemblyFoldersSuffix>
+    <TargetCompactFramework>true</TargetCompactFramework>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+
+  <Import Project="$(windir)\Microsoft.NET\Framework\v2.0.50727\Microsoft.CSharp.targets" />
+  <Import  Project="Device.targets"/>
+</Project>

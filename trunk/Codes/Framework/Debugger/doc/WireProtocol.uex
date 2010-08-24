@@ -1,0 +1,18 @@
+<docs>
+  <doc for="HeapBlock">
+    <exclude/>
+  </doc>
+
+  <doc for="Flags">
+    <exclude/>
+  </doc>
+
+  <doc for="Packet">
+    <exclude/>
+  </doc>
+
+  <doc for="Commands">
+    <exclude/>
+  </doc>
+
+</docs>

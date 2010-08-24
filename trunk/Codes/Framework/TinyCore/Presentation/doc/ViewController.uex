@@ -1,0 +1,404 @@
+<docs>
+  <doc for="GenericRecordView">
+    <exclude/>
+    <summary>
+    An abstract base class representing a view based upon a record.
+    </summary>
+  </doc>
+
+  <doc for="GenericRecordView.Record">
+    <summary>
+    Gets or sets the record for the view.
+    </summary>
+  </doc>
+
+  <doc for="GenericRecordView.GetHashCode">
+    <summary>
+    Serves as a hash function for a particular type, suitable for use in hashing algorithms and data structures like a hash table.
+    </summary>
+    <returns>A hash code for the current Microsoft.SPOT.GenericRecordView.</returns>
+  </doc>
+
+  <doc for="GenericRecordView.Equals">
+    <summary>
+    Determines whether the specified Microsoft.SPOT.GenericRecordView is equal to the current Microsoft.SPOT.GenericRecordView.
+    </summary>
+    <param name="o">The Microsoft.SPOT.GenericRecordView to compare with the current Microsoft.SPOT.GenericRecordView.</param>
+    <returns>true if the specified Microsoft.SPOT.GenericRecordView is equal to the current Microsoft.SPOT.GenericRecordView; otherwise, false.</returns>
+  </doc>
+
+  <doc for="ActivateHandler">
+    <summary>
+    Represents the method that will handle the event when an item in a view controller is activated.
+    </summary>
+  </doc>
+
+  <doc for="DeactivateHandler">
+    <summary>
+    Represents the method that will handle the event when an item in a view controller is deactivated.
+    </summary>
+  </doc>
+
+  <doc for="SelectHandler">
+    <summary>
+    Represents the method that will handle the event when an item in a view controller is selected.
+    </summary>
+  </doc>
+
+  <doc for="ViewController">
+    <summary>
+    Provides navigation and control over a collection of views.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_activateHandler">
+    <summary>
+    Handles the activate event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_selectHandler">
+    <summary>
+    Handles the select event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_deactivateHandler">
+    <summary>
+    Handles the deactivate event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_fHasContents">
+    <summary>
+    Indicates if the controller has views to control.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_fWrap">
+    <summary>
+    Indicates whether the navigation will wrap from the ends of the list.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_fInitialized">
+    <summary>
+    Indicates whether the view controller is initialized.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.m_fOutOfSync">
+    <summary>
+    Indicates whether the controller is out of sync with the views it is controlling.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.Iterator">
+    <summary>
+    The iterator used to move between views.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.Operator">
+    <summary>
+    The operator that will display data.  Common operators are views and labels.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.Current">
+    <summary>
+    The current data object defining the contents of the current view.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.DefaultTitle">
+    <summary>
+    Default title bar text.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.SwapNavigation">
+    <summary>
+    Indicates whenter the order of the buttons should be swapped.
+    true == swap order of buttons.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.TrackIterator">
+    <summary>
+    Indicates whether changes to the underlying iterator get updated automatically.
+    true == changes update automatically.
+    false == only changes from no data to having data update automatically.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.ViewController">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ViewController class.
+    </summary>
+    <param name="fWrap">Indicates whether the navigation will wrap from the ends of the list.</param>
+  </doc>
+
+  <doc for="ViewController.ActivateHandler">
+    <summary>
+    Add or remove callback methods for the activate event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.SelectHandler">
+    <summary>
+    Add or remove callback methods for the select event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.DeactivateHandler">
+    <summary>
+    Add or remove callback methods for the deactivate event.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.OnSelect">
+    <summary>
+    Called when the select button is pressed.
+    </summary>
+    <param name="current">The current data object.</param>
+    <param name="fHandled">Indicates whether the select event has been handled.</param>
+  </doc>
+
+  <doc for="ViewController.OnIteratorChanged">
+    <summary>
+    Called when an iterator has been changed.
+    </summary>
+    <param name="newcurrent">The new current object.</param>
+  </doc>
+
+  <doc for="ViewController.Select">
+    <summary>
+    Select an object.
+    </summary>
+    <param name="o">The object to select.</param>
+    <returns>true if the select event has been handled;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ViewController.Activate">
+    <summary>
+    Activate the current iterator object.
+    </summary>
+  </doc>
+
+  <doc for="ViewController.OnActivate">
+    <summary>
+    Activate a new current object.
+    </summary>
+    <param name="current">The object being activated.</param>
+    <remarks>
+    You must call the base class when overriding
+    this method so that the event is properly delegated,
+    and so the internal state is updated correctly.
+    </remarks>
+  </doc>
+
+  <doc for="ViewController.Bind">
+    <summary>
+    Bind the active item to the operator.
+    </summary>
+    <remarks>
+    Intended to be overridden in derived classes.
+    </remarks>
+  </doc>
+
+  <doc for="ViewController.UpdateTitleBar">
+    <summary>
+    Takes the current object, and if it implements
+    the ITitleBarContext interface, updates the
+    titlebar using it.
+    </summary>
+    <param name="titlebar">The titlebar to update, if possible.</param>
+  </doc>
+
+  <doc for="ViewController.OnDeactivate">
+    <summary>
+    Called when the current object is deactivated.
+    </summary>
+    <param name="current">The object being deactivated.</param>
+    <remarks>
+    A derived class should call this base class method when overriding so that the event is properly delegated.
+    </remarks>
+  </doc>
+
+  <doc for="ViewController.OnKey">
+    <summary>
+    Process key events.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="ViewController.HasContents">
+    <summary>
+    Determines whether the view controller has a current view.
+    </summary>
+    <returns>A Boolean value indicating whether the view controller has a current view.</returns>
+  </doc>
+
+  <doc for="ViewController.OnDataStateChanged">
+    <summary>
+    Called the data state switches between no data and having data.
+    </summary>
+    <param name="fHasData">Indicates whether the view controller now has data (true) or no longer has data (false).</param>
+  </doc>
+
+  <doc for="ViewController.MoveFirst">
+    <summary>
+    Move to and activate the first object.
+    </summary>
+    <returns>true if the move was successful;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ViewController.MoveLast">
+    <summary>
+    Move to and activate the last object.
+    </summary>
+    <returns>true if the move was successful;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ViewController.Resync">
+    <summary>
+    Resync to the current object if the controller is out of sync.
+    </summary>
+    <returns>true if the controller is out of sync and the current object was resyncronized;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ViewController.MoveNext">
+    <summary>
+    Move to the next object and activate it. 
+    </summary>
+    <returns>true if the move was successful and the current object changed;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ViewController.MovePrev">
+    <summary>
+    Move to the previous object and activate it.
+    </summary>
+    <returns>true if the move was successful and the current object changed;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="SimpleVC">
+    <summary>
+    Extends the basic view controller to add parking behavior,
+    and no data behavior when there are no items.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.NoDataText">
+    <summary>
+    Text to be displayed when there is no data available.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.Transition">
+    <summary>
+    Defines the transition between views.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.m_erase">
+    <summary>
+    Holds the value that indicates if the instance supports erase functionality.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.InTransition">
+    <summary>
+    Indicates that the view controller is currently in a transition.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.SimpleVC">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.SimpleVC class.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.OnKeyEvent">
+    <summary>
+    Called when a key event occurs.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="SimpleVC.Dispose">
+    <summary>
+    Free resources that are no longer needed.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.ParkingRate">
+    <summary>
+    Sets the amount of time before parking times out.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.FlippingRate">
+    <summary>
+    Sets the amount of time before a view is flipped.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.SetTimerToParking">
+    <summary>
+    Sets the timer to the <see cref="SimpleVC.ParkingRate">ParkingRate</see>.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.SetTimerToFlipping">
+    <summary>
+    Sets the timer to the <see cref="SimpleVC.FlippingRate">FlippingRate</see>.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.SetTimerToNormal">
+    <summary>
+    Sets the to timer to the normal parking and flipping rate.  The timer is set to normal as default.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.GlanceTimeout">
+    <summary>
+    Change to the next view in glance mode.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.TCallback">
+    <summary>
+    The transition callback.
+    </summary>
+    <param name="state">The new state of the transition.</param>
+  </doc>
+
+  <doc for="SimpleVC.OnDataStateChanged">
+    <summary>
+    Called the data state switches between no data and having data.
+    </summary>
+    <param name="fHasData">Indicates whether the view controller now has data (true) or no longer has data (false).</param>
+  </doc>
+
+  <doc for="SimpleVC.SupportsErase">
+    <summary>
+    Indicates whenther the view controller supports erase functionality.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.Erase">
+    <summary>
+    Erase the current object in the view collection.
+    </summary>
+  </doc>
+
+  <doc for="SimpleVC.OnKey">
+    <summary>
+    Process key events.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+</docs>

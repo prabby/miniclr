@@ -1,0 +1,76 @@
+<docs>
+    <doc for="ExtendedWeakReference.c_SurviveBoot">
+        <summary>
+            A flag specifying that this weak reference will be recoverable after a reboot.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.c_SurvivePowerdown">
+        <summary>
+            A flag specifying that this weak reference will be recoverable after a powerdown.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.ExtendedWeakReference">
+        <summary>
+            Initializes a new instance of the Microsoft.SPOT.ExtendedWeakReference class, referencing the specified object.
+        </summary>
+        <param name="target">The object targeted for a weak reference.</param>
+        <param name="selector">The type with which to associate this ExtendedWeakReference.</param>
+        <param name="id">Theindentifierwith which to associate this ExtendedWeakReference.</param>
+        <param name="flags">Flags specifying what states this weak reference should be recoverable from.</param>
+    </doc>
+    <doc for="ExtendedWeakReference.Selector">
+        <summary>
+            Gets the Selector.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.RecoverOrCreate">
+        <summary>
+            Attempts to recover an ExtendedWeakReference, and creates a new instance if it fails.
+        </summary>
+        <param name="selector">The Type that the object to recover is associated with.</param>
+        <param name="id">Theindentifierthat the object to recover is associated with.</param>
+        <param name="flags">The flags of the ExtendedWeakReference instance that is to be created, if one was not recovered.</param>
+        <returns>An ExtendendWeakReference instance.  If the reference was not recovered, the Target object will be null.</returns>
+    </doc>
+    <doc for="ExtendedWeakReference.Recover">
+        <summary>
+            Recover an ExtendedWeakReference.
+            Can be called multiple times to recover all objects associated with a Type/Id.  Will return null when
+            there are no more objects to be recovered.
+        </summary>
+        <param name="selector">The Type that the object to recover is associated with.</param>
+        <param name="id">Theindentifierthat the object(s) to be recovered is associated with.</param>
+        <returns>An ExtendendWeakReference instance.</returns>
+    </doc>
+    <doc for="ExtendedWeakReference.PushBackIntoRecoverList">
+        <summary>
+            Flag the reference as a candidate for recovery across a reboot or powerdown.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.Id">
+        <summary>
+            Gets theindentifierthis ExtendedWeakReference is associated with.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.Flags">
+        <summary>
+            Gets the flags specifying what states this weak reference should be recoverable from.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference.Priority">
+        <summary>
+            Gets or sets the priority of an ExtendedWeakReference.  Higher values = more important.
+        </summary>
+    </doc>
+    <doc for="ExtendedWeakReference">
+        <summary>
+            Represents an extended weak reference, which references an object while still allowing it to be garbage collected.
+        </summary>
+        <remarks>
+            When the object referred to by the extended weak references has no live references to it, it will be stored in a serialized format.
+            Thus the target of an ExtendedWeakRefernence must be serializable.  
+            A selector andindentifierare used to identify a group of 1 or more weak references.  The selector should be a type known only to 
+            the customer of the ExtendedWeakReference.   The same selector can be used with multiple IDs to create groups of ExtendedWeakReferences.
+        </remarks>
+    </doc>
+</docs>

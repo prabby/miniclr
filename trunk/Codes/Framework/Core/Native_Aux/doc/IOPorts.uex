@@ -1,0 +1,389 @@
+<docs>
+    <doc for="GPIOInterruptEventHandler">
+        <summary>
+            Delegate that is invoked when an interrupt occurs.
+        </summary>
+    </doc>
+    <doc for="Port">
+        <summary>
+            I/O Port base class for managing GPIO pins that contains the necessary logic to handle read and write requests.  This class cannot be created directly.
+        </summary>
+    </doc>
+    <doc for="ResistorMode">
+        <summary>
+            Specifies the different port resistor modes.
+        </summary>
+    </doc>
+    <doc for="ResistorMode.Disabled">
+        <summary>
+            Disables the resistor functionality.
+        </summary>
+    </doc>
+    <doc for="ResistorMode.PullDown">
+        <summary>
+            Enables the resistor functionality in Pull-down mode.
+        </summary>
+    </doc>
+    <doc for="ResistorMode.PullUp">
+        <summary>
+            Enables the resistor functionality in Pull-up mode.
+        </summary>
+    </doc>
+    <doc for="InterruptMode">
+        <summary>
+            Specifies the different port interrupt modes.
+        </summary>
+        <remarks>
+            <b>Note </b> Level interrupts, which are <c>InterruptEdgeLevelHigh</c> or <c>InterruptEdgeLevelLow</c>,
+            are dispatched when the value on a pin matches the high or low value chosen.  The system only dispatches
+            the first occurence of interrupt until it is cleared via the <see cref="InterruptPort.ClearInterrupt()">ClearInterrupt</see> method.
+            For the other non-level interrupts, every chosen edge is dispatched;  <see cref="InterruptPort.ClearInterrupt()">ClearInterrupt</see> has no effect.
+        </remarks>
+    </doc>
+    <doc for="InterruptMode.InterruptNone">
+        <summary>
+            Sets the port to not generate an interrupt.
+        </summary>
+    </doc>
+    <doc for="InterruptMode.InterruptEdgeLow">
+        <summary>
+            Sets the port as a low-edge triggered interrupt.
+        </summary>
+    </doc>
+    <doc for="InterruptMode.InterruptEdgeHigh">
+        <summary>
+            Sets the port as a high-edge triggered interrupt.
+        </summary>
+    </doc>
+    <doc for="InterruptMode.InterruptEdgeBoth">
+        <summary>
+            Sets the port as both a low and high-edge triggered interrupt.
+        </summary>
+    </doc>
+    <doc for="InterruptMode.InterruptEdgeLevelHigh">
+        <summary>
+            Sets the port as a high-edge level triggered interrupt.
+        </summary>
+    </doc>
+    <doc for="InterruptMode.InterruptEdgeLevelLow">
+        <summary>
+            Sets the port as a low-edge level triggered interrupt.
+        </summary>
+    </doc>
+    <doc for="Port.Port">
+        <summary>
+            Initializes a new instance of the Port class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <param name="interruptMode">The interrupt mode that establishes the conditions need for the port to generate an interrupt.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="Port.Port1">
+        <summary>
+            Initializes a new instance of the Port class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial forced on the port output after construction.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="Port.Port2">
+        <summary>
+            Initializes a new instance of the Port class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial value forced on the port output after construction.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="Port.Dispose">
+        <summary>
+            Disables the pin and marks it as available for reuse.
+        </summary>
+    </doc>
+    <doc for="Port.Read">
+        <summary>
+            Reads a boolean value at the port input.
+        </summary>
+        <returns>The boolean value at the port input.</returns>
+    </doc>
+    <doc for="Port.Id">
+        <summary>
+            Gets the port indentifier.
+        </summary>
+    </doc>
+    <doc for="InputPort">
+        <summary>
+            Represents an instance of an input port which can be used to read the value of a GPIO pin.
+        </summary>
+    </doc>
+    <doc for="InputPort.InputPort">
+        <summary>
+            Initializes a new instance of the InputPort class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="InputPort.InputPort1">
+        <summary>
+            Initializes a new instance of the InputPort class
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <param name="interruptMode">The interrupt mode that establishes the conditions need for the port to generate an interrupt.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="InputPort.InputPort2">
+        <summary>
+            Initializes a new instance of the InputPort class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial value forced on the port output after construction.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="InputPort.Resistor">
+        <summary>
+            Gets and sets the resistor mode of the port.  The initial resistor mode value is set in the InputPort constructor.
+        </summary>
+    </doc>
+    <doc for="InputPort.GlitchFilter">
+        <summary>
+            Gets and sets the glitch filter state of the port; true when the glitch filter is enbled, false otherwise.
+        </summary>
+    </doc>
+    <doc for="OutputPort">
+        <summary>
+            Represents an instance of an output port which can be used to set the value of a GPIO pin.
+        </summary>
+        <remarks>
+            An OutputPort is also able to read the state of port and function as an input port.
+        </remarks>
+    </doc>
+    <doc for="OutputPort.OutputPort">
+        <summary>
+            Initializes a new instance of the OutputPort class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial state forced on the port output after the constructor returns.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="OutputPort.OutputPort1">
+        <summary>
+            Initializes a new instance of the OutputPort class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial state forced on the port output after the constructor returns.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="OutputPort.Write">
+        <summary>
+            Writes a value at the port output.
+        </summary>
+        <param name="state">The value to write.</param>
+    </doc>
+    <doc for="OutputPort.InitialState">
+        <summary>
+            Gets the initial value of the port after activation.  This initial value is provided by the <i>initialState</i> parameter in the OutputPort constructor.
+        </summary>
+    </doc>
+    <doc for="TristatePort">
+        <summary>
+            Represents an instance of a tristated port.  This class cannot be inherited.
+        </summary>
+        <remarks>
+            A TristatePort is a port that is able to share a pin with another TristatePort for both reading and writing.
+        </remarks>
+    </doc>
+    <doc for="TristatePort.TristatePort">
+        <summary>
+            Initializes a new instance of the TristatePort class.  A TristatePort is initially an input port.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="initialState">The initial value forced on the port after construction; this value will be effective when the port will be enabled to be an output Port.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="TristatePort.Active">
+        <summary>
+            Gets or sets the active/inactive state of the tristate port; 
+            true changes the state of the TristatePort to an output port, and
+            false changes the state of the TristatePort to an input port.
+        </summary>
+        <exception cref="System.Exception">
+            Attempting to set the <i>Active</i> state to its current value.  
+            For example, setting <i>Active</i> to true when it is already true will cause an exception.
+        </exception>
+    </doc>
+    <doc for="TristatePort.Resistor">
+        <summary>
+            Gets and sets the resistor mode of the port.  The initial resistor mode value is set in the TristatePort constructor.
+        </summary>
+    </doc>
+    <doc for="TristatePort.GlitchFilter">
+        <summary>
+            Gets the glitch filter state of the port; true when the glithch filter is anbled, false otherwise.
+        </summary>
+    </doc>
+    <doc for="InterruptPort">
+        <summary>
+            Represents an instance of an interrupt port.  This class cannot be inherited.
+        </summary>
+        <remarks>
+            <para>
+                When configuring an InterruptPort, note the differences between level and non-level interrupts.
+                Level interrupts, which are <see cref="Port.InterruptMode">InterruptEdgeLevelHigh</see> or <see cref="Port.InterruptMode">InterruptEdgeLevelLow</see>,
+                are dispatched when the value on a pin matches the high or low value chosen.  The system only dispatches
+                the first occurence of interrupt until it is cleared via the <see cref="InterruptPort.ClearInterrupt()">ClearInterrupt</see> method.
+                For the other non-level interrupts, every chosen edge is dispatched;  <see cref="InterruptPort.ClearInterrupt()">ClearInterrupt</see> has no effect.
+            </para>
+            <para>
+                In practice, level interrupts are best used when the interrupt condition only needs to be checked periodically.
+            </para>
+        </remarks>
+        <example>
+            The following code example demonstrates simple interrupt functionality.
+            <code>
+                /*
+                 * ----------------------------------------------------------------------
+                 * This file is part of the Microsoft TinyCLR SDK Code Samples.
+                 *
+                 * Copyright (C) 2004 Microsoft Corporation.  All rights reserved.
+                 *
+                 * This source code is intended only as a supplement to Microsoft
+                 * Development Tools and/or on-line documentation.  See those other
+                 * materials for detailed information regarding Microsoft code samples.
+                 *
+                 * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+                 * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+                 * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+                 * PARTICULAR PURPOSE.
+                 * ----------------------------------------------------------------------
+                 * 
+                 * HelloLED.cs
+                 * Daniel Bolstad &lt;danb@dotcorporate.com&gt;
+                 * 
+                 * SUMMARY
+                 *   This program demonstrates basic control of a CPU pin. An OutputPort
+                 *   is toggled on and off by a button on the development board, which
+                 *   toggles an LED on and off.
+                 * 
+                 * USAGE
+                 *   The serial port is needed for flashing the software to the stamp board
+                 *   and for serial debug information.  Button 4 is used to toggle the
+                 *   LED on and off.
+                 * 
+                 * WIRING
+                 *   Serial Port 
+                 *     SER_SHDN_L         to  VCC3_3V
+                 *     GPIO9_SER2_TDX     to  SER2_TX
+                 *     GPIO10_SER2_RDX    to  SER2_RX
+                 * 
+                 *   Buttons
+                 *     GPIO8_SER2_CKX     to  BUTTON4
+                 * 
+                 *   LED
+                 *     GPIO3_SER1_RDS     to  LED + terminal
+                 *     GND                to  LED - terminal
+                 */
+
+                using System;
+                using System.Threading;
+                using Microsoft.SPOT;
+                using Microsoft.SPOT.Hardware;
+
+                namespace Microsoft.SPOT.Samples.Applications
+                {
+                    public class HelloLED
+                    {
+                        bool                m_ledOn = true;
+                        bool                m_glitchFilter = true;
+                        Port.ResistorMode   m_resistorMode = Port.ResistorMode.PullUp;
+                        Port.InterruptMode  m_interruptMode = Port.InterruptMode.InterruptEdgeLow;
+
+                        InterruptPort       m_buttonInterruptPort;
+                        Cpu.Pin             m_buttonInterruptPortId = Cpu.Pin.GPIO8_SER2_CLKX;
+                        OutputPort          m_ledPort;
+                        Cpu.Pin             m_ledPortId = Cpu.Pin.GPIO3_SER1_RDS;
+
+                        public void ButtonEventHandler(Cpu.Pin portId, bool state, TimeSpan time)
+                        {
+                            if(portId != m_buttonInterruptPortId)
+                                return;
+
+                            m_ledOn = !m_ledOn;
+
+                            // Write a boolean value to the port 
+                            // telling it to turn on (true) or off (false)
+                            m_ledPort.Write(m_ledOn);
+                        }
+
+                        public void Run()
+                        {
+                            // Set up the LED
+                            m_ledPort = new OutputPort(m_ledPortId, true);
+
+                            // Set up button 4
+                            m_buttonInterruptPort = new InterruptPort( m_buttonInterruptPortId, m_glitchFilter, m_resistorMode, m_interruptMode );
+                            m_buttonInterruptPort.OnInterrupt += new GPIOInterruptEventHandler( this.ButtonEventHandler );
+
+                            // Wait forever
+                            AutoResetEvent exit = new AutoResetEvent( false );
+                            exit.WaitOne();
+                        }
+
+                        static void Main()
+                        {
+                            HelloLED app = new HelloLED();
+                            app.Run();
+                        }
+                    }
+                }
+            </code>
+        </example>
+    </doc>
+    <doc for="InterruptPort.InterruptPort">
+        <summary>
+            Initializes a new instance of the InterruptPort class.
+        </summary>
+        <param name="portId">The port indentifier.  If the port with the requested identifier is already in use, an exception is thrown.</param>
+        <param name="glitchFilter">A boolean value that when true the glitch filter is enabled; when false the glitch filter is disabled.</param>
+        <param name="resistor">The resistor mode that establishes a default state of the port.</param>
+        <param name="interrupt">The interrupt mode that establishes the conditions need for the port to generate an interrupt.</param>
+        <exception cref="System.Exception"><i>portId</i> is already in use.</exception>
+    </doc>
+    <doc for="InterruptPort.OnInterrupt">
+        <summary>
+            Add or remove callback methods for capture events.
+        </summary>
+        <remarks>
+            <para>Applications can subscribe to this event to be notified when a interrupt event occures.</para>
+            <para><b>Note </b> If a <see cref="Port.InterruptMode">InterruptEdgeLevelHigh</see> or <see cref="Port.InterruptMode">InterruptEdgeLevelLow</see> interrupt event occurs
+            an application must call ClearInterrupt to re-enable this event.</para>
+        </remarks>
+    </doc>
+    <doc for="InterruptPort.ClearInterrupt">
+        <summary>
+            Clears the interrupt on the port.
+        </summary>
+        <remarks>
+            If a level interrupt, <see cref="Port.InterruptMode">InterruptEdgeLevelHigh</see> or <see cref="Port.InterruptMode">InterruptEdgeLevelLow</see>, event occurs
+            an application must call ClearInterrupt to re-enable this event.  Other non-level 
+            interrupts do not require ClearInterrupt to re-enable this event.
+        </remarks>
+    </doc>
+    <doc for="InterruptPort.Interrupt">
+        <summary>
+            Gets or sets the Interrupt Mode of the port.
+        </summary>
+    </doc>
+</docs>

@@ -1,0 +1,39 @@
+<docs>
+    <doc for="WeakDelegate.Combine">
+        <summary>
+            Concatenates the invocation lists of two multicast (combinable) delegates.
+        </summary>
+        <param name="a">The multicast (combinable) delegate whose invocation list comes first.</param>
+        <param name="b">The multicast (combinable) delegate whose invocation list comes last.</param>
+        <returns>
+            A new multicast (combinable) delegate with an invocation list that concatenates the invocation lists of a and b in that order.
+            -or- a, if b is null.
+            -or- b, if a is null.
+            -or- null, if both a and b are null.
+        </returns>
+    </doc>
+    <doc for="WeakDelegate.Remove">
+        <summary>
+            Removes the invocation list of a delegate from the invocation list of another delegate.
+        </summary>
+        <param name="a">The delegate from which to remove the invocation list of value.</param>
+        <param name="b">The delegate that supplies the invocation list to remove from the invocation list of source.</param>
+        <returns>
+            A new delegate with an invocation list formed by taking the invocation list of source
+            and removing the invocation list of value, if the invocation list of value is found 
+            within the invocation list of source.
+            -or- source, if value is null, or if the invocation list of value is not found within the invocation list of source.
+            -or- null, if the invocation list of value is equal to the invocation list of source, or if source is null.
+        </returns>
+    </doc>
+    <doc for="WeakDelegate">
+        <summary>
+            A lightweight delegate class providing methods to combine and remove delegates.  This class cannot be inherited.
+        </summary>
+        <remarks>
+            When delegates are created in this manner, the object references in the delegate list are treated like WeakReferences.
+            This means that the object can be garbage collected even if it is still a target in the list of delegates.
+            When this happens, it will be removed from the list of delegates automatically.
+        </remarks>
+    </doc>
+</docs>

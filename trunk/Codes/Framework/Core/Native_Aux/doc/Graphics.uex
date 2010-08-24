@@ -1,0 +1,1000 @@
+<docs>
+  <doc for="BitmapResourceAttribute">
+    <summary>
+    Indicates that a bitmap EmbeddedResource should be extracted and placed in the assembly.
+    </summary>
+  </doc>
+
+  <doc for="BitmapResourceAttribute.m_id">
+    <summary>
+    The name of the EmbeddedResource.
+    </summary>
+  </doc>
+
+  <doc for="BitmapResourceAttribute.m_fNoCompression">
+    <summary>
+    Specifies whether the bitmap resource is compressed.
+    </summary>
+  </doc>
+
+  <doc for="BitmapResourceAttribute.BitmapResourceAttribute">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BitmapResourceAttribute class.
+    </summary>
+    <param name="id">The name of the EmbeddedResource.</param>
+  </doc>
+
+  <doc for="BitmapResourceAttribute.BitmapResourceAttribute1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BitmapResourceAttribute class specifying if the data should be compressed.
+    </summary>
+    <param name="id">The name of the EmbeddedResource.</param>
+    <param name="fNoCompression">Specifies whether the bitmap resource is compressed.</param>
+  </doc>
+
+  <doc for="FontResourceAttribute">
+    <summary>
+    Indicates that a font EmbeddedResource should be extracted and placed in the assembly.
+    </summary>
+  </doc>
+
+  <doc for="FontResourceAttribute.m_id">
+    <summary>
+    The name of the EmbeddedResource.
+    </summary>
+  </doc>
+
+  <doc for="FontResourceAttribute.FontResourceAttribute">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.FontResourceAttribute class.
+    </summary>
+    <param name="id">The name of the EmbeddedResource.</param>
+  </doc>
+
+  <doc for="Font">
+    <summary>
+    Defines a particular format for text, including font face, size, and style attributes.
+    This class cannot be inherited.
+    </summary>
+  </doc>
+
+  <doc for="Font.CharWidth">
+    <summary>
+    Gets the width of the provided character, in pixels.
+    </summary>
+    <param name="c">The width of the provided character.</param>
+    <returns>The width of c, in pixels.</returns>
+  </doc>
+
+  <doc for="Font.Height">
+    <summary>
+    Gets the height of this Font object, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="Font.AverageWidth">
+    <summary>
+    Gets the average width of the characters in this font, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="Font.MaxWidth">
+    <summary>
+    Gets the width of the widest character in this font, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="Font.Ascent">
+    <summary>
+    Gets the ascent metric for this font, in pixels.
+    </summary>
+    <remarks>
+    Ascent is the distance between the baseline and the top of the font area.
+    </remarks>
+  </doc>
+
+  <doc for="Font.Descent">
+    <summary>
+    Gets the descent metric for this font, in pixels.
+    </summary>
+    <remarks>
+    Descent is the distance between the baseline and the bottom of the font area.
+    </remarks>
+  </doc>
+
+  <doc for="Font.InternalLeading">
+    <summary>
+    Gets the internal leading metric for this font, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="Font.ExternalLeading">
+    <summary>
+    Gets the external leading metric for this font, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="Font.ComputeExtent1">
+    <summary>
+    Compute the width and height of a line of text. (ignores the newline character)
+    </summary>
+    <param name="text">The text to measure.</param>
+    <param name="width">The width of the text measured.</param>
+    <param name="height">The height of the text measured.</param>
+  </doc>
+
+  <doc for="Font.ComputeExtent2">
+    <summary>
+    Compute the width and height of a line of text.
+    </summary>
+    <param name="text">The text to measure.</param>
+    <param name="width">The width of the text measured.</param>
+    <param name="height">The height of the text measured.</param>
+    <param name="kerning">The kerning of the text</param>
+  </doc>
+
+  <doc for="Font.ComputeTextInRect1">
+    <summary>
+    Compute the width and height of the text.
+    </summary>
+    <param name="text">The text to measure.</param>
+    <param name="renderWidth">The width of the text measured.</param>
+    <param name="renderHeight">The height of the text measured.</param>
+  </doc>
+
+  <doc for="Font.ComputeTextInRect2">
+    <summary>
+    Compute the width and height of the text.
+    </summary>
+    <param name="text">The text to measure.</param>
+    <param name="renderWidth">The width of the text measured.</param>
+    <param name="renderHeight">The height of the text measured.</param>
+    <param name="availableWidth">The maximum width allowed.</param>
+  </doc>
+
+  <doc for="Font.ComputeTextInRect3">
+    <summary>
+    Compute the width and height of the text.
+    </summary>
+    <param name="text">The text to measure.</param>
+    <param name="renderWidth">The width of the text measured.</param>
+    <param name="renderHeight">The height of the text measured.</param>
+    <param name="xRelStart">The x coordinate of the relative starting point.</param>
+    <param name="yRelStart">The y coordinate of the relative starting point.</param>
+    <param name="availableWidth">The maximum width allowed.</param>
+    <param name="availableHeight">The maximum height allowed.</param>
+    <param name="dtFlags">DrawText flags to specified alignment and more</param>
+  </doc>
+
+  <doc for="Bitmap">
+    <summary>
+    Encapsulates a bitmap, which consists of the pixel data for a graphics image and its methods and attributes.
+    This class cannot be inherited.
+    </summary>
+    <remarks>
+    The <i>Bitmap</i> class is one of the basic, essential tools used to draw graphics and 
+    create a user interface for this system.
+    </remarks>
+    <seealso cref="Font"/>
+  </doc>
+
+  <doc for="Bitmap.MaxWidth">
+    <summary>The maximum width of the display device, in pixels.</summary>
+    <seealso cref="Bitmap.MaxHeight"/>
+    <seealso cref="Bitmap.CenterX"/>
+    <seealso cref="Bitmap.CenterY"/>
+  </doc>
+
+  <doc for="Bitmap.MaxHeight">
+    <summary>The maximum height of the display device, in pixels.</summary>
+    <seealso cref="Bitmap.MaxWidth"/>
+    <seealso cref="Bitmap.CenterX"/>
+    <seealso cref="Bitmap.CenterY"/>
+  </doc>
+
+  <doc for="Bitmap.CenterX">
+    <summary>The X coordinate of the center of the display device, in pixels.</summary>
+    <seealso cref="Bitmap.MaxWidth"/>
+    <seealso cref="Bitmap.MaxHeight"/>
+    <seealso cref="Bitmap.CenterY"/>
+  </doc>
+
+  <doc for="Bitmap.CenterY">
+    <summary>The Y coordinate of the center of the display device, in pixels.</summary>
+    <seealso cref="Bitmap.MaxWidth"/>
+    <seealso cref="Bitmap.MaxHeight"/>
+    <seealso cref="Bitmap.CenterX"/>
+  </doc>
+
+  <doc for="Bitmap.SRCCOPY">
+    <summary>Copies the source rectangle directly to the destination rectangle.</summary>
+    <example>
+      <para>
+      The example below shows how to use this method to copy a bitmap using the SRCCOPY raster-operation flag.
+      </para>
+      <code lang="C#">
+public Bitmap CopyBitmap( Bitmap bSrc )
+{
+    Bitmap bDest = new Bitmap( bSrc.Width, bSrc.Height );
+    bDest.BitBlt( 0, 0, bDest.Width, bDest.Height, bSrc, 0, 0, Bitmap.SRCCOPY );
+    return bDest;
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.PATINVERT">
+    <summary>Inverts the source rectangle.</summary>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.DSTINVERT">
+    <summary>Inverts the destination rectangle.</summary>
+    <example>
+      <para>
+      The example below shows how to use the DSTINVERT raster-operation flag to invert a bitmap.
+      </para>
+      <code lang="C#">
+if(invert) 
+{
+    b.PatBlt( 0, 0, b.Width, b.Height, Bitmap.DSTINVERT );
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.BLACKNESS">
+    <summary>Fills the destination rectangle using the color associated with index 0 in the physical palette.</summary>
+    <example>
+      <para>
+      The example below shows how to use the BLACKNESS raster-operation flag to create an entirely black bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.BLACKNESS );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.WHITENESS">
+    <summary>Fills the destination rectangle using the color associated with index 1 in the physical palette.</summary>
+    <example>
+      <para>
+      The example below shows how to use the WHITENESS raster-operation flag to create an blank, or white, bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.WHITENESS );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.DSTGRAY">
+    <summary>Fills the destination rectangle using a grey color.</summary>
+    <example>
+      <para>
+      The example below shows how to use the DSTGRAY raster-operation flag to create a grey bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.DSTGRAY );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.DSTLTGRAY">
+    <summary>Fills the destination rectangle using a light grey color.</summary>
+    <example>
+      <para>
+      The example below shows how to use the DSTLTGRAY raster-operation flag to create a light grey bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.DSTLTGRAY );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.DSTDKGRAY">
+    <summary>Fills the destination rectangle using a dark grey color.</summary>
+    <example>
+      <para>
+      The example below shows how to use the DSTDKGRAY raster-operation flag to create a dark grey bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.DSTDKGRAY );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.SINGLEPIXEL">
+    <summary>Specifies that a circle should have only a single pixel border and no fill pattern or color.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.Circle method.</remarks>
+    <example>
+      <para>
+      The example below shows how to use the SINGLEPIXEL raster-operation flag to draw a black circle 
+      with a radius of 10 pixels in the center of a white bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.WHITENESS );
+b.Circle( Bitmap.MaxWidth/2, Bitmap.MaxHeight/2, 10, Bitmap.BLACKNESS );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.RANDOM">
+    <summary>Fills the destination rectangle or circle using a randomly generated pattern.</summary>
+    <example>
+      <para>
+      The example below shows how to use the RANDOM raster-operation flag to create a random patterned bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.RANDOM );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+  </doc>
+
+  <doc for="Bitmap.DT_None">
+    <summary>Specifies no format rules.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.DT_WordWrap">
+    <summary>Specifies whether a line of text automatically wraps words to the beginning of the next line when necessary.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.DT_AlignmentCenter">
+    <summary>Specifies that the text is centered within a rectangle.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+    
+  </doc>
+
+  <doc for="Bitmap.DT_AlignmentLeft">
+    <summary>Specifies that the text is aligned left within a rectangle.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+    
+  </doc>
+
+  <doc for="Bitmap.DT_AlignmentRight">
+    <summary>Specifies that the text is aligned right within a rectangle.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+    
+  </doc>
+
+  <doc for="Bitmap.DT_TruncateAtBottom">
+    <summary>Specifies that if text is larger than the space provided then the text is truncated at the bottom.  Cannot be used with the DT_Ellipsis flag.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.DT_Ellipsis">
+    <summary>Specifies that the text is trimmed to the nearest character, and an ellipsis is inserted at the end of a trimmed line.  Cannot be used with the DT_TruncateAtBottom flag.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.DT_IgnoreHeight">
+    <summary>Specifies that if text is larger than the space provided then the text is to be fully drawn.</summary>
+    <remarks>Used only with the Microsoft.SPOT.Bitmap.DrawTextInRect methods.</remarks>
+    <seealso cref="Bitmap.DrawTextInRect"/>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+  </doc>
+
+  <doc for="Bitmap.Bitmap">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Bitmap class to the specified height and width.
+    </summary>
+    <param name="width">The width, in pixels.</param>
+    <param name="height">The height, in pixels.</param>
+    <example>
+      <para>
+      The example below shows how to create a new bitmap and copy the contents of another bitmap into it.
+      </para>
+      <code lang="C#">
+public Bitmap CopyBitmap( Bitmap bSrc )
+{
+    Bitmap bDest = new Bitmap( bSrc.Width, bSrc.Height );
+    bDest.BitBlt( 0, 0, bDest.Width, bDest.Height, bSrc, 0, 0, Bitmap.SRCCOPY );
+    return bDest;
+}
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.Flush">
+    <summary>
+    Flushes the current instance of the bitmap to the display device.
+    The bitmap must be equal to the display device in dimensions.
+    </summary>
+    <example>
+      <para>
+      The example below shows how to use the <i>Flush</i> method to view a bitmap as it is being modified.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+
+for(int i = 0; i &lt; Bitmap.MaxHeight; i++)
+{
+    b.Line( 0, 0, Bitmap.MaxWidth, i );
+    b.Flush();
+}
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.Clear">
+    <summary>
+    Clears the entire drawing surface.
+    </summary>
+    <remarks>It is not necessary to <i>Clear</i> a newly created <i>Bitmap</i>.</remarks>
+  </doc>
+
+  <doc for="Bitmap.SetPixel">
+    <summary>
+    Sets a pixel on or off.
+    </summary>
+    <param name="xPos">The x-coordinate of the pixel to set.</param>
+    <param name="yPos">The y-coordinate of the pixel to set.</param>
+    <param name="fSet">Specifies whether the pixel is on (true) or off (false).</param>
+    <example>
+      <para>
+      The example below shows how to use this method to randomly set pixels on a bitmap.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+
+for(int i = 0; i &lt; 100; i++)
+{
+    b.SetPixel( Microsoft.SPOT.Math.Random( Bitmap.MaxWidth ), Microsoft.SPOT.Math.Random( Bitmap.MaxHeight ), true );
+    b.Flush();
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.Flush"/>
+    <seealso cref="Microsoft.SPOT.Math.Random"/>
+  </doc>
+
+  <doc for="Bitmap.Line">
+    <summary>
+    Draws a line connecting the two points specified by coordinate pairs.
+    </summary>
+    <param name="x1">The x-coordinate of the first point.</param>
+    <param name="y1">The y-coordinate of the first point.</param>
+    <param name="x2">The x-coordinate of the second point.</param>
+    <param name="y2">The y-coordinate of the second point.</param>
+    <example>
+      <para>
+      The example below shows how to draw two lines that will divide the screen into four quadrants.
+      </para>
+      <code lang="C#">
+b.Line( 0, Bitmap.MaxHeight / 2, Bitmap.MaxWidth, Bitmap.MaxHeight / 2 );
+b.Line( Bitmap.MaxWidth / 2, 0, Bitmap.MaxWidth / 2, Bitmap.MaxHeight );
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.Circle">
+    <summary>
+    Draws a circle specified by a coordinate pair and a radius using a specified raster-operation.
+    </summary>
+    <param name="xCenter">The x-coordinate of the center of the circle.</param>
+    <param name="yCenter">The y-coordinate of the center of the circle.</param>
+    <param name="radius">The length of the radius of the circle.</param>
+    <param name="dwRop">Specifies a raster-operation code.</param>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+    <example>
+      <para>
+      The example below shows how to draw two circles.
+      A black circle will be drawn in the upper left hand corner of the bitmap, 
+      and the outline of another circle will be drawn directly to the right of the black circle.
+      </para>
+      <code lang="C#">
+b.Circle( 10, 10, 10, Bitmap.BLACKNESS );
+b.Circle( 30, 10, 10, Bitmap.SINGLEPIXEL );
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.DrawRectangle">
+    <summary>
+    Draws a rectangle specified by two coordinate pairs.
+    </summary>
+    <param name="x1">Specifies the x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y1">Specifies the y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="x2">Specifies the x-coordinate of the lower-right corner of the rectangle.</param>
+    <param name="y2">Specifies the y-coordinate of the lower-right corner of the rectangle.</param>
+    <example>
+      <para>
+      The example below shows how to draw the outline of a rectangle 
+      that has a hieght of 20 pixels and a length of 50 pixels.
+      </para>
+      <code lang="C#">
+b.DrawRectangle( 10, 10, 60, 30 );
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.DrawText">
+    <summary>
+    Draws text specified by a coordinate pair and a font.
+    </summary>
+    <param name="text">The string to be drawn.</param>
+    <param name="xPos">The x-coordinate of the upper-left corner of the text.</param>
+    <param name="yPos">The y-coordinate of the upper-left corner of the text.</param>
+    <param name="font">The font in which to draw the string.</param>
+    <example>
+      <para>
+      The example below shows how to draw "Hello" in the upper left corner of the bitmap. 
+      </para>
+      <code lang="C#">
+b.DrawText( "Hello", 0, 0, f );
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.DrawText1">
+    <summary>
+    Draws text specified by a coordinate pair, a font, and kerning.
+    </summary>
+    <param name="text">The string to be drawn.</param>
+    <param name="xPos">The x-coordinate of the upper-left corner of the text.</param>
+    <param name="yPos">The y-coordinate of the upper-left corner of the text.</param>
+    <param name="font">The font in which to draw the string.</param>
+    <param name="kerning">The amount of space the each letter in the text will occupy.  Standard kerning is 1.</param>
+    <remarks>
+    While a <i>kerning</i> value of zero is valid, each letter will be drawn on top of each other and the text will be unreadable.
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to draw text using various kerning values.
+      <i>f</i> represents an instance of a <see cref="Font">Font</see>.
+      </para>
+      <code lang="C#">
+b.DrawText( "Zero", 0, 0, f, 0 );
+b.DrawText( "One", 0, 20, f, 1 );
+b.DrawText( "Two", 0, 40, f, 2 );
+b.DrawText( "Three", 0, 60, f, 3 );
+      </code>
+    </example>
+  </doc>
+
+  <doc for="Bitmap.DrawTextInRect">
+    <summary>
+    Draws text in a specified rectangle.
+    </summary>
+    <param name="text">The string to be drawn.  Contains the remaining string, or an empty string, after the method is executed if the text did not fit in the specified rectangle.</param>
+    <param name="xRelStart">The x-coordinate, relative to the rectangle, at which to draw the text.  Contains the x-coordinate of the end of the text after the method is executed.</param>
+    <param name="yRelStart">The y-coordinate, relative to the rectangle, at which to draw the text.  Contains the y-coordinate of the end of the text after the method is executed.</param>
+    <param name="x">The x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y">The y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="width">The width of the rectangle.</param>
+    <param name="height">The height of the rectangle.</param>
+    <param name="dtFlags">Flags specifying the format of the text.</param>
+    <param name="font">The font used to draw the text.</param>
+    <returns>true if all text was drawn;  otherwise, false, and "text" contains the remaining text that was not drawn.</returns>
+    <example>
+      <para>
+      The example below shows how to use this method to draw text on a bitmap.
+      The text will start in the upper left corner of the bitmap, and will print <i>s2</i> directly after <i>s1</i> since the values
+      of <i>x</i> and <i>y</i> will be changed to reflect the new coordinates after the first call to <i>DrawTextInRect</i>.
+      <i>f</i> represents an instance of a <see cref="Font">Font</see>.
+      </para>
+      <code lang="C#">
+string s1 = "First";
+string s2 = "Second";
+b.DrawTextInRect( ref s1, ref x, ref y, 0, 0, b.Width, f.Height, Bitmap.DT_None, f );
+b.DrawTextInRect( ref s2, ref x, ref y, 0, 0, b.Width, f.Height, Bitmap.DT_None, f );
+      </code>
+    </example>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.DrawTextInRect1">
+    <summary>
+    Draws text in a specified rectangle.
+    </summary>
+    <param name="text">The string to be drawn.</param>
+    <param name="x">The x-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="y">The y-coordinate of the upper-left corner of the rectangle.</param>
+    <param name="width">The width of the rectangle.</param>
+    <param name="height">The height of the rectangle.</param>
+    <param name="dtFlags">Flags specifying the format of the text.</param>
+    <param name="font">The font used to draw the text.</param>
+    <example>
+      <para>
+      The example below shows how to use this method to draw text on a bitmap.
+      The text will be centered on the bitmap, and will have ellipsis if the entire string doesn't fit on one line.
+      </para>
+      <code lang="C#">
+public void DrawCenteredTextOnBitmap( Bitmap b, string s, Font f )
+{
+    b.DrawTextInRect( s, 0, b.Height / 2, b.Width, f.Height, Bitmap.DT_AlignmentCenter | Bitmap.DT_Ellipsis, f );
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.DT_None"/>
+    <seealso cref="Bitmap.DT_WordWrap"/>
+    <seealso cref="Bitmap.DT_AlignmentCenter"/>
+    <seealso cref="Bitmap.DT_TruncateAtBottom"/>
+    <seealso cref="Bitmap.DT_Ellipsis"/>
+    <seealso cref="Bitmap.DT_IgnoreHeight"/>
+  </doc>
+
+  <doc for="Bitmap.SetClippingRectangle">
+    <summary>
+    Sets the clipping region of this bitmap object specified by a coordinate pair, a width and a height.
+    The clipping rectangle is the region of the bitmap that will change when an attempt to modify the bitmap is made.
+    </summary>
+    <param name="x">Specifies the x-coordinate of the upper-left corner of the clipping rectangle.</param>
+    <param name="y">Specifies the y-coordinate of the upper-left corner of the clipping rectangle.</param>
+    <param name="width">The width of the clipping rectangle.</param>
+    <param name="height">The height of the clipping rectangle.</param>
+    <example>
+      <para>
+      The example below shows how to use this method to restrict the region that gets affected by a drawing method.
+      Only the left half of the bitmap below will be filled in with <i>BLACKNESS</i>.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( 60, 60 );
+b.SetClippingRectangle( 0, 0, 30, 60 );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.BLACKNESS );
+      </code>
+    </example>
+    <seealso cref="Bitmap.ResetClippingRectangle"/>
+  </doc>
+
+  <doc for="Bitmap.ResetClippingRectangle">
+    <summary>
+    Reset the clipping region of this bitmap object to the entire bitmap.
+    </summary>
+    <example>
+      <para>
+      The example below shows how to use this method to restrict the region that gets affected by a drawing method,
+      and then reset the restriction.
+      Only the left half of the bitmap below will be filled in with <i>BLACKNESS</i> in the first call to <i>PatBlt</i>,
+      but in the second call to <i>PatBlt</i> the entire bitmap will be filled with <i>RANDOM</i> pixels shaded.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( 60, 60 );
+b.SetClippingRectangle( 0, 0, 30, 60 );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.BLACKNESS );
+b.ResetClippingRectangle();
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.RANDOM );
+      </code>
+    </example>
+    <seealso cref="Bitmap.SetClippingRectangle"/>
+  </doc>
+
+  <doc for="Bitmap.BitBlt">
+    <summary>
+    Performs a bit-block transfer of the bitmap data corresponding to a 
+    rectangle of pixels from the specified source bitmap into this destination bitmap.
+    </summary>
+    <param name="xDst">Specifies the x-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="yDst">Specifies the y-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="nWidth">Specifies the width of the source and destination rectangles.</param>
+    <param name="nHeight">Specifies the height of the source and destination rectangles.</param>
+    <param name="pSrc">The source bitmap.</param>
+    <param name="xSrc">Specifies the x-coordinate of the upper-left corner of the source rectangle.</param>
+    <param name="ySrc">Specifies the y-coordinate of the upper-left corner of the source rectangle.</param>
+    <param name="dwRop">
+    Specifies a raster-operation code. These codes define how the bitmap data for the source rectangle
+    is to be combined with the bitmap data for the destination rectangle.
+    </param>
+    <example>
+      <para>
+      The example below shows how to use this method to copy a bitmap.
+      </para>
+      <code lang="C#">
+public Bitmap CopyBitmap( Bitmap bSrc )
+{
+    Bitmap bDest = new Bitmap( bSrc.Width, bSrc.Height );
+    bDest.BitBlt( 0, 0, bDest.Width, bDest.Height, bSrc, 0, 0, Bitmap.SRCCOPY );
+    return bDest;
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.TransparentBlt"/>
+    <seealso cref="Bitmap.MaskBlt"/>
+    <seealso cref="Bitmap.PatBlt"/>
+    <seealso cref="Bitmap.RotateBlt"/>
+    <seealso cref="Bitmap.SRCCOPY"/>
+    <seealso cref="Bitmap.PATINVERT"/>
+    <seealso cref="Bitmap.DSTINVERT"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.TransparentBlt">
+    <summary>
+    Combines the data for the source bitmap and this destination bitmap.
+    </summary>
+    <param name="xDst">Specifies the x-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="yDst">Specifies the y-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="nWidth">Specifies the width of the source and destination rectangles.</param>
+    <param name="nHeight">Specifies the height of the source and destination rectangles.</param>
+    <param name="pSrc">The source bitmap.</param>
+    <param name="xSrc">Specifies the x-coordinate of the upper-left corner of the source rectangle.</param>
+    <param name="ySrc">Specifies the y-coordinate of the upper-left corner of the source rectangle.</param>
+    <example>
+      <para>
+      The example below shows how to use the <i>TransparentBlt</i> method to combine the data for two bitmaps into one.
+      The resulting bitmap <i>b</i> will have a black circle in the middle of randomly blackened pixels.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.RANDOM );
+Bitmap b2 = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b2.Circle( Bitmap.MaxWidth / 2, Bitmap.MaxHeight / 2, 10, Bitmap.BLACKNESS );
+b.TransparentBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, b2, 0, 0 );
+      </code>
+    </example>
+    <seealso cref="Bitmap.BitBlt"/>
+    <seealso cref="Bitmap.MaskBlt"/>
+    <seealso cref="Bitmap.PatBlt"/>
+    <seealso cref="Bitmap.RotateBlt"/>
+  </doc>
+
+  <doc for="Bitmap.MaskBlt">
+    <summary>
+    Combines the data for the source bitmap and this destination bitmap using the specified mask.
+    </summary>
+    <param name="xDst">Specifies the x-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="yDst">Specifies the y-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="nWidth">Specifies the width of the source and destination rectangles.</param>
+    <param name="nHeight">Specifies the height of the source and destination rectangles.</param>
+    <param name="pSrc">The source bitmap.</param>
+    <param name="xSrc">Specifies the x-coordinate of the upper-left corner of the source rectangle.</param>
+    <param name="ySrc">Specifies the y-coordinate of the upper-left corner of the source rectangle.</param>
+    <param name="pMask">A mask specifying how to combine the bitmaps.</param>
+    <example>
+      <para>
+      The example below shows how to use the <i>MaskBlt</i> method to combine the data for two bitmaps into one using a mask bitmap.
+      The resulting bitmap <i>b</i> will have random pixels in the shape of an out line of a circle.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+Bitmap b2 = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+Bitmap b3 = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+b.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.WHITENESS );
+b2.PatBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, Bitmap.RANDOM );
+b3.Circle( Bitmap.MaxWidth / 2, Bitmap.MaxHeight / 2, 10, Bitmap.SINGLEPIXEL );
+b.MaskBlt( 0, 0, Bitmap.MaxWidth, Bitmap.MaxHeight, b2, 0, 0, b3 );
+      </code>
+    </example>
+    <seealso cref="Bitmap.BitBlt"/>
+    <seealso cref="Bitmap.TransparentBlt"/>
+    <seealso cref="Bitmap.PatBlt"/>
+    <seealso cref="Bitmap.RotateBlt"/>
+  </doc>
+
+  <doc for="Bitmap.PatBlt">
+    <summary>
+    Creates a bit pattern on the bitmap.
+    </summary>
+    <param name="xDst">Specifies the x-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="yDst">Specifies the y-coordinate of the upper-left corner of the destination rectangle.</param>
+    <param name="nWidth">Specifies the width of the source and destination rectangles.</param>
+    <param name="nHeight">Specifies the height of the source and destination rectangles.</param>
+    <param name="dwRop">Specifies a raster-operation code;  the pattern to create on this bitmap.</param>
+    <example>
+      <para>
+      The example below shows how to use the <i>PatBlt</i> method to invert a bitmap.
+      </para>
+      <code lang="C#">
+if(invert) 
+{
+    b.PatBlt( 0, 0, b.Width, b.Height, Bitmap.DSTINVERT );
+}
+      </code>
+    </example>
+    <seealso cref="Bitmap.BitBlt"/>
+    <seealso cref="Bitmap.TransparentBlt"/>
+    <seealso cref="Bitmap.MaskBlt"/>
+    <seealso cref="Bitmap.RotateBlt"/>
+    <seealso cref="Bitmap.BLACKNESS"/>
+    <seealso cref="Bitmap.WHITENESS"/>
+    <seealso cref="Bitmap.DSTGRAY"/>
+    <seealso cref="Bitmap.DSTLTGRAY"/>
+    <seealso cref="Bitmap.DSTDKGRAY"/>
+    <seealso cref="Bitmap.SINGLEPIXEL"/>
+    <seealso cref="Bitmap.RANDOM"/>
+  </doc>
+
+  <doc for="Bitmap.RotateBlt">
+    <summary>
+    Rotates the bitmap to a specified degree around a specified point.
+    </summary>
+    <param name="pSrc">The source bitmap.</param>
+    <param name="degree">The degree of rotation.</param>
+    <param name="xSrc">Specifies the x-coordinate of the center of the source bitmap.</param>
+    <param name="ySrc">Specifies the y-coordinate of the center of the source bitmap.</param>
+    <param name="xDst">Specifies the x-coordinate of the center of the destination bitmap.</param>
+    <param name="yDst">Specifies the y-coordinate of the center of the destination bitmap.</param>
+    <example>
+      <para>
+      The example below shows how to use the <i>RotateBlt</i> method to rotate a bitmap and combine it with another bitmap.
+      The resulting bitmap below will have the letters ABC rotated counter-clockwise 90 degrees and placed in the bottom left corner.
+      <i>f</i> represents an instance of a <see cref="Font">Font</see>.
+      </para>
+      <code lang="C#">
+Bitmap b = new Bitmap( Bitmap.MaxWidth, Bitmap.MaxHeight );
+string s = "ABC";
+int width, height;
+f.ComputeExtent( s, out width, out height );
+Bitmap b2 = new Bitmap( width, height );
+b2.DrawText( "ABC", 0, 0, f );
+b.RotateBlt( b2, -90, 0, 0, 0, Bitmap.MaxHeight - 1 );
+      </code>
+    </example>
+    <seealso cref="Bitmap.BitBlt"/>
+    <seealso cref="Bitmap.TransparentBlt"/>
+    <seealso cref="Bitmap.MaskBlt"/>
+    <seealso cref="Bitmap.PatBlt"/>
+  </doc>
+
+  <doc for="Bitmap.Width">
+    <summary>
+    Gets the width of the bitmap.
+    </summary>
+  </doc>
+
+  <doc for="Bitmap.Height">
+    <summary>
+    Gets the height of the bitmap.
+    </summary>
+  </doc>
+
+</docs>

@@ -1,0 +1,325 @@
+<docs>
+  <doc for="TransitionCallbackState">
+    <summary>
+    An enumeration of the different possible states of a transition callback.
+    </summary>
+  </doc>
+
+  <doc for="TransitionCallbackState.ApplyStateChange">
+    <summary>The transition is to apply a state change.</summary>
+  </doc>
+
+  <doc for="TransitionCallbackState.Done">
+    <summary>The transition has completed.</summary>
+  </doc>
+
+  <doc for="TransitionCallbackState.Skipped">
+    <summary>The transition was skipped.</summary>
+  </doc>
+
+  <doc for="TransitionCallback">
+    <summary>
+    Represents the method that will be called when the state of a tranistion changes.
+    </summary>
+  </doc>
+
+  <doc for="TransitionView">
+    <summary>
+    Defines a view that can perform transitions from another view within its designated UI.
+    </summary>
+  </doc>
+
+  <doc for="TransitionView.TransitionView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.TransitionView class.
+    </summary>
+  </doc>
+
+  <doc for="TransitionView.OnPaintEvent">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="TransitionView.ApplyTransition">
+    <summary>
+    Applies the transition.
+    </summary>
+    <param name="trans">The transition to apply.</param>
+    <param name="callback">A callback that sets up the destination state for the transition.</param>
+  </doc>
+
+  <doc for="TransitionView.CancelTransition">
+    <summary>
+    Cancel a transition if it is running.
+    If a transition is cancelled before it is completed, the client area is invalidated.
+    </summary>
+  </doc>
+
+  <doc for="Transition">
+    <summary>
+    The transition base class for transitioning from one bitmap to another.
+    </summary>
+  </doc>
+
+  <doc for="Transition.DEFAULT_INTERVAL">
+    <summary>
+    The default time interval between transition state changes.
+    </summary>
+  </doc>
+
+  <doc for="Transition.DEFAULT_DUETIME">
+    <summary>
+    The default amount of time to delay before the transition starts.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_timer">
+    <summary>
+    The timer used to generate the transition.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_parent">
+    <summary>
+    The parent view of the transition.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_from">
+    <summary>
+    The bitmap that the transition is transitioning from.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_to">
+    <summary>
+    The bitmap that the transition is transitioning to.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_state">
+    <summary>
+    The step number of the transition state.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_dueTime">
+    <summary>
+    The amount of time to delay before the transition starts.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_interval">
+    <summary>
+    The time interval between transition state changes.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_left">
+    <summary>
+    The left x-coordinate of the parent view.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_top">
+    <summary>
+    The top y-coordinate of the parent view.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_width">
+    <summary>
+    The width of the parent view.
+    </summary>
+  </doc>
+
+  <doc for="Transition.m_height">
+    <summary>
+    The height of the parent view.
+    </summary>
+  </doc>
+
+  <doc for="Transition.Transition">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Transition class.
+    </summary>
+  </doc>
+
+  <doc for="Transition.ChangeState">
+    <summary>
+    Change to the next transition state.
+    </summary>
+    <returns>true if there are no more transition states;  othewise; false.</returns>
+  </doc>
+
+  <doc for="Transition.StartTransition">
+    <summary>
+    Start the transition from one view bitmap to another bitmap view.
+    </summary>
+    <param name="from">The bitmap that the transition is starting from.</param>
+    <param name="to">The bitmap that the transition is going to.</param>
+    <param name="parent">The view owns the transition.</param>
+  </doc>
+
+  <doc for="Transition.DrawTransition">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="Transition.NeedsFromBuffer">
+    <summary>
+    Indicates whether the transition needs a buffer to hold the "from" bitmap.
+    </summary>
+  </doc>
+
+  <doc for="Transition.DrawTransitionProtected">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="CrossFadeTransition">
+    <summary>
+    Defines a transition that does a slow cross fade between the two bitmaps.
+    </summary>
+  </doc>
+
+  <doc for="CrossFadeTransition.Name">
+    <summary>
+    Gets the name of this transition type.
+    </summary>
+  </doc>
+
+  <doc for="CrossFadeTransition.StartTransition">
+    <summary>
+    Start the transition from one view bitmap to another bitmap view.
+    </summary>
+    <param name="from">The bitmap that the transition is starting from.</param>
+    <param name="to">The bitmap that the transition is going to.</param>
+    <param name="parent">The view owns the transition.</param>
+  </doc>
+
+  <doc for="CrossFadeTransition.ChangeState">
+    <summary>
+    Change to the next transition state.
+    </summary>
+    <returns>true if there are no more transition states;  othewise; false.</returns>
+  </doc>
+
+  <doc for="CrossFadeTransition.DrawTransitionProtected">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="FadeInTransition">
+    <summary>
+    Defines a transition that removes the from bitmap and does a quick fade in of the to bitmap.
+    </summary>
+  </doc>
+
+  <doc for="FadeInTransition.FadeInTransition">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.FadeInTransition class.
+    </summary>
+  </doc>
+
+  <doc for="FadeInTransition.Name">
+    <summary>
+    Gets the name of this transition type.
+    </summary>
+  </doc>
+
+  <doc for="FadeInTransition.NeedsFromBuffer">
+    <summary>
+    Indicates whether the transition needs a buffer to hold the "from" bitmap.
+    </summary>
+  </doc>
+
+  <doc for="FadeInTransition.DrawTransitionProtected">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="FadeInTransition.ChangeState">
+    <summary>
+    Change to the next transition state.
+    </summary>
+    <returns>true if there are no more transition states;  othewise; false.</returns>
+  </doc>
+
+  <doc for="NoTransition">
+    <summary>
+    Defines a transition between two bitmaps that has no transition effects.
+    </summary>
+  </doc>
+
+  <doc for="NoTransition.Name">
+    <summary>
+    Gets the name of this transition type.
+    </summary>
+  </doc>
+
+  <doc for="NoTransition.NeedsFromBuffer">
+    <summary>
+    Indicates whether the transition needs a buffer to hold the "from" bitmap.
+    </summary>
+  </doc>
+
+  <doc for="NoTransition.DrawTransitionProtected">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="DropInTransition">
+    <summary>
+    Defines a transition between two bitmaps where the to bitmap is dropped in front of the from bitmap.
+    </summary>
+  </doc>
+
+  <doc for="DropInTransition.DropInTransition">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.DropInTransition class.
+    </summary>
+  </doc>
+
+  <doc for="DropInTransition.StartTransition">
+    <summary>
+    Start the transition from one view bitmap to another bitmap view.
+    </summary>
+    <param name="from">The bitmap that the transition is starting from.</param>
+    <param name="to">The bitmap that the transition is going to.</param>
+    <param name="parent">The view owns the transition.</param>
+  </doc>
+
+  <doc for="DropInTransition.DrawTransitionProtected">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="DropInTransition.ChangeState">
+    <summary>
+    Change to the next transition state.
+    </summary>
+    <returns>true if there are no more transition states;  othewise; false.</returns>
+  </doc>
+
+</docs>

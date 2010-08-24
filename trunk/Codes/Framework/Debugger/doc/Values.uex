@@ -1,0 +1,58 @@
+<docs>
+  <doc for="CorElementType">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeDataType">
+    <exclude/>
+  </doc>
+
+  <doc for="ReflectionDefinition">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Internal">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Primitive">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_String">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Indirect">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Object">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_ByRef">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Class">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_ValueType">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Array">
+    <exclude/>
+  </doc>
+
+  <doc for="RuntimeValue_Reflection">
+    <exclude/>
+  </doc>
+
+</docs>

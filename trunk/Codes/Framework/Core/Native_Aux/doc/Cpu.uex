@@ -1,0 +1,105 @@
+<docs>
+    <doc for="Cpu">
+        <summary>
+            Contains all platform specific definitions and methods.
+        </summary>
+    </doc>
+    <doc for="Pin">
+        <summary>
+            Indentifiers for the General Purpose I/O pins and the alternate functions that they are to be used for.
+        </summary>
+        <remarks>
+            These GPIO pins are available for many I/O operations, however some of them have special alternative functions that they must be used for.
+            For example, if you want to create a VTU port with a pin, you must use a pin that has a VTU alternative function since it has specialized circuitry in CPU for that specific function.
+        </remarks>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_3">
+        <summary>
+            GPIO pin 3. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_4">
+        <summary>
+            GPIO pin 4. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_5">
+        <summary>
+            GPIO pin 5. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_6">
+        <summary>
+            GPIO pin 6. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_7">
+        <summary>
+            GPIO pin 7. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_8">
+        <summary>
+            GPIO pin 8. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_9">
+        <summary>
+            GPIO pin 9. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_10">
+        <summary>
+            GPIO pin 10. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_11">
+        <summary>
+            GPIO pin 11. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_12">
+        <summary>
+            GPIO pin 12. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_13">
+        <summary>
+            GPIO pin 13. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_PORT_A_14">
+        <summary>
+            GPIO pin 14. This pin can be used as input or output
+        </summary>
+    </doc>
+    <doc for="Pin.GPIO_NONE">
+        <summary>
+            No GPIO selected.
+        </summary>
+    </doc>
+
+    <doc for="Cpu.SystemClock">
+        <summary>
+            Gets the frequency of the System Clock.
+        </summary>
+    </doc>
+
+    <doc for="Cpu.SlowClock">
+        <summary>
+            Gets the frequency of the Slow Clock.
+        </summary>
+        <remarks>
+            The Slow Clock is a slower and more precise clock than the system clock.  It is used for the timing of the GPIO pins.
+        </remarks>
+    </doc>
+
+    <doc for="Cpu.GlitchFilterTime">
+        <summary>
+            Gets and sets the time of the glitch filter for the debounce circuitry of the all GPIO pins.
+        </summary>
+        <remarks>
+            This setting effects all pins system wide.  The default value is 7.68 ms.
+        </remarks>
+    </doc>
+</docs>

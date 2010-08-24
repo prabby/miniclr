@@ -1,0 +1,455 @@
+<docs>
+  <doc for="KeyAction">
+    <summary>
+    An enumeration of the possible key actions.
+    Defines how a key event is handled.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.Cancel">
+    <summary>
+    Indicates the key event was canceled.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.Bubble">
+    <summary>
+    Indicates the key event was not handled.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.Done">
+    <summary>
+    Indicates the key event was handled.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.DoneNoRepeat">
+    <summary>
+    Indicates the key event was handled and to not generate any more key events 
+    with ButtonState.Hold for the ButtonCode related to this key event.
+    If the ButtonState was a ButtonState.Down,
+    then it indicates that no hold events should be generate at all.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.DoneNoRepeatNoUp">
+    <summary>
+    Indicates the key event was handled and to not generate any more key events 
+    with ButtonState.Hold for the ButtonCode related to this key event as well as
+    no ButtonState.Up event.
+    If the ButtonState was a ButtonState.Down,
+    then it indicates that no hold events should be generate at all.
+    </summary>
+  </doc>
+
+  <doc for="KeyAction.DoneNoUp">
+    <summary>
+    Indicates the key event was handled and to not generate a ButtonState.Up event
+    for the ButtonCode related to this key event.
+    </summary>
+  </doc>
+
+  <doc for="IWindow">
+    <exclude/>
+    <summary>
+    Provides the base interface for a user interface window object.
+    </summary>
+  </doc>
+
+  <doc for="IWindow.NeedsRepaint">
+    <summary>
+    Indicates that the widow is invalid and needs to be repainted.
+    </summary>
+  </doc>
+
+  <doc for="IWindow.HasFocus">
+    <summary>
+    Indicates that the window has input focus.
+    </summary>
+  </doc>
+
+  <doc for="IWindow.OnShow">
+    <summary>
+    Called when the window is shown.
+    </summary>
+  </doc>
+
+  <doc for="IWindow.OnHide">
+    <summary>
+    Called when the window is hidden.
+    </summary>
+  </doc>
+
+  <doc for="IWindow.SetPosition">
+    <summary>
+    Set the position of the window.
+    </summary>
+    <param name="x">The x-coordinate of the upper-left corner of the client area.</param>
+    <param name="y">The y-coordinate of the upper-left corner of the client area.</param>
+    <param name="width">The width of the client area.</param>
+    <param name="height">The height of the client area.</param>
+  </doc>
+
+  <doc for="IWindow.OnKeyEvent">
+    <summary>
+    Called when a key event occurs.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="IWindow.OnPaint">
+    <summary>
+    Draws the visible widgets belonging to a window to a bitmap.
+    </summary>
+    <param name="x">Returns the left x-coordinate of frameBuffer.</param>
+    <param name="y">Returns the top y-coordinate of frameBuffer.</param>
+    <param name="frameBuffer">Returns a newly allocated bitmap containing the drawn form client area.</param>
+    <param name="mask">Returns the mask used while drawing.</param>
+  </doc>
+
+  <doc for="IChannel">
+    <summary>
+    Provides the base interface for creating Microsoft.SPOT.Channel instances.
+    </summary>
+  </doc>
+
+  <doc for="ITimeChannel">
+    <exclude/>
+    <summary>
+    Provides the base interface for creating Microsoft.SPOT.TimeChannel.TimeChannel instances.
+    </summary>
+  </doc>
+
+  <doc for="PersonalMessageReceived">
+    <exclude/>
+    <summary>
+    Represents the method that will handle the event when a personal message is received.
+    </summary>
+  </doc>
+
+  <doc for="IChannelHost">
+    <summary>
+    Provides the base interface for creating Microsoft.SPOT.ChannelChanger.ChannelHost instances.
+    An IChannelHost object is a proxy that provides an interface through which a channel can 
+    make requests to the frame protocol, and to the channel changer.
+    </summary>
+  </doc>
+
+  <doc for="IChannelHost.SwitchToTime">
+    <summary>
+    Switch to the default time channel.
+    </summary>
+  </doc>
+
+  <doc for="IChannelHost.RegisterForMessageNotification">
+    <summary>
+    Register a message notification callback for a particular message type.
+    </summary>
+    <param name="callback">The message notification callback.</param>
+    <param name="typeMsg">The message type.</param>
+    <returns>A handle representing a registered message handler for the provided message type.</returns>
+  </doc>
+
+  <doc for="IChannelHost.DeregisterForMessageNotification">
+    <summary>
+    Deregister a message handler.
+    </summary>
+    <param name="handle">The handle representing a registered message handler.</param>
+  </doc>
+
+  <doc for="IChannelHost.RegisterForTableOfContents">
+    <summary>
+    Register a handler for a table of contents message.
+    </summary>
+    <param name="handler">The table of contents message handler.</param>
+    <returns>A handle representing a registered message handler for a table of contents message.</returns>
+  </doc>
+
+  <doc for="IChannelHost.DeregisterForTableOfContents">
+    <summary>
+    Deregister a table of contents handler.
+    </summary>
+    <param name="handle">The handle representing a registered table of contents message handler.</param>
+  </doc>
+
+  <doc for="IChannelHost.RegisterForDownload">
+    <summary>
+    Register a download complete callback for when a particular type is downloaded.
+    </summary>
+    <param name="callback">The callback to be called when the download is complete.</param>
+    <param name="type">The type to download.</param>
+    <param name="displayName">A name for the download.</param>
+    <returns>A handle representing a registered download handler for the provided type.</returns>
+  </doc>
+
+  <doc for="IChannelHost.DeregisterForDownload">
+    <summary>
+    Deregister a download handler.
+    </summary>
+    <param name="handle">The handle representing a registered download handler.</param>
+  </doc>
+
+  <doc for="IChannelHost.HandleException">
+    <summary>
+    Handles a thrown exception and attempts a recovery.
+    </summary>
+    <param name="sender">The object in which the exception was caught.</param>
+    <param name="e">The exception that has occured.</param>
+    <returns>true if the channel host attempts a recovery;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="IChannelRequiresSubscription">
+    <exclude/>
+    <summary>
+    Provides the base interface for creating classes that require an MSN Direct subscription to operate.
+    Implementing the interface on a channel ensures the channel cannot be used without an MSN Direct subscription.
+    </summary>
+  </doc>
+
+  <doc for="IWatchEventSource">
+    <exclude/>
+    <summary>
+    Provides the base interface for creating Form classes that implement WatchEvent.
+    </summary>
+  </doc>
+
+  <doc for="IWatchEventSource.WatchEvent">
+    <summary>
+    Gets the watch event that will be generated when the form is displayed.
+    </summary>
+  </doc>
+
+  <doc for="IAlert">
+    <summary>
+    Provides the base interface for creating a popup alert form.
+    </summary>
+  </doc>
+
+  <doc for="IAlert.Priority">
+    <summary>
+    Gets the priority.
+    </summary>
+  </doc>
+
+  <doc for="IAlert.Popup">
+    <summary>
+    Show this dialog box as a popup alert.
+    </summary>
+  </doc>
+
+  <doc for="ISupportSetTimeMode">
+    <summary>
+    Provides the base interface for a view class to support setting the date and/or time.
+    </summary>
+  </doc>
+
+  <doc for="ISupportSetTimeMode.UpdateTime">
+    <summary>
+    Update the current time.
+    </summary>
+    <param name="dateTime">Set the current time.</param>
+    <param name="fExitSetTimeMode">Exit the edit state.</param>
+  </doc>
+
+  <doc for="ISupportSetTimeMode.Update">
+    <summary>
+    Redraw the view using the current time and settings.
+    </summary>
+  </doc>
+
+  <doc for="ITimeUpdate">
+    <summary>
+    Provides the base interface for a view class to support time updates.
+    </summary>
+  </doc>
+
+  <doc for="ITimeUpdate.Update">
+    <summary>
+    Update the time of the object.
+    </summary>
+    <param name="time">The new time.</param>
+  </doc>
+
+  <doc for="ITransition">
+    <summary>
+    Provides the base interface for a view class to support screen transitions between another view.
+    </summary>
+  </doc>
+
+  <doc for="ITransition.StartTransition">
+    <summary>
+    Start the transition from one view bitmap to another bitmap view.
+    </summary>
+    <param name="from">The bitmap that the transition is starting from.</param>
+    <param name="to">The bitmap that the transition is going to.</param>
+    <param name="parent">The view owns the transition.</param>
+  </doc>
+
+  <doc for="ITransition.DrawTransition">
+    <summary>
+    Draw the transition.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+    <returns>true if the transition is complete and there are no more transition states;  othewise, false.</returns>
+  </doc>
+
+  <doc for="ITransition.NeedsFromBuffer">
+    <summary>
+    Indicates whether the transition needs a buffer to hold the "from" bitmap.
+    </summary>
+  </doc>
+
+  <doc for="ITransitionMyViewsEnabled">
+    <summary>
+    Provides an interface for a view class to support screen transitions between another view.
+    </summary>
+  </doc>
+
+  <doc for="ITransitionMyViewsEnabled.Name">
+    <summary>
+    Gets the name of the transition type.
+    </summary>
+    <remarks>
+    Typical use of this property is to display the name of the transition in a settings screen for a view that support
+    multiple types of transitions.
+    </remarks>
+  </doc>
+
+  <doc for="IScrollable">
+    <summary>
+    Provides the base interface for a class to support scrolling.
+    </summary>
+  </doc>
+
+  <doc for="IScrollable.LineHeight">
+    <summary>
+    Gets the height of an item that is to be scrolled;  usually the height of a line of text.
+    </summary>
+  </doc>
+
+  <doc for="IWatchTheme">
+    <exclude/>
+    <summary>
+    Provides the base interface for a class to be a watch theme.
+    </summary>
+    <remarks>
+    Needed for Reflection.
+    </remarks>
+  </doc>
+
+  <doc for="WatchTheme">
+    <summary>
+    Provides the base implementation of a watch theme.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.ThemeFlags">
+    <summary>
+    Flags to describe a watch face.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.ThemeFlags.None">
+    <summary>
+    No flags set.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.ThemeFlags.LowPowerFace">
+    <summary>
+    Indicates that this watch theme is a low power theme.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.Flags">
+    <summary>
+    Gets the theme flags that describe this watch face.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.ClockFace">
+    <summary>
+    Gets the clock face for this watch theme.
+    </summary>
+  </doc>
+
+  <doc for="WatchTheme.TitleBar">
+    <summary>
+    Gets the title bar for this watch theme.
+    </summary>
+  </doc>
+
+  <doc for="IMyViewable">
+    <summary>
+    Provides the base interface for a channel to be displayed in the MyViews class.
+    </summary>
+    <remarks>
+    Channels implement this interface if they are to be displayed in MyViews.
+    </remarks>
+  </doc>
+
+  <doc for="IMyViewable.GetMyViewSource">
+    <summary>
+    Gets the view source for a MyViews class.
+    </summary>
+    <returns>
+    A class implementing the <see cref="IMyViewSource">IMyViewSource</see> interface representing the view for 
+    the channel being displayed in the MyViews class.
+    </returns>
+    <seealso cref="IMyViewSource"/>
+  </doc>
+
+  <doc for="IMyViewSource">
+    <summary>
+    Provides the base interface for a class to encapsulate the state associated with a session of MyViews.
+    </summary>
+    <remarks>
+    Returned from an object implementing the IMyViewable interface,
+    it encapsulates the state associated with a session of myviews,
+    and provides a way of getting the views (possible 0) exposed
+    by the channel.
+    </remarks>
+  </doc>
+
+  <doc for="IMyViewSource.GetViews">
+    <summary>
+    Get the views exposed by the channel.
+    </summary>
+  </doc>
+
+  <doc for="IMyViewSource.GetWeight">
+    <summary>
+    Get an approximate size of the views exposed by the channel.
+    </summary>
+    <returns>An approximate size of the views exposed by the channel, in bytes.</returns>
+  </doc>
+
+  <doc for="IMyViewContext">
+    <summary>
+    Provides the base interface for a class to have context with a session of MyViews.
+    </summary>
+    <remarks>
+    Optionally implemented by views returned by IMyViewSource.
+    </remarks>
+  </doc>
+
+  <doc for="IMyViewContext.DisplayTime">
+    <summary>
+    Gets the length of time, in ticks, that the time context should change between displaying time and other options.
+    </summary>
+  </doc>
+
+  <doc for="ICommitableSetting">
+    <summary>
+    Provides the base interface for a class to have commitable settings.
+    </summary>
+  </doc>
+
+  <doc for="ICommitableSetting.CommitSetting">
+    <summary>
+    Save all commitable settings.
+    </summary>
+  </doc>
+
+</docs>

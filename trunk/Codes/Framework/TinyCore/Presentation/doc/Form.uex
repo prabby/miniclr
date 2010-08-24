@@ -1,0 +1,229 @@
+<docs>
+  <doc for="ExceptionHandler">
+    <summary>
+    Represents the method that will handle exception events.
+    </summary>
+  </doc>
+
+  <doc for="ExceptionWatcher">
+    <summary>
+    Provides functionality to track exception information.
+    </summary>
+  </doc>
+
+  <doc for="ExceptionWatcher.SecondsToResetCount">
+    <summary>The number of seconds before the next reset should occur.</summary>
+  </doc>
+
+  <doc for="ExceptionWatcher.Count">
+    <summary>The number of exceptions that have been tracked.</summary>
+  </doc>
+
+  <doc for="ExceptionWatcher.LastException">
+    <summary>The time of the last exception.</summary>
+  </doc>
+
+  <doc for="ExceptionWatcher.ExceptionWatcher">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ExceptionWatcher class.
+    </summary>
+    <param name="defaultSecondsToResetCount">The number of seconds before the next reset should occur.</param>
+  </doc>
+
+  <doc for="ExceptionWatcher.RecordException">
+    <summary>
+    Record that an exception occured.
+    </summary>
+    <returns>The number of exceptions that have occured, including this exception.</returns>
+  </doc>
+
+  <doc for="Form">
+    <summary>
+    Represents a window or dialog box that makes up an application's user interface.
+    </summary>
+  </doc>
+
+  <doc for="Form.Channel">
+    <summary>A reference to the Channel to which this Form belongs.</summary>
+  </doc>
+
+  <doc for="Form.m_formleft">
+    <summary>The left x-coordinate.</summary>
+  </doc>
+
+  <doc for="Form.m_formtop">
+    <summary>The top y-coordinate.</summary>
+  </doc>
+
+  <doc for="Form.HelpView">
+    <summary>The HelpView associated with this form.</summary>
+  </doc>
+
+  <doc for="Form.Form">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Form class.
+    </summary>
+    <param name="fTitleBar">Indicates if the form has a title bar.</param>
+  </doc>
+
+  <doc for="Form.Form1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Form class with a title bar.
+    </summary>
+  </doc>
+
+  <doc for="Form.WatchEvent">
+    <summary>
+    Gets or sets the watch event that will be generated when the form is displayed.
+    </summary>
+  </doc>
+
+  <doc for="Form.Layout">
+    <summary>
+    Provide layout behavior.
+    </summary>
+  </doc>
+
+  <doc for="Form.NonClientViews">
+    <summary>
+    The collection of views that belong to the non-client area of the form.
+    </summary>
+    <remarks>
+    For a normal form, this is the titlebar area.
+    </remarks>
+  </doc>
+
+  <doc for="Form.Views">
+    <summary>
+    The colletion of views that belong to the client area of the form.
+    </summary>
+    <remarks>
+    For a normal form, this is the section that doesn't include the navbar.
+    </remarks>
+  </doc>
+
+  <doc for="Form.ClientView">
+    <summary>
+    The view enclosing the client area of the form.
+    </summary>
+    <remarks>
+    This is where you will add the subviews to make your application.
+    </remarks>
+  </doc>
+
+  <doc for="Form.TitleBar">
+    <summary>
+    The title bar belonging to this form.
+    </summary>
+    <remarks>
+    Null if there is no titlebar.
+    </remarks>
+  </doc>
+
+  <doc for="Form.NeedsRepaint">
+    <summary>
+    Indicates that the form is invalid and needs to be repainted.
+    </summary>
+  </doc>
+
+  <doc for="Form.HasFocus">
+    <summary>
+    Indicates that the form has input focus.
+    </summary>
+  </doc>
+
+  <doc for="Form.SetPosition">
+    <summary>
+    Set the position of the form.
+    </summary>
+    <param name="x">The x-coordinate of the upper-left corner of the client area.</param>
+    <param name="y">The y-coordinate of the upper-left corner of the client area.</param>
+    <param name="width">The width of the client area.</param>
+    <param name="height">The height of the client area.</param>
+    <remarks>
+    If the client area has changed, the form is invalidated automatically.
+    </remarks>
+  </doc>
+
+  <doc for="Form.OnKeyEvent">
+    <summary>
+    Called when a key event occurs.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="Form.OnPaint">
+    <summary>
+    Draw the visible widgets belonging to this class on the bitmap provided.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="Form.OnPaint1">
+    <summary>
+    Draws the visible widgets belonging to a form to a bitmap.
+    </summary>
+    <param name="x">Returns the left x-coordinate of frameBuffer.</param>
+    <param name="y">Returns the top y-coordinate of frameBuffer.</param>
+    <param name="frameBuffer">Returns a newly allocated bitmap containing the drawn form client area.</param>
+    <param name="mask">Returns the mask used while drawing.</param>
+  </doc>
+
+  <doc for="Form.ApplyTransition">
+    <summary>
+    Applies the transition.
+    </summary>
+    <param name="trans">The transition to apply.</param>
+    <param name="callback">A callback that sets up the destination state for the transition.</param>
+  </doc>
+
+  <doc for="Form.CancelTransition">
+    <summary>
+    Cancel a transition if it is running.
+    </summary>
+  </doc>
+
+  <doc for="Form.OnInvalid">
+    <summary>
+    Called when the form is invalidated.
+    </summary>
+  </doc>
+
+  <doc for="Form.OnInvalidLayout">
+    <summary>
+    Called when the layout is invalided.
+    </summary>
+  </doc>
+
+  <doc for="Form.Show">
+    <summary>
+    Displays the form to the user.
+    </summary>
+    <param name="fMaximize">Indicates whether to display the form as fullscreen.</param>
+  </doc>
+
+  <doc for="Form.Hide">
+    <summary>
+    Hide the from from the user.
+    </summary>
+  </doc>
+
+  <doc for="Form.Dispose">
+    <summary>
+    Free resources that are no longer needed.
+    </summary>
+  </doc>
+
+  <doc for="Form.OnShow">
+    <summary>
+    Called when the form is shown.
+    </summary>
+  </doc>
+
+  <doc for="Form.OnHide">
+    <summary>
+    Called when the form is hidden.
+    </summary>
+  </doc>
+
+</docs>

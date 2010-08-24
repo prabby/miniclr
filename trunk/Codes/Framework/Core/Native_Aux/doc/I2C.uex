@@ -1,0 +1,108 @@
+<docs>
+    <doc for="I2CDevice">
+        <summary>
+            Represents an instance of the I2C interface for a I2C device.
+        </summary>
+        <remarks>
+            <para>
+                The I2C interface is a synchronous serial communication protocol in which several devices
+                can be connected on one two-wire system.  
+                The two-wire system includes:
+                the serial data signal (SDA),
+                and the serial clock (SCA).
+                This two-wire interface has the ability to send 8-bit data, 7-bit addresses, as well as control bits.
+            </para>
+        </remarks>
+    </doc>
+
+    <doc for="I2CDevice.I2CTransaction">
+        <summary>
+            Represents an I2C transaction
+        </summary>
+    </doc>            
+
+    <doc for="I2CDevice.I2CTransaction.Buffer">
+        <summary>
+            The buffer associated with the transaction.
+        </summary>
+    </doc>
+
+    <doc for="I2CDevice.I2CTransaction.I2CTransaction">
+        <summary>
+            Initializes a new instance of an I2C transaction class.
+        </summary>
+        <param name="buffer">The buffer containing the data to write or the space to store the read data.</param>
+    </doc>
+
+    <doc for="I2CDevice.I2CReadTransaction">
+        <summary>
+            Represents an I2C transaction that reads from the addressed device.
+        </summary>
+    </doc>            
+
+    <doc for="I2CDevice.I2CWriteTransaction">
+        <summary>
+            Represents an I2C transaction that writes to the addressed device.
+        </summary>
+    </doc>            
+
+    <doc for="I2CDevice.Configuration">
+        <summary>
+            Represents a configuration for an I2C interface instance.
+        </summary>
+    </doc>
+
+    <doc for="I2CDevice.Configuration.Address">
+        <summary>
+            Represents the address of the I2C device.
+            The address is used to uniquely identify the I2C device on the I2C bus.
+        </summary>
+    </doc>
+
+    <doc for="I2CDevice.Configuration.ClockRateKhz">
+        <summary>
+            Represents the clock rate in Khz used when communicating with the I2C device. An approximate value supported by the device will be used. 
+        </summary>
+    </doc>
+
+    <doc for="I2CDevice.Configuration.Configuration">
+        <summary>
+            Initializes a new instance of the Configuration class for a I2C interface.
+        </summary>
+        <param name="address">The address for the I2C interface.</param>
+        <param name="clockRateKhz">The clock rate for the I2C interface.</param>
+    </doc>
+
+    <doc for="I2CDevice.I2CDevice">
+        <summary>
+            Sets the configuration for this I2C interface instance.
+        </summary>
+        <param name="config">The configuration to apply to this I2C instance.</param>
+    </doc>
+
+    <doc for="I2CDevice.CreateReadTransaction">
+        <summary>
+            Creates a I2CReadTransaction object that can be passed to Execute.
+        </summary>
+        <param name="buffer">The array of bytes that will contain the data read from the device.</param>
+        <returns>The I2CReadTransaction object.</returns>
+    </doc>
+
+    <doc for="I2CDevice.CreateWriteTransaction">
+        <summary>
+            Creates a I2CWriteTransaction object that can be passed to Execute.
+        </summary>
+        <param name="buffer">The array of bytes that will be sent to the device.</param>
+        <returns>The I2CWriteTransaction object.</returns>
+    </doc>
+
+    <doc for="I2CDevice.Execute">
+        <summary>
+            Executes a transaction by scheduling the transfer of the data.
+        </summary>
+        <param name="xActions">The amount of time to wait before execute returns.</param>
+        <param name="timeout">The amount of time to wait before execute returns.</param>
+        <returns>The number of bytes transferred in the transaction.</returns>
+    </doc>
+
+</docs>

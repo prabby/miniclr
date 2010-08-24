@@ -1,0 +1,215 @@
+<docs>
+    <doc for="Utility">
+        <summary>
+            A collection of helper functions for security, collections, driver manipulation, time, and idle CPU usage.  This class cannot be inherited.
+        </summary>
+    </doc>
+    <doc for="Utility.ComputeCRC">
+        <summary>
+            Computes a cyclic redundancy check (CRC) from the specified byte array buffer.
+        </summary>
+        <param name="buf">A buffer of data on which to compute the CRC.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be checked.</param>
+        <param name="length">The number of bytes of data to check starting from the offset;  -1 indicates that all data in <i>buf</i> starting from the offset is to be checked.</param>
+        <param name="crc">A seed for the CRC calculation.</param>
+        <returns>The CRC value.</returns>
+        <exception cref="System.Exception">
+            <para><i>buf</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>offset</i> is less than zero.</para>
+            <para>- or -</para>
+            <para><i>offset</i> is greater than the number of elements in <i>buf</i>.</para>
+            <para>- or -</para>
+            <para><i>length</i> is less than -1.</para>
+            <para>- or -</para>
+            <para><i>offset</i> + <i>length</i> is greater than the number of elements in <i>buf</i>.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.DecodeRS">
+        <summary>
+            Decode a Reed Solomon (RS) encoded byte array.
+        </summary>
+        <param name="buf">A Reed Solomon encoded byte array.</param>
+        <param name="parityBytes">The number of parity bytes contained in the buffer.</param>
+        <returns>The number of decode errors.</returns>
+    </doc>
+    <doc for="Utility.ExtractValueFromArray">
+        <summary>
+            Extract a value from a byte array given the position and size of the data in the array.
+        </summary>
+        <param name="data">The byte array of data.</param>
+        <param name="pos">The position of the data in the array.</param>
+        <param name="size">The size of the data objects contained in the array, in bytes.  Valid arguments are 1, 2, and 4.</param>
+        <returns>The value.</returns>
+        <exception cref="System.Exception">
+            <para><i>data</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>pos</i> is greater than the number of elements in <i>data</i>.</para>
+            <para>- or -</para>
+            <para><i>pos</i> is less than zero.</para>
+            <para>- or -</para>
+            <para><i>size</i> is a value other than 1, 2, or 4.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.InsertValueIntoArray">
+        <summary>
+            Insert a value in to a byte array at a specific position.
+        </summary>
+        <param name="data">The byte array of data.</param>
+        <param name="pos">The position of the data in the array.</param>
+        <param name="size">The size of the data objects contained in the array, in bytes.  Valid arguments are 1, 2, and 4.</param>
+        <param name="val">The value to insert.</param>
+        <exception cref="System.Exception">
+            <para><i>data</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>pos</i> is less than zero.</para>
+            <para>- or -</para>
+            <para><i>pos</i> is greater than the number of elements in <i>data</i>.</para>
+            <para>- or -</para>
+            <para><i>size</i> is a value other than 1, 2, or 4.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.ExtractRangeFromArray">
+        <summary>
+            Extract a linear section of data from a byte array.
+        </summary>
+        <param name="data">The byte array of data.</param>
+        <param name="offset">The offset from the beginning of the byte array to the target data.</param>
+        <param name="count">The amount of data to extract, in bytes.</param>
+        <returns>A byte array containing the extracted data.</returns>
+        <exception cref="System.Exception">
+            <para><i>data</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>offset</i> is less than zero.</para>
+            <para>- or -</para>
+            <para><i>offset</i> is greater than the number of elements in <i>data</i>.</para>
+            <para>- or -</para>
+            <para><i>count</i> is less than zero.</para>
+            <para>- or -</para>
+            <para><i>count</i> is greater than the number of elements in <i>data</i>.</para>
+            <para>- or -</para>
+            <para><i>count</i> + <i>offset</i> is greater than the number of elements in <i>data</i>.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.CombineArrays">
+        <summary>
+            Combine the data of two byte arrays into one array.
+        </summary>
+        <param name="src1">The first byte array.</param>
+        <param name="src2">The second byte array.</param>
+        <returns>A new byte array containing the first and second arrays.</returns>
+        <exception cref="System.Exception">
+            <para><i>src1</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>src2</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>src1</i> and <i>src2</i> are of different types.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.CombineArrays1">
+        <summary>
+            Combine ranges of data contained within two byte arrays into one array.
+        </summary>
+        <param name="src1">The first byte array.</param>
+        <param name="offset1">The offset from the beginning of the first byte array to the target data.</param>
+        <param name="count1">The amount of data to combine from the first array, in bytes.</param>
+        <param name="src2">The second byte array.</param>
+        <param name="offset2">The offset from the beginning of the second byte array to the target data.</param>
+        <param name="count2">The amount of data to combine from the second array, in bytes.</param>
+        <returns>A new byte array containing the specified ranges of data from the first and second arrays.</returns>
+        <exception cref="System.Exception">
+            <para><i>src1</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>src2</i> is a null reference.</para>
+            <para>- or -</para>
+            <para><i>src1</i> and <i>src2</i> are of different types.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.SetLocalTime">
+        <summary>
+            Sets the local time.
+        </summary>
+        <param name="dt">The new date and time.</param>
+    </doc>
+    <doc for="Utility.GetMachineTime">
+        <summary>
+            Gets the machine time.
+        </summary>
+        <returns>The machine time.</returns>
+    </doc>
+    <doc for="Utility.GetLastBootTime">
+        <summary>
+            Gets the time of the last system boot.
+        </summary>
+        <returns>The time of the last system boot.</returns>
+    </doc>
+    <doc for="Utility.Piezo">
+        <summary>
+            Emit a sound from the piezo speaker.
+        </summary>
+        <param name="frequency">The frequency of the sound.</param>
+        <param name="duration">The duration of the sound.</param>
+    </doc>
+    <doc for="Utility.Backlight">
+        <summary>
+            Control the backlight hardware feature.
+        </summary>
+        <param name="fStatus">Turn the backlight on (true) or off (false).</param>
+    </doc>
+    <doc for="Utility.IsFeaturePresent">
+        <summary>
+            Query the system to see if a hardware feature is avaliable.
+        </summary>
+        <param name="featureId">A string representing a feature indentifier.</param>
+        <returns>true if the feature is present;  otherwise, false.</returns>
+    </doc>
+    <doc for="Utility.QueryDriver">
+        <summary>
+            An interface to invoke driver methods through a lookup table of driver commands.
+        </summary>
+        <param name="driverId">A string representing a driver indentifier.</param>
+        <param name="commandId">A string representing a command indentifier.</param>
+        <param name="values">An array of objects to pass as arguments to the command.</param>
+        <returns>The return from the invoked driver method in object format.</returns>
+        <remarks>Calls to QueryDriver must be sub-millisecond and non-blocking.</remarks>
+        <exception cref="System.Exception">
+            <para>The <i>driverId</i> or <i>commandId</i> was not found in the lookup table of driver commands.</para>
+            <para>- or -</para>
+            <para>A parameter in <i>values</i> is invalid.</para>
+        </exception>
+    </doc>
+    <doc for="Utility.HibernateSystem">
+        <summary>
+            Place the system in a sleep mode.
+        </summary>
+    </doc>
+    <doc for="Utility.WaitForIdleCPU">
+        <summary>
+            Pause execution and wait for the CPU to become idle.
+        </summary>
+        <param name="expectedWorkItemDuration">The length of time, in ticks, the work item following this method is expected to execute in.</param>
+        <param name="timeout">The length of time to wait for an idle CPU, in ticks.</param>
+        <returns>true if the CPU becomes idle within the timeout period;  otherwise, false.</returns>
+        <remarks>
+            This method can be very useful to help mitigate problems surrounding CPU intensive operations.
+            Calling this method pauses the current thread of operation which yeilds control to other threads that may need CPU time.
+            When the CPU becomes idle or the timeout limit is reached, execution begins again.
+        </remarks>
+        <example>
+            <para>
+            If a method, or series of methods, needs to be called that is likely to use a large amount of CPU that could
+            cause undesirable delays in the execution of other concurrent threads, this method can be used to overcome this problem.
+            For example, if an expensive method needs to be called, such as <c>SearchForSignal</c>, but it's not imperative that it happens 
+            immediately, this method can used.
+            </para>
+            [C#]
+            <code>
+                for(int tries=0; tries&lt;5; tries++)
+                {
+                    Utility.WaitForIdleCPU( 500, 4000 );
+                    SearchForSignal();
+                }
+            </code>
+        </example>
+    </doc>
+</docs>

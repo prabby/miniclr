@@ -1,0 +1,872 @@
+<docs>
+  <doc for="TimeZoneId">
+    <summary>
+    An enumeration of the different time zones available.  
+    </summary>
+  </doc>
+
+  <doc for="TimeZoneId.Current">
+    <summary>The current time zone id.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Network">
+    <summary>Use the network provided time zone.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Dateline">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Samoa">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Hawaii">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Alaska">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Pacific">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Arizona">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Mountain">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.CentAmerica">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Central">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Saskatchewan">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.MexicoCity">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Indiana">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Bogota">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Eastern">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Caracas">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Santiago">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Atlantic">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Newfoundland">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Brasilia">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Greenland">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.BuenosAires">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.MidAtlantic">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.CapeVerde">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Azores">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Casablanca">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.GMT">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.London">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.WCentAfrica">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Prague">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Warsaw">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Paris">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Berlin">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Cairo">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Jerusalem">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Pretoria">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Bucharest">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Helsinki">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Athens">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Riyadh">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Nairobi">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Moscow">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Baghdad">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Tehran">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Baku">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Kabul">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.AbuDhabi">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Yekaterinburg">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Islamabad">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.NewDelhi">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Kathmandu">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Astana">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.SriLanka">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Almaty">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Yangon">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Bangkok">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Krasnoyarsk">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Beijing">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Malaysia">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Taipei">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Perth">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Ulaanbataar">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Seoul">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Tokyo">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Yakutsk">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Darwin">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Adelaide">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Sydney">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Brisbane">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Hobart">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Guam">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Vladivostok">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Magadan">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.FijiIslands">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.NewZealand">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.Tonga">
+    <summary>A string resource.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.FIRST">
+    <summary>The first time zone id.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.LAST">
+    <summary>The last time zone id.</summary>
+  </doc>
+
+  <doc for="TimeZoneId.COUNT">
+    <summary>The number of time zone ids.</summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone">
+    <summary>
+    Represents a time zone.
+    </summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone.c_TicksTo20030101">
+    <summary>
+    The number of ticks equal to the DateTime of 2003/01/01 00:00:00.
+    </summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone.StandardName">
+    <summary>
+    Gets the standard time zone name.
+    </summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone.DaylightName">
+    <summary>
+    Gets the daylight saving time zone name. 
+    </summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone.TimeZoneId">
+    <summary>
+    Gets the id of the current time zone.
+    </summary>
+  </doc>
+
+  <doc for="ExtendedTimeZone.GetUtcOffset">
+    <summary>
+    Returns the coordinated universal time (UTC) offset for the specified local time.
+    </summary>
+    <param name="time">The local date and time.</param>
+    <returns>The UTC offset from time, measured in ticks.</returns>
+  </doc>
+
+  <doc for="ExtendedTimeZone.GetDaylightChanges">
+    <summary>
+    Returns the daylight saving time period for a particular year.
+    </summary>
+    <param name="year">The year to which the daylight saving time period applies.</param>
+    <returns>A System.Globalization.DaylightTime instance containing the start and end date for daylight saving time in year.</returns>
+  </doc>
+
+  <doc for="ExtendedTimeZone.GetTimeZone">
+    <summary>
+    Returns a time zone for a particular time zone id.
+    </summary>
+    <param name="id">The id of the time zone desired.</param>
+    <returns>A System.TimeZone instance set to the provided time zone id.</returns>
+  </doc>
+
+  <doc for="ExtendedTimeZone.SetTimeZone">
+    <summary>
+    Set the time zone.
+    </summary>
+    <param name="id">The time zone to set the system to.</param>
+  </doc>
+
+  <doc for="ExtendedTimeZone.SetTimeOffset">
+    <summary>
+    Set the time offset.
+    </summary>
+    <param name="minutes">The amount of time, in minutes, to set the time ahead of the true time.</param>
+  </doc>
+
+  <doc for="ExtendedTimeZone.SynchronizeWithNetworkTime">
+    <summary>
+    Synchronize the machine system time with the network time.
+    </summary>
+    <param name="startOfFrameUniversalTime">The UTC time from the network.</param>
+    <param name="startofFrameMachineTime">The machine system time.</param>
+    <param name="tzi">The id of the time zone to synchronize to.</param>
+    <returns>A System.TimeSpan instance set to the difference between the network time and the machine time.</returns>
+  </doc>
+
+  <doc for="ExtendedTimer">
+    <summary>
+    Provides a mechanism for executing methods at specified intervals or on specific events.
+    This class cannot be inherited.
+    </summary>
+    <remarks>
+      <para>
+      The <b>ExtendedTimer</b> class is a very useful class that give a developer the ability to trigger events 
+      based on specific time intervals or dependent on other events related to system time.  The events related to 
+      system time are available in the <see cref="ExtendedTimer.TimeEvents">TimeEvents</see> enumeration.
+      </para>
+      <para>
+      Use a <see cref="System.Threading.TimerCallback">TimerCallback</see> delegate to specify the method you want the <b>ExtendedTimer</b> to execute.
+      The timer delegate is specified when the timer is constructed, and cannot be changed. 
+      The method does not execute in the thread that created the timer; it executes in a thread pool thread supplied by the system.
+      </para>
+      <para>
+      When you create a timer, you can specify an amount of time to wait before the first execution of the method (due time),
+      and an amount of time to wait between subsequent executions (period).
+      You can change these values, or disable the timer, using the <see cref="ExtendedTimer.Change">Change</see> method.
+      </para>
+      <para>
+      <b>Note:</b> As long as you are using a <b>ExtendedTimer</b>, you must keep a reference to it.
+      As with any managed object, a <b>ExtendedTimer</b> is subject to garbage collection when there are no references to it.
+      The fact that a <b>ExtendedTimer</b> is still active does not prevent it from being collected.
+      </para>
+      <para>
+      When a timer is no longer needed, use the <see cref="ExtendedTimer.Dispose">Dispose</see> method to free the resources held by the timer.
+      </para>
+    </remarks>
+    <seealso cref="ExtendedTimer.TimeEvents"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents">
+    <summary>
+    An enumeration of the different timer events available.
+    </summary>
+    <remarks>
+    These timer events are to be used with an <see cref="ExtendedTimer">ExtendedTimer</see> to create a timer
+    that will execute a method when one of these timer events occurs.
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method every second.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Second );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.Second">
+    <summary>An event ocurring on a change in seconds.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method every second.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Second );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.Minute">
+    <summary>An event ocurring on a change in minutes.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method every minute.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Minute );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.Hour">
+    <summary>An event ocurring on a change in hours.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method every hour.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Hour );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.Day">
+    <summary>An event ocurring on a change in days.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method every day.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Day );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.TimeZone">
+    <summary>An event ocurring on a change in time zone.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method when the time zone has been set.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.TimeZone );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.TimeEvents.SetTime">
+    <summary>An event ocurring when the time is set.</summary>
+    <example>
+      <para>
+      The example below shows how to create an <see cref="ExtendedTimer">ExtendedTimer</see> that will execute
+      the <i>CallbackMethod</i> method when the system time is set.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.SetTime );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer"/>
+    <seealso cref="System.Threading"/>
+  </doc>
+
+  <doc for="ExtendedTimer.ExtendedTimer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ExtendedTimer class, using 32-bit signed integers to measure time intervals.
+    </summary>
+    <param name="callback">The callback method that is executed when the timer expires.</param>
+    <param name="state">An object containing application-specific information relevant to the methods invoked by callback, or null.</param>
+    <param name="dueTime">The amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify <see cref="System.Threading.Timeout.Infinite">System.Threading.Timeout.Infinite</see> to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The time interval between invocations of <i>callback</i>, in milliseconds. Specify <see cref="System.Threading.Timeout.Infinite">System.Threading.Timeout.Infinite</see> to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The delegate specified by the <i>callback</i> parameter is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), <i>callback</i> is invoked immediately. If <i>dueTime</i> is <b>System.Threading.Timeout.Infinite</b>, <i>callback</i> is not invoked; the timer is disabled, but can be re-enabled by calling the <see cref="ExtendedTimer.Change">Change</see> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or <b>Infinite</b> and <i>dueTime</i> is not <b>Infinite</b>, <i>callback</i> is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled using the <b>Change</b> method.
+      </para>
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to create an <i>ExtendedTimer</i> that will execute the <i>CallbackMethod</i> method every second.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", 1000, 1000 );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="System.Threading.TimerCallback"/>
+  </doc>
+
+  <doc for="ExtendedTimer.ExtendedTimer1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ExtendedTimer class, using System.TimeSpan values to measure time intervals.
+    </summary>
+    <param name="callback">The callback method that is executed when the timer expires.</param>
+    <param name="state">An object containing application-specific information relevant to the methods invoked by callback, or null.</param>
+    <param name="dueTime">The System.TimeSpan representing the amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify negative one (-1) milliseconds to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The System.TimeSpan representing the time interval between invocations of <i>callback</i>, in milliseconds. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The delegate specified by the <i>callback</i> parameter is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), <i>callback</i> is invoked immediately. If <i>dueTime</i> is negative one (-1) milliseconds, <i>callback</i> is not invoked; the timer is disabled, but can be re-enabled by calling the <see cref="ExtendedTimer.Change">Change</see> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or negative one (-1) milliseconds and <i>dueTime</i> is positive, <i>callback</i> is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled using the <b>Change</b> method.
+      </para>
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to create an <i>ExtendedTimer</i> that will execute the <i>CallbackMethod</i> method in an hour from the time
+      that <i>CreateExtendedTimer</i> was called, and every 5 seconds afterwards.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", new TimeSpan( 1, 0, 0 ), new TimeSpan( 0, 0, 5 ) );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="System.TimeSpan"/>
+    <seealso cref="System.Threading.TimerCallback"/>
+  </doc>
+
+  <doc for="ExtendedTimer.ExtendedTimer2">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ExtendedTimer class, using System.DateTime and System.TimeSpan values to measure time intervals.
+    </summary>
+    <param name="callback">The callback method that is executed when the timer expires.</param>
+    <param name="state">An object containing application-specific information relevant to the methods invoked by callback, or null.</param>
+    <param name="dueTime">The System.DateTime representing the amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify negative one (-1) milliseconds to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The System.TimeSpan representing the time interval between invocations of <i>callback</i>, in milliseconds. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The delegate specified by the <i>callback</i> parameter is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), <i>callback</i> is invoked immediately. If <i>dueTime</i> is negative one (-1) milliseconds, <i>callback</i> is not invoked; the timer is disabled, but can be re-enabled by calling the <see cref="ExtendedTimer.Change">Change</see> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or negative one (-1) milliseconds and <i>dueTime</i> is positive, <i>callback</i> is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled using the <b>Change</b> method.
+      </para>
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to create an <i>ExtendedTimer</i> that will execute the <i>CallbackMethod</i> method on
+      December 1, 2012 at 14:00:05, and every 5 seconds afterwards.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", new DateTime( 2012, 12, 1, 14, 0, 5 ), new TimeSpan( 0, 0, 5 ) );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="System.DateTime"/>
+    <seealso cref="System.TimeSpan"/>
+    <seealso cref="System.Threading.TimerCallback"/>
+  </doc>
+
+  <doc for="ExtendedTimer.ExtendedTimer3">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ExtendedTimer class.
+    </summary>
+    <param name="callback">The callback method that is executed when the timer expires.</param>
+    <param name="state">The state of the object used as an argument for the callback method.</param>
+    <param name="ev">The event on which the callback method is to be executed.</param>
+    <remarks>
+      <para>
+      The delegate specified by the <i>callback</i> parameter is invoked once for every <i>ev</i> that occurs.
+      </para>
+    </remarks>
+    <example>
+      <para>
+      The example below shows how to create an <i>ExtendedTimer</i> with a <see cref="ExtendedTimer.TimeEvents">TimeEvents</see> 
+      timer event that will execute the <i>CallbackMethod</i> method every second.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", ExtendedTimer.TimeEvents.Second );
+}
+
+public void CallbackMethod( object state )
+{
+    Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+}
+      </code>
+    </example>
+    <seealso cref="ExtendedTimer.TimeEvents"/>
+    <seealso cref="System.Threading.TimerCallback"/>
+  </doc>
+
+  <doc for="ExtendedTimer.Dispose">
+    <summary>
+    Releases all resources used by the current instance of Microsoft.SPOT.ExtendedTimer.
+    </summary>
+    <example>
+      <para>
+      The example below shows how to create an <i>ExtendedTimer</i> that will execute the <i>CallbackMethod</i> only twice.
+      </para>
+      <code lang="C#">
+ExtendedTimer m_timer;
+int m_timerCount = 0;
+
+public void CreateExtendedTimer()
+{
+    m_timer = new ExtendedTimer( new System.Threading.TimerCallback( CallbackMethod ), "CallbackMethod", 1000, 1000 );
+}
+
+public void CallbackMethod( object state )
+{
+    if(m_timerCount++ &lt; 2)
+        Microsoft.SPOT.Debug.Print( (string)state + " called at: " + DateTime.Now.ToString() );
+    else
+        m_timer.Dispose();
+}
+      </code>
+    </example>
+  </doc>
+
+  <doc for="ExtendedTimer.Change">
+    <summary>
+    Changes the start time and the interval between method invocations for a timer, using 32-bit signed integers to measure time intervals.
+    </summary>
+    <param name="dueTime">The amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify <see cref="System.Threading.Timeout.Infinite">System.Threading.Timeout.Infinite</see> to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The time interval between invocations of <i>callback</i>, in milliseconds. Specify <see cref="System.Threading.Timeout.Infinite">System.Threading.Timeout.Infinite</see> to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The callback method is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), <i>callback</i> is invoked immediately. If <i>dueTime</i> is <b>System.Threading.Timeout.Infinite</b>, <i>callback</i> is not invoked; the timer is disabled, but can be re-enabled by calling the <b>Change</b> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or <b>Infinite</b> and <i>dueTime</i> is not <b>Infinite</b>, <i>callback</i> is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled by calling the <b>Change</b> method specifying a positive value for <i>period</i>.
+      </para>
+    </remarks>
+  </doc>
+
+  <doc for="ExtendedTimer.Change1">
+    <summary>
+    Changes the start time and the interval between method invocations for a timer, using System.TimeSpan values to measure time intervals.  
+    </summary>
+    <param name="dueTime">The System.TimeSpan representing the amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify negative one (-1) milliseconds to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The System.TimeSpan representing the time interval between invocations of <i>callback</i>, in milliseconds. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The callback method is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), the callback method is invoked immediately. If <i>dueTime</i> is is negative one (-1) milliseconds, the callback method is not invoked; the timer is disabled, but can be re-enabled by calling the <b>Change</b> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or negative one (-1) milliseconds, and <i>dueTime</i> is positive, the callback method is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled by calling the <b>Change</b> method specifying a value greater than zero for <i>period</i>.
+      </para>
+    </remarks>
+  </doc>
+
+  <doc for="ExtendedTimer.Change2">
+    <summary>
+    Changes the start time and the interval between method invocations for a timer, using System.DateTime and System.TimeSpan values to measure time intervals.  
+    </summary>
+    <param name="dueTime">The System.DateTime representing the amount of time to delay before <i>callback</i> is invoked, in milliseconds. Specify negative one (-1) milliseconds to prevent the timer from starting. Specify zero (0) to start the timer immediately.</param>
+    <param name="period">The System.TimeSpan representing the time interval between invocations of <i>callback</i>, in milliseconds. Specify negative one (-1) milliseconds to disable periodic signaling.</param>
+    <remarks>
+      <para>
+      The callback method is invoked once after <i>dueTime</i> elapses, and thereafter each time the <i>period</i> time interval elapses.
+      </para>
+      <para>
+      If <i>dueTime</i> is zero (0), the callback method is invoked immediately. If <i>dueTime</i> is is negative one (-1) milliseconds, the callback method is not invoked; the timer is disabled, but can be re-enabled by calling the <b>Change</b> method.
+      </para>
+      <para>
+      If <i>period</i> is zero (0) or negative one (-1) milliseconds, and <i>dueTime</i> is positive, the callback method is invoked once; the periodic behavior of the timer is disabled, but can be re-enabled by calling the <b>Change</b> method specifying a value greater than zero for <i>period</i>.
+      </para>
+    </remarks>
+  </doc>
+
+  <doc for="ExtendedTimer.LastExpiration">
+    <summary>
+    Gets the System.TimeSpan of the last expiration of this timer.
+    </summary>
+  </doc>
+
+</docs>

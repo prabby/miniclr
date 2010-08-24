@@ -1,0 +1,192 @@
+<docs>
+  <doc for="DialogBox">
+    <summary>
+    Represents a window displayed in the user interface to solicit input from the user.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.DEFAULT_WIDTH">
+    <summary>
+    The default width of a dialog box.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.DEFAULT_HEIGHT">
+    <summary>
+    the default height of a dialog box.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.OnDismissDelegate">
+    <summary>
+    The delegate called when a dialog box is dismissed.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.TimeoutValue">
+    <summary>
+    The length of time before the dialog box will timeout because of no user interaction.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.m_priority">
+    <summary>
+    The dialog box priority in relation to other dialog box instances.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.Priority">
+    <summary>
+    Gets the priority.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.Popup">
+    <summary>
+    Show this dialog box as a popup alert.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.OnShow">
+    <summary>
+    Called when the dialog box is shown.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.OnDismiss">
+    <summary>
+    Called when a dialog box alert is dismissed so that state can be maintained.
+    </summary>
+    <param name="o">Dialog box state information.</param>
+  </doc>
+
+  <doc for="DialogBox.Views">
+    <summary>
+    The colletion of views that belong to the client area of the form.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.DialogBox">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.DialogBox class with a specified priority.
+    </summary>
+    <param name="priority">The priority of the dialog box.</param>
+  </doc>
+
+  <doc for="DialogBox.DialogBox1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.DialogBox class.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.ShowNavigationArrows">
+    <summary>
+    Indicates if navigation arrows should be shown.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.Dismiss">
+    <summary>
+    Dismiss the dialog box.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.Dismiss1">
+    <summary>
+    Dismiss the dialog box.
+    </summary>
+    <param name="o">An object passed to the OnDismiss method.
+    Provides sub-classes a way to pass information along with the dismiss event.</param>
+  </doc>
+
+  <doc for="DialogBox.Dispose">
+    <summary>
+    Free resources that are no longer needed.
+    </summary>
+  </doc>
+
+  <doc for="DialogBox.OnPaint">
+    <summary>
+    Draws the visible widgets belonging to a dialog box to a bitmap.
+    </summary>
+    <param name="x">Returns the left x-coordinate of frameBuffer.</param>
+    <param name="y">Returns the top y-coordinate of frameBuffer.</param>
+    <param name="frameBuffer">Returns a newly allocated bitmap containing the drawn dialog box client area.</param>
+    <param name="mask">Returns the mask used while drawing.</param>
+  </doc>
+
+  <doc for="DialogBoxView">
+    <summary>
+    Represents the view portion of the dialog box window.
+    </summary>
+  </doc>
+
+  <doc for="DialogBoxView.c_sizeBorder">
+    <summary>The width of the border, in pixels.</summary>
+  </doc>
+
+  <doc for="DialogBoxView.c_sizeCorner">
+    <summary>The width and height of a corner, in pixels.</summary>
+  </doc>
+
+  <doc for="DialogBoxView.ViewContainer">
+    <summary>The container view that encapsulates this dialog box.</summary>
+  </doc>
+
+  <doc for="DialogBoxView.FitToContents">
+    <summary>Indicates whether the dialog box show scale to fit it's contents.  The default is true.</summary>
+  </doc>
+
+  <doc for="DialogBoxView.Views">
+    <summary>
+    Gets the child views of this view instance.
+    </summary>
+  </doc>
+
+  <doc for="DialogBoxView.DialogBoxView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.DialogBoxView class.
+    </summary>
+  </doc>
+
+  <doc for="DialogBoxView.DialogBoxView1">
+    <summary>
+    Initializes a new instance fo the Microsoft.SPOT.DialogBoxView class using the specified view.
+    </summary>
+    <param name="container">A container view to encapsulate the dialog box view.</param>
+  </doc>
+
+  <doc for="DialogBoxView.OnPaint">
+    <summary>
+    Draw the visible widgets belonging to this class on the bitmap provided.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="DialogBoxView.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the dialog box.</param>
+    <param name="height">The height of the dialog box.</param>
+  </doc>
+
+  <doc for="DialogBoxView.MinimumSize">
+    <summary>
+    Calculate the minimum size that the dialog box needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The minimum width.  -1 indicates all available space.</param>
+    <param name="height">The minimum height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="OnDismissCallback">
+    <summary>
+    Represents the method that will be called when a dialog box is dismissed.
+    </summary>
+  </doc>
+
+</docs>

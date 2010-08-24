@@ -1,0 +1,31 @@
+﻿<?xml version='1.0'?>
+<Include>
+  <?include defines.wxs?>
+  <Registry
+    Root="HKLM"
+    Key="$(var.FxKey)\v$(var.ProdVerMajorMinor)"
+    Name="BuildNumber"
+    Type ="string"
+    Value ="$(var.ProdVerBuild)"
+    Id="Registry_BuildVersionValue"
+    />
+
+  <Registry
+    Root="HKLM"
+    Key="$(var.FxKey)\v$(var.ProdVerMajorMinor)"
+    Name="RevisionNumber"
+    Type ="string"
+    Value ="$(var.ProdVerRevision)"
+    Id="Registry_RevisionVersionValue"
+    />
+  <!-- Visal C# Express 2008 -->
+  <?include vs_skus\VCSharpExpress9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v4.0\WixTargetsRegIncludeInner.wxs?>
+  <!-- VisualStudio 2008 -->
+  <?include vs_skus\VisualStudio9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v4.0\WixTargetsRegIncludeInner.wxs?>
+  <!-- VisualStudio 2010 -->
+  <?include vs_skus\VisualStudio10.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v4.0\WixTargetsRegIncludeInner.wxs?>
+
+</Include>

@@ -1,0 +1,59 @@
+<docs>
+    <doc for="Trace.Print">
+        <summary>
+            Writes a message, followed by the current line terminator, to the standard output stream.
+            This method should be used instead of Debug.Print.
+        </summary>
+        <param name="text">A message to write.</param>
+    </doc>
+    <doc for="Debug">
+        <summary>
+            Provides a set of methods and properties that help debug your code.
+        </summary>
+    </doc>
+    <doc for="Debug.Print">
+        <summary>
+            Writes a message, followed by the current line terminator, to the standard output stream.
+            Trace.Print should be used in production code instead of Debug.Print.
+        </summary>
+        <param name="text">A message to write.</param>
+    </doc>
+    <doc for="Debug.GC">
+        <summary>
+            Run garbage collection, a service that automatically reclaims unused memory.
+        </summary>
+        <param name="force">A Boolean value specifying whether garbage collection should be forced.</param>
+        <returns>A number representing free memory, in bytes.</returns>
+    </doc>
+    <doc for="Debug.DumpHeap">
+        <summary>
+            Print out all available heap information to the standard output stream.
+        </summary>
+    </doc>
+    <doc for="Debug.DumpStack">
+        <summary>
+            Print out all available stack information to the standard output stream.
+        </summary>
+    </doc>
+    <doc for="Debug.DumpPerfCounters">
+        <summary>
+            Print out performance counter information to the standard output stream.
+        </summary>
+    </doc>
+    <doc for="Debug.DumpBuffer">
+        <summary>
+            Print out data and information for a buffer.
+        </summary>
+        <param name="buf">A array of byte data;  The buffer.</param>
+        <param name="fCRC">A Boolean value specifying whether to compute and print the CRC for each row of data.</param>
+        <param name="fOffset">A Boolean value specifying whether to print the memory offset address for each row of data.</param>
+    </doc>
+    <doc for="Trace">
+        <summary>
+            Wrapper for Debug.Print.
+        </summary>
+        <remarks>
+            Conditionally compiled.
+        </remarks>
+    </doc>
+</docs>

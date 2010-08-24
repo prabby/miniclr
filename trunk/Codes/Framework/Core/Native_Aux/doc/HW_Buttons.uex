@@ -1,0 +1,222 @@
+<docs>
+  <doc for="ButtonCode">
+    <summary>
+    An enumeration of the buttons available on this system.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Up">
+    <summary>
+    The Up button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Down">
+    <summary>
+    The Down button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Spare">
+    <summary>
+    The Spare button.  Not used in the current watchs.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Select">
+    <summary>
+    The Select button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Channel">
+    <summary>
+    The Channel button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Backlight">
+    <summary>
+    The Backlight button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_B0">
+    <summary>
+    Button 0.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_B1">
+    <summary>
+    Button 1.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_B2">
+    <summary>
+    Button 2.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B3">
+    <summary>
+    Button 3.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B4">
+    <summary>
+    Button 4.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B5">
+    <summary>
+    Button 5.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B6">
+    <summary>
+    Button 6.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B7">
+    <summary>
+    Button 7.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B8">
+    <summary>
+    Button 8.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_B9">
+    <summary>
+    Button 9.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T0">
+    <summary>
+    Touchscreen button 0.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_T1">
+    <summary>
+    Touchscreen button 1.
+    </summary>
+  </doc>    
+
+  <doc for="ButtonCode.Raw_T2">
+    <summary>
+    Touchscreen button 2.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T3">
+    <summary>
+    Touchscreen button 3.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T4">
+    <summary>
+    Touchscreen button 4.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T5">
+    <summary>
+    Touchscreen button 5.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T6">
+    <summary>
+    Touchscreen button 6.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T7">
+    <summary>
+    Touchscreen button 7.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T8">
+    <summary>
+    Touchscreen button 8.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.Raw_T9">
+    <summary>
+    Touchscreen button 9.
+    </summary>
+  </doc>
+
+  <doc for="ButtonCode.MAX">
+    <summary>
+    The maximum number of buttons on a device.
+    This enumeration value does not represent a real button.
+    </summary>
+  </doc>
+
+  <doc for="ButtonState">
+    <summary>
+    An enumeration of possible button states.
+    </summary>
+  </doc>
+
+  <doc for="ButtonState.Down">
+    <summary>
+    The button is in a down, or pressed, state.
+    </summary>
+  </doc>
+
+  <doc for="ButtonState.Hold">
+    <summary>
+    The button is in a held down, or continually pressed, state.
+    It takes a hold of approximately one second to reach this state.
+    </summary>
+  </doc>
+
+  <doc for="ButtonState.Up">
+    <summary>
+    The button is in a up, or released, state.  The button was not held.
+    </summary>
+  </doc>
+
+  <doc for="ButtonState.UpHeld">
+    <summary>
+    The button is in a up, or released, state.  The button was held.
+    </summary>
+  </doc>
+
+  <doc for="Buttons">
+    <exclude/>
+    <summary>
+    Provides a method for handling button events.  This class cannot be inherited.
+    </summary>
+  </doc>
+
+  <doc for="Buttons.WaitForEvent">
+    <summary>
+    Pause execution for a specified time and wait for a button event.
+    </summary>
+    <param name="code">The ButtonCode of the button event.</param>
+    <param name="state">The ButtonsState of the button event. It is either ButtonState.Up or ButtonState.Down.</param>
+    <param name="timeout">The amount of time to wait for a button event, in ticks.</param>
+    <returns>true if a button event occurs within the timeout amount of time;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="Buttons.GetHardwareState">
+  </doc>
+
+</docs>

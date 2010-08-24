@@ -1,0 +1,1115 @@
+<docs>
+  <doc for="AtomView">
+    <summary>
+    Represents a view with basic layout options for justification and the ability fit to available height and width.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.ManualLayout">
+    <summary>
+    Indicates whether the layout is done manually in the derived class.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.m_outerleft">
+    <summary>
+    The left x-coordinate.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.m_outertop">
+    <summary>
+    The top y-coordinate.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.m_outerwidth">
+    <summary>
+    The width.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.m_outerheight">
+    <summary>
+    The height.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.IgnoreJustificationIfTooBig">
+    <summary>
+    Indicates whether the justification parameter settings will be ignored if the view is bigger than the space it is given.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.AtomView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AtomView class.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.AtomView1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AtomView class specifying whether to fit to the available height and width.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.AtomView2">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AtomView class specifying justification and whether to fit to the available height and width.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.HorizontalJustification">
+    <summary>
+    Gets or sets the horizontal justification of the view.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.VerticalJustification">
+    <summary>
+    Gets or sets the vertical justification of the view.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.FitWidth">
+    <summary>
+    Indicates whether the view should fit to the full width available.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.FitHeight">
+    <summary>
+    Indicates whether the view should fit to the full height available.
+    </summary>
+  </doc>
+
+  <doc for="AtomView.MinimumSize">
+    <summary>
+    Calculate the minimum size that the view needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="AtomView.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="AtomView.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="AtomView.InvalidateLayout">
+    <summary>
+    Invalidates the layout of this view.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox">
+    <summary>
+    PictureBox widget for displaying an image.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.m_bitmap">
+    <summary>
+    The image to display.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.m_mask">
+    <summary>
+    The image mask that specifies what image data to display.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.m_bboxwidth">
+    <summary>
+    The width of the bounding box.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.m_bboxheight">
+    <summary>
+    The height of the bounding box.
+    The bounding box represents the amount of space that the bitmap will use;  it can be larger or smaller than the bitmap.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.m_fTransparent">
+    <summary>
+    Indicates that the bitmap image white space is to be transparent with respect to its background.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.PictureBox">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.PictureBox class with a bitmap inside.
+    </summary>
+    <param name="bitmap">The bitmap to show.</param>
+  </doc>
+
+  <doc for="PictureBox.PictureBox1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.PictureBox class with a bitmap and the specified transparency.
+    </summary>
+    <param name="bitmap">The bitmap to show.</param>
+    <param name="fTransparent">Indicates that the bitmap image white space is to be transparent with respect to its background.</param>
+  </doc>
+
+  <doc for="PictureBox.PictureBox2">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.PictureBox class with a bitmap and associated mask.
+    </summary>
+    <param name="bitmap">The bitmap to show.</param>
+    <param name="mask">The bitmap mask that specifies what bitmap data to display.</param>
+  </doc>
+
+  <doc for="PictureBox.SetBoundingBox">
+    <summary>
+    Set the height and width of the bounding box.
+    </summary>
+    <param name="width">The width of the bounding box.</param>
+    <param name="height">The height of the bounding box.</param>
+    <remarks>
+    The bounding box represents the amount of space that the bitmap will use;  it can be larger or smaller than the bitmap.
+    </remarks>
+  </doc>
+
+  <doc for="PictureBox.AddPictureBox">
+    <summary>
+    Creates a new instance of the Microsoft.SPOT.PictureBox class containing the specified bitmap and adds it to the specified view.
+    </summary>
+    <param name="view">The view to add the picture box.</param>
+    <param name="bitmap">The bitmap to show.</param>
+    <returns>The new picture box instance that was added.</returns>
+  </doc>
+
+  <doc for="PictureBox.MinimumSize">
+    <summary>
+    Calculate the minimum size that the picture box needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="PictureBox.Bitmap">
+    <summary>
+    Gets or sets the picture box bitmap image.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.Mask">
+    <summary>
+    Gets or set the picture box bitmap image mask that specifies what image data to display.
+    </summary>
+  </doc>
+
+  <doc for="PictureBox.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="FixedSizeContainer">
+    <summary>
+    A view with a fixed size.
+    </summary>
+  </doc>
+
+  <doc for="FixedSizeContainer.FixedSizeContainer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.FixedSizeContainer class with the specified height and width.
+    </summary>
+    <param name="width">The width of the new view.</param>
+    <param name="height">The height of the new view.</param>
+    <remarks>The default view is justified both horizontally and vertically.</remarks>
+  </doc>
+
+  <doc for="FixedSizeContainer.MinimumSize">
+    <summary>
+    Calculate the minimum size that the view needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The minimum width.</param>
+    <param name="height">The minimum height.</param>
+  </doc>
+
+  <doc for="AbsolutePositionView">
+    <summary>
+    A view with an fixed screen position.
+    </summary>
+  </doc>
+
+  <doc for="AbsolutePositionView.AbsolutePositionView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AbsolutePositionView class at the specified position.
+    </summary>
+    <param name="view">A view to add and position;  can be null.</param>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="AbsolutePositionView.AbsolutePositionView1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AbsolutePositionView class.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="AbsolutePositionView.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+    <remarks>
+    Overridden because an AbsolutePositionView has a fixed location and do not participate in layout.
+    </remarks>
+  </doc>
+
+  <doc for="AbsolutePositionView.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.  The parent views dimensions are ignored.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="MultiLineLabel">
+    <summary>
+    A scrollable label with multiple lines of text.
+    </summary>
+  </doc>
+
+  <doc for="MultiLineLabel.MultiLineLabel">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.MultiLineLabel class with the specified font and text.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+  </doc>
+
+  <doc for="MultiLineLabel.MultiLineLabel1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.MulitLineLabel class with the specified font, text, and justifications.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+    <param name="hj">The horizontal justification.</param>
+    <param name="vj">The vertical justification.</param>
+  </doc>
+
+  <doc for="MultiLineLabel.LineHeight">
+    <summary>
+    Gets the height of a line of text.
+    </summary>
+  </doc>
+
+  <doc for="MultiLineLabel.MinimumSize">
+    <summary>
+    Calculate the minimum size that the label needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The minimum width.  -1 indicates all available space.</param>
+    <param name="height">The minimum height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="MultiLineLabel.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="NavigationArrowFactory">
+    <exclude/>
+    <summary>
+    A collection of methods to produce navigation arrows.
+    </summary>
+  </doc>
+
+  <doc for="NavigationArrowFactory.CreateView">
+    <summary>
+    Creates a view containing an arrow.
+    </summary>
+    <param name="up">Specifies that the arrow is to point up.</param>
+    <param name="y_baseline">The baseline y-coordinate of the arrow.</param>
+    <returns>A view containing the desired arrow.</returns>
+  </doc>
+
+  <doc for="NavigationArrowFactory.DrawArrow">
+    <summary>
+    Draw an arrow on a bitmap or bitmap mask at a specified location.
+    </summary>
+    <param name="bmp">The bitmap or bitmap mask to draw on.</param>
+    <param name="y_baseline">The baseline y-coordinate of the arrow.</param>
+    <param name="up">Specifies that the arrow is to point up.</param>
+    <param name="mask">Indicates if the bitmap that is being drawn upon is a bitmap mask.</param>
+  </doc>
+
+  <doc for="Label">
+    <summary>
+    A label is a font, text, and a horizontal and vertical justification.
+    </summary>
+  </doc>
+
+  <doc for="Label.m_text">
+    <summary>
+    The text to be shown.
+    </summary>
+  </doc>
+
+  <doc for="Label.m_font">
+    <summary>
+    The font used to draw the label text.
+    </summary>
+  </doc>
+
+  <doc for="Label.IgnoreDescent">
+    <summary>
+    Ignore the font descent when calculating label height.
+    </summary>
+  </doc>
+
+  <doc for="Label.IgnoreInternalLeading">
+    <summary>
+    Ignore the font internal leading when caluculating label height.
+    </summary>
+  </doc>
+
+  <doc for="Label.DrawTextInRectFlags">
+    <summary>
+    Flags defining what format options are to be used.
+    </summary>
+  </doc>
+
+  <doc for="Label.Label">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Label class.
+    </summary>
+  </doc>
+
+  <doc for="Label.Label1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Label class with the specified font and text.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+  </doc>
+
+  <doc for="Label.Label2">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Label class with the specified font, text, and justification.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+    <param name="hj">The horizontal justification.</param>
+    <param name="vj">The vertial justification.</param>
+  </doc>
+
+  <doc for="Label.AddLabel">
+    <summary>
+    Creates a new Microsoft.SPOT.Label instance with the specified font, text, and justification.
+    </summary>
+    <param name="view">The view to add the label to.</param>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+    <param name="hj">The horizontal justification.</param>
+    <param name="vj">The vertical justification.</param>
+    <returns>A new label instance.</returns>
+  </doc>
+
+  <doc for="Label.AddLabel1">
+    <summary>
+    Creates a new Microsoft.SPOT.Label instance with the specified font, text, and horizontal justification.
+    </summary>
+    <param name="view">The view to add the label to.</param>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+    <param name="hj">The horizontal justification.</param>
+    <returns>A new label instance.</returns>
+  </doc>
+
+  <doc for="Label.AddLabel2">
+    <summary>
+    Creates a new Microsoft.SPOT.Label instance with the specified font.
+    </summary>
+    <param name="view">The view to add the label to.</param>
+    <param name="font">The font used to draw the text.</param>
+    <returns>A new label instance.</returns>
+  </doc>
+
+  <doc for="Label.MinimumSize">
+    <summary>
+    Calculate the minimum size that the label needs to be and ensure that the view is sufficiently large.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The minimum width.  -1 indicates all available space.</param>
+    <param name="height">The minimum height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="Label.Text">
+    <summary>
+    Gets or sets the label text.
+    </summary>
+    <remarks>
+    The label is invalidated when set.
+    </remarks>
+  </doc>
+
+  <doc for="Label.Font">
+    <summary>
+    Gets or sets the label font.
+    </summary>
+    <remarks>
+    The label is invalidated when set.
+    </remarks>
+  </doc>
+
+  <doc for="Label.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="WideLabel">
+    <summary>
+    A label that can be wider than the available screen.
+    </summary>
+  </doc>
+
+  <doc for="WideLabel.WideLabel">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.WideLabel class.
+    </summary>
+  </doc>
+
+  <doc for="WideLabel.WideLabel1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.WideLabel class with the specified font and text.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+  </doc>
+
+  <doc for="WideLabel.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="TwoSizeLabel">
+    <summary>
+    A label that uses two separate fonts.
+    If the width of the text in the first font is wider than the label, the second font is used.
+    </summary>
+  </doc>
+
+  <doc for="TwoSizeLabel.TwoSizeLabel">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.TwoSizeLabel class with the specified fonts and text.
+    </summary>
+    <param name="font1">The first font used to draw the text.</param>
+    <param name="font2">The second font used to draw the text.</param>
+    <param name="text">The label text.</param>
+  </doc>
+
+  <doc for="TwoSizeLabel.TwoSizeLabel1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.TwoSizeLabel class with the specified fonts, text, and justifications.
+    </summary>
+    <param name="font1">The first font used to draw the text.</param>
+    <param name="font2">The second font used to draw the text.</param>
+    <param name="text">The label text.</param>
+    <param name="horizontalJustification">The horizontal justification.</param>
+    <param name="verticalJustification">The vertial justification.</param>
+  </doc>
+
+  <doc for="TwoSizeLabel.SetFonts">
+    <summary>
+    Set the fonts to be used.
+    </summary>
+    <param name="font1">The first font used to draw the text.</param>
+    <param name="font2">The second font used to draw the text.</param>
+  </doc>
+
+  <doc for="TwoSizeLabel.InvalidateLayout">
+    <summary>
+    Invalidates the layout of this label.
+    </summary>
+  </doc>
+
+  <doc for="TwoSizeLabel.Text">
+    <summary>
+    Gets or sets the label text.
+    </summary>
+  </doc>
+
+  <doc for="TwoSizeLabel.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="FlipView">
+    <summary>
+    A view that can flip between two different views.
+    </summary>
+  </doc>
+
+  <doc for="FlipView.View1">
+    <summary>
+    The first view.
+    </summary>
+  </doc>
+
+  <doc for="FlipView.View2">
+    <summary>
+    The second view.
+    </summary>
+  </doc>
+
+  <doc for="FlipView.FlipView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.FlipView class.
+    </summary>
+    <param name="view1">The first view.</param>
+    <param name="view2">The seconf view.</param>
+  </doc>
+
+  <doc for="FlipView.Activate">
+    <summary>
+    Flip between the two views.
+    </summary>
+    <param name="fView1">
+    Specifies which view to flip to.
+    true == the first view;
+    false == the second view.
+    </param>
+  </doc>
+
+  <doc for="FlipLabel">
+    <summary>
+    A label that flips between default text and alternate text.
+    </summary>
+  </doc>
+
+  <doc for="FlipLabel.FlipLabel">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.FlipLabel class.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="pritext">The default label text.</param>
+    <param name="alttext">The alternate label text.</param>
+  </doc>
+
+  <doc for="FlipLabel.PriText">
+    <summary>
+    The default text.
+    </summary>
+  </doc>
+
+  <doc for="FlipLabel.AltText">
+    <summary>
+    The alternate text.
+    </summary>
+  </doc>
+
+  <doc for="FlipLabel.Flip">
+    <summary>
+    Convenient method for flipping between the default and alternate text based on a timer callback.
+    </summary>
+    <param name="o">An object of type FlipLabel to flip.</param>
+    <remarks>
+    Usage example:  myTimer = new GuiTimer(new TimerCallback(FlipLabel.Flip), myFlipLabel, -1, -1);
+    </remarks>
+  </doc>
+
+  <doc for="FlipLabel.FlipLabels">
+    <summary>
+    Convenient method for flipping between the default and alternate text for an array of labels based on a timer callback.
+    </summary>
+    <param name="o">Array of objects of type FlipLabel to flip simulataneously.</param>
+    <remarks>
+    This method is synchronized via the GloballySynchronized attribute.
+    </remarks>
+  </doc>
+
+  <doc for="FlipLabel.Flip1">
+    <summary>
+    Flips the between the default and alternate text.
+    </summary>
+  </doc>
+
+  <doc for="FlipLabel.Reset">
+    <summary>
+    Reset the label to the default text.
+    </summary>
+  </doc>
+
+  <doc for="AnimationView">
+  </doc>
+
+  <doc for="AnimationView.Bitmaps">
+  </doc>
+
+  <doc for="AnimationView.FrameRate">
+  </doc>
+
+  <doc for="AnimationView.Dispose">
+  </doc>
+
+  <doc for="AnimationView.AnimationView">
+  </doc>
+
+  <doc for="AnimationView.Start">
+  </doc>
+
+  <doc for="AnimationView.NextFrame">
+  </doc>
+
+  <doc for="AnimationView.Stop">
+  </doc>
+
+  <doc for="AnimationView.Reset">
+  </doc>
+
+  <doc for="AnimationView.Reset1">
+  </doc>
+
+  <doc for="AnimationView.OnPaint">
+  </doc>
+
+  <doc for="PatternView">
+    <summary>
+    A view containing a bit pattern.
+    </summary>
+  </doc>
+
+  <doc for="PatternView.PatternView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.PatterView class.
+    </summary>
+    <param name="dwRop">
+    Specifies a raster-operation code of the pattern to create.  
+    The raster-operation codes are defined in Microsoft.SPOT.Bitmap.
+    </param>
+  </doc>
+
+  <doc for="PatternView.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="HelpView">
+    <exclude/>
+    <summary>
+    A view with additional help views associated with it.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.HelpView">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.HelpView class.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.HelpView1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.HelpView class encapsulating the provided view.
+    </summary>
+    <param name="v">The view to encapsulate by this </param>
+  </doc>
+
+  <doc for="HelpView.HelpViewType">
+    <summary>
+    An enumeration of the different elements of a HelpView.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.HelpViewType.HelpTop">
+  </doc>
+
+  <doc for="HelpView.HelpViewType.SeparatorTop">
+  </doc>
+
+  <doc for="HelpView.HelpViewType.View">
+  </doc>
+
+  <doc for="HelpView.HelpViewType.SeparatorBottom">
+  </doc>
+
+  <doc for="HelpView.HelpViewType.HelpBottom">
+  </doc>
+
+  <doc for="HelpView.UpdateTitleBar">
+    <summary>
+    Make the provided title bar visible.
+    </summary>
+    <param name="t">The title bar to make visible.</param>
+  </doc>
+
+  <doc for="HelpView.Activate">
+    <summary>
+    Registers this HelpView as the HelpView for Form that it was added to.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.SetTextHelp">
+    <summary>
+    Set the text for the top or bottom help element.
+    </summary>
+    <param name="fTop">Specifies that the text for the top (true) or bottom (false) help element is being set.</param>
+    <param name="text">Text for the specified help element.</param>
+  </doc>
+
+  <doc for="HelpView.SetTextHelp1">
+    <summary>
+    Set the text for both the top and bottom help elements.
+    </summary>
+    <param name="top">Text for the top help element.</param>
+    <param name="bottom">Text for the bottom help element.</param>
+  </doc>
+
+  <doc for="HelpView.SetHelp">
+    <summary>
+    Display either the top and bottom arrows or set the text for the top and bottom.
+    </summary>
+    <param name="fArrows">Specifies that the top and bottom are to be displayed (true).</param>
+    <param name="top">Text for the top help element.</param>
+    <param name="bottom">Text for the bottom help element.</param>
+  </doc>
+
+  <doc for="HelpView.SetTextHelp2">
+    <summary>
+    Set the text for the specified help view.
+    </summary>
+    <param name="fTop">Specifies if the help text is at the top (true) or bottom (false) of the screen.</param>
+    <param name="fLeft">Specifies if the text is to be left justified (true) or right justified (false).</param>
+    <param name="text">The help text.</param>
+  </doc>
+
+  <doc for="HelpView.SetHelpArrows">
+    <summary>
+    Display both top and bottom help arrows.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.SetHelpArrows1">
+    <summary>
+    Control the display of the top and bottom help arrows.
+    </summary>
+    <param name="fTopVisible">Indicates whether to display the top help arrow.</param>
+    <param name="fBottomVisible">Indicates whether to display the bottom help arrow.</param>
+  </doc>
+
+  <doc for="HelpView.GetView">
+    <summary>
+    Get a specific help view type.
+    </summary>
+    <param name="type">The help view type to get.</param>
+    <returns>A view </returns>
+  </doc>
+
+  <doc for="HelpView.Views">
+    <summary>
+    Gets the child views of this view instance.
+    </summary>
+  </doc>
+
+  <doc for="HelpView.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="ScrollableContainer">
+    <summary>
+    Provides a simple view with scrolling capabilities.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.OnScrollEvent">
+    <summary>
+    Represents the method that will handle scroll events.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.c_INTERNAL_SCROLL">
+    <summary>
+    An internal scroll increment.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.m_yOffset">
+    <summary>
+    The offset from the top of the first scrollable item when all of the scrollable items are combined.
+    This value will be in the range from 0 to m_yHeight.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.m_yHeight">
+    <summary>
+    The height of all the scrollable items combined.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.m_yOffsetNew">
+    <summary>
+    A temporary variable used to hold the new y-coordinate offset during scrolling.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.m_yClipTop">
+    <summary>
+    The y-coordinate of the top of the clipping rectangle.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.m_yClipHeight">
+    <summary>
+    The height of the clipping rectangle.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.ScrollOnHold">
+    <summary>
+    Indicates that the scroll events will be generated by holding a scroll button.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.CenterIfOnePage">
+    <summary>
+    Indicates that the items in the container will be centered if they are less than one page in length.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.ScrollableContainer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ScrollableContainer class.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.ScrollEvent">
+    <summary>
+    Add or remove callback methods for the scroll event.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableContainer.Scroll">
+    <summary>
+    Scroll the view up or down.
+    </summary>
+    <param name="fDown">Indicates if the list to scroll down (true), or up (false).</param>
+    <returns>true if the view was scrolled;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ScrollableContainer.OnKey">
+    <summary>
+    Process key events.
+    </summary>
+    <param name="ka">Information about the key press event.</param>
+  </doc>
+
+  <doc for="ScrollableContainer.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="ScrollableContainer.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="ScrollableContainer.CanScroll">
+    <summary>
+    Determines if the view can be scrolled.
+    </summary>
+    <param name="fDown">Indicates if the list to scroll down (true), or up (false).</param>
+    <returns>true if the view can be scrolled;  otherwise, false.</returns>
+  </doc>
+
+  <doc for="ScrollableContainer.OnScroll">
+    <summary>
+    Called when the scroll event occurs.
+    </summary>
+    <param name="fDown">Indicates if the list to scroll down (true), or up (false).</param>
+    <returns>The number of pixels scrolled.</returns>
+  </doc>
+
+  <doc for="ScrollableContainer.OnPaintEvent">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="ScrollableLabel">
+    <summary>
+    A scrollable label with multiple lines of text justified to the top.
+    </summary>
+  </doc>
+
+  <doc for="ScrollableLabel.ScrollableLabel">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ScrollableLabel class with the specified font.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+  </doc>
+
+  <doc for="ScrollableLabel.ScrollableLabel1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.ScrollableLabel class with the specified font and text.
+    </summary>
+    <param name="font">The font used to draw the text.</param>
+    <param name="text">The label text.</param>
+  </doc>
+
+  <doc for="BufferedContainer">
+    <summary>
+    A container with a configurable amount of buffer, or padding, of its viewable contents from the edge of the container.
+    </summary>
+  </doc>
+
+  <doc for="BufferedContainer.c_PADDING_DEFAULT">
+    <summary>
+    The default amount of padding, in pixels.
+    </summary>
+  </doc>
+
+  <doc for="BufferedContainer.BufferedContainer">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BufferedContainer class with the default padding on the top and bottom.
+    </summary>
+  </doc>
+
+  <doc for="BufferedContainer.BufferedContainer1">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.BufferedContainer class with the specified padding.
+    </summary>
+    <param name="dxLeft">The amount of padding from the left edge of the container.</param>
+    <param name="dxRight">The amount of padding from the right edge of the container.</param>
+    <param name="dyTop">The amount of padding from the top edge of the container.</param>
+    <param name="dyBottom">The amount of padding from the bottom edge of the container.</param>
+  </doc>
+
+  <doc for="BufferedContainer.ComputePreferredSize">
+    <summary>
+    Determines how large the view would like to be.
+    </summary>
+    <param name="maxWidth">The maximum width available to the view for layout.</param>
+    <param name="maxHeight">The maximum height available to the view for layout.</param>
+    <param name="width">The preferred width.  -1 indicates all available space.</param>
+    <param name="height">The preferred height.  -1 indicates all available space.</param>
+  </doc>
+
+  <doc for="BufferedContainer.ApplyLayout">
+    <summary>
+    Applies current layout using the specified dimensions.
+    </summary>
+    <param name="left">The left x-coordinate.</param>
+    <param name="top">The top y-coordinate.</param>
+    <param name="width">The width of the view.</param>
+    <param name="height">The height of the view.</param>
+  </doc>
+
+  <doc for="Circle">
+    <summary>
+    A circle widget that can be filled with a pattern.
+    </summary>
+  </doc>
+
+  <doc for="Circle.Circle">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.Circle class.
+    </summary>
+    <param name="radius">The radius of the circle, in pixels.</param>
+    <param name="dwRop">Specifies a raster-operation code;  the pattern to fill inside the circle.</param>
+  </doc>
+
+  <doc for="Circle.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="AntennaWidget">
+    <exclude/>
+    <summary>
+    An animated antenna image.
+    </summary>
+  </doc>
+
+  <doc for="AntennaWidget.AntennaWidget">
+    <summary>
+    Initializes a new instance of the Microsoft.SPOT.AntennaWidget class.
+    </summary>
+  </doc>
+
+  <doc for="AntennaWidget.OnPaint">
+    <summary>
+    Handles the paint event.
+    </summary>
+    <param name="b">The bitmap surface to paint on.</param>
+  </doc>
+
+  <doc for="AntennaWidget.Dispose">
+    <summary>
+    Free resources that are no longer needed.
+    </summary>
+  </doc>
+
+</docs>

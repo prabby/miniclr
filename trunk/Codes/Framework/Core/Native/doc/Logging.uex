@@ -1,0 +1,31 @@
+<docs>
+    <doc for="Logging">
+        <exclude/>
+        <summary>
+            Provides the ability to manage logged data.  This class cannot be inherited.
+        </summary>
+    </doc>
+    <doc for="Logging.Erase">
+        <summary>
+            Erase all log records.
+        </summary>
+    </doc>
+    <doc for="Logging.AppendRecord">
+        <summary>
+            Add a log record to the end of the list of records.
+        </summary>
+        <param name="o">The record object to log.</param>
+    </doc>
+    <doc for="Logging.NumberOfRecords">
+        <summary>
+            Gets the number of log records.
+        </summary>
+    </doc>
+    <doc for="Logging.GetRecord">
+        <summary>
+            Get a log record from the zero-based list of records.
+        </summary>
+        <param name="i">The index of the object to retrieve.</param>
+        <returns>A record object.</returns>
+    </doc>
+</docs>

@@ -1,0 +1,148 @@
+<docs>
+    <doc for="Key">
+        <exclude/>
+        <summary>
+            An abstract base class representing a basic encryption key.
+        </summary>
+    </doc>
+    <doc for="Key.Encrypt">
+        <summary>
+            Encrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be encrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be encrypted.</param>
+        <param name="count">The number of bytes of data to encrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to encrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing encrypted data.</returns>
+    </doc>
+    <doc for="Key.Decrypt">
+        <summary>
+            Decrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be decrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be decrypted.</param>
+        <param name="count">The number of bytes of data to decrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to decrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing decrypted data.</returns>
+    </doc>
+    <doc for="Key.Signature">
+        <summary>
+            Gets the signature associated with this key.
+        </summary>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm">
+        <exclude/>
+        <summary>
+            Performs simple symmetric encryption and decryption.
+        </summary>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.c_SizeOfKey">
+        <summary>
+            The size of the encryption key, in bytes.
+        </summary>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.c_SizeOfSignature">
+        <summary>
+            The size of the signature, in bytes.
+        </summary>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.Key_TinyEncryptionAlgorithm">
+        <summary>
+            Initializes a new instance of the Microsoft.SPOT.Cryptography.Key_TinyEncryptionAlgorithm class with the specified key data.
+        </summary>
+        <param name="val">The encryption key data.</param>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.Encrypt">
+        <summary>
+            Encrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be encrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be encrypted.</param>
+        <param name="count">The number of bytes of data to encrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to encrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing encrypted data.</returns>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.Decrypt">
+        <summary>
+            Decrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be decrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be decrypted.</param>
+        <param name="count">The number of bytes of data to decrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to decrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing decrypted data.</returns>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.Signature">
+        <summary>
+            Gets the signature associated with this key.
+        </summary>
+    </doc>
+    <doc for="Key_TinyEncryptionAlgorithm.GetActivationString">
+        <summary>
+            Returns a string representing the system indentifier.
+        </summary>
+        <param name="region">The current region number.</param>
+        <param name="model">The hardware and/or system model number.</param>
+        <returns>A string representing the system indentifier.</returns>
+    </doc>
+    <doc for="Key_RSA">
+        <exclude/>
+        <summary>
+            Performs asymmetric encryption and decryption using the RSA algorithm.
+        </summary>
+    </doc>
+    <doc for="Key_RSA.c_SizeOfKey">
+        <summary>
+            The size of the encryption key, in bytes.
+        </summary>
+    </doc>
+    <doc for="Key_RSA.c_SizeOfSignature">
+        <summary>
+            The size of the signature, in bytes.
+        </summary>
+    </doc>
+    <doc for="Key_RSA.Key_RSA">
+        <summary>
+            Initializes a new instance of the Microsoft.SPOT.Cryptography.Key_RSA class.
+        </summary>
+        <param name="modulus">The modulus parameter for the RSA algorithm key.</param>
+        <param name="exponent">The exponent parameter for the RSA algorithm key.</param>
+    </doc>
+    <doc for="Key_RSA.Encrypt">
+        <summary>
+            Encrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be encrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be encrypted.</param>
+        <param name="count">The number of bytes of data to encrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to encrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing encrypted data.</returns>
+    </doc>
+    <doc for="Key_RSA.Decrypt">
+        <summary>
+            Decrypts data from a provided byte array.
+        </summary>
+        <param name="data">The byte array containing data to be decrypted.</param>
+        <param name="offset">An offset into the data array locating the start of the data to be decrypted.</param>
+        <param name="count">The number of bytes of data to decrypt starting from the offset.</param>
+        <param name="IV">The initialization vector.  Used to decrypt the first block of data in a cipher block chain.</param>
+        <returns>A byte array contianing decrypted data.</returns>
+    </doc>
+    <doc for="Key_RSA.Signature">
+        <summary>
+            Gets the signature associated with this key, which is null.
+        </summary>
+    </doc>
+    <doc for="Key_RSA.VerifySignature">
+        <summary>
+            Verifies the specified signature data by comparing it to the signature computed for the specified data.
+        </summary>
+        <param name="data">The data that was signed.</param>
+        <param name="dataOffset">The offset into the data array location the start of the data to be verified.</param>
+        <param name="dataCount">The length of the data, in bytes.</param>
+        <param name="sig">The signature data to be verified.</param>
+        <param name="sigOffset">The offset into the signature data array locating the start of the signature.</param>
+        <param name="sigCount">The length of the signature, in bytes.</param>
+        <returns>true if the signature is verified as valid; otherwise, false.</returns>
+    </doc>
+</docs>

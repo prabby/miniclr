@@ -1,0 +1,9 @@
+﻿<?xml version='1.0'?>
+<Include>
+  <!-- Visual Studio 2008 -->
+  <?include $(env.SPOCLIENT)\setup\Include\vs_skus\VisualStudio9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v2.0\WixTargets_v2_0_RegIncludeInner.wxs?>
+  <!-- Visual C# Express 2008 -->
+  <?include $(env.SPOCLIENT)\setup\Include\vs_skus\VCSharpExpress9.wxs?>
+  <?include $(env.SPOCLIENT)\Framework\IDE\Targets\v2.0\WixTargets_v2_0_RegIncludeInner.wxs?>
+</Include>
