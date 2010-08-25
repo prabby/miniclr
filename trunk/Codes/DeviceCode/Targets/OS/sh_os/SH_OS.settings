@@ -1,0 +1,23 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Name>SH_OS</Name>
+    <CpuName>
+    </CpuName>
+    <DefaultISA>SHC</DefaultISA>
+    <Guid>{34C3FA32-56C6-4d8a-BFE9-679E6EBAA50C}</Guid>
+    <Description>SHC OS </Description>
+    <Documentation>
+    </Documentation>
+    <ProjectPath>$(SPOCLIENT)\devicecode\Targets\OS\SH_os\SH_OS.settings</ProjectPath>
+    <PLATFORM_FAMILY>SHC</PLATFORM_FAMILY>
+    <CustomFilter>
+    </CustomFilter>
+    <INSTRUCTION_SET Condition="'$(INSTRUCTION_SET)'==''">SH2</INSTRUCTION_SET>
+    <TARGETPROCESSOR>SH2</TARGETPROCESSOR>
+    <TARGETCODEBASE>SH_os</TARGETCODEBASE>
+    <TARGETCODEBASETYPE>OS</TARGETCODEBASETYPE>
+  </PropertyGroup>
+  <ItemGroup>
+    <IncludePaths Include="devicecode\Targets\OS\SH_os" />
+  </ItemGroup>
+</Project>
