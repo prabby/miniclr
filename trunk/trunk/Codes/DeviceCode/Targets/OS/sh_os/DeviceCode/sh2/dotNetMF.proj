@@ -1,0 +1,53 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>SHHal_Sh2</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{6466289D-76BE-4e14-9F6A-14BC732B2F53}</ProjectGuid>
+    <Description>SH OS backbone layer</Description>
+    <Level>HAL</Level>
+    <LibraryFile>SHHal_Sh2.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\DeviceCode\Targets\OS\SH_os\DeviceCode\sh2\dotNetMF.proj</ProjectPath>
+    <ManifestFile>shHal_sh2.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>OS\SH</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <ProcessorSpecific>
+      <MFComponent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SH_os" Guid="{e804cbb3-f3a0-468e-ac9f-5ac32de2a7f9}" xmlns="">
+        <VersionDependency xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">
+          <Major>4</Major>
+          <Minor>0</Minor>
+          <Revision>0</Revision>
+          <Build>0</Build>
+          <Extra />
+          <Date>2009-04-30</Date>
+        </VersionDependency>
+        <ComponentType xmlns="http://schemas.microsoft.com/netmf/InventoryFormat.xsd">Processor</ComponentType>
+      </MFComponent>
+    </ProcessorSpecific>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>False</IsStub>
+    <Directory>DeviceCode\Targets\OS\SH_os\DeviceCode\sh2</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+
+    <Compile Include="Hwsetup.cpp" />
+    <Compile Include="intprg.c" />
+    <Compile Include="resetprg.c" />
+    <Compile Include="dbsct.c" />
+    <Compile Include="sbrk.c" />
+    <Compile Include="vecttbl.c" />
+
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>
