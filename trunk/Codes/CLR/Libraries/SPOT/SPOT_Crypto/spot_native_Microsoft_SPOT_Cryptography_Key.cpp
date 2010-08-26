@@ -146,7 +146,9 @@ void Library_spot_native_Microsoft_SPOT_CryptoState::GetSeed( KeySeed& seed )
 {
     UINT8 buffer[ sizeof(KeySeed) ];
 
-    ::SecurityKey_Copy( buffer, sizeof(buffer) );
+    //::SecurityKey_Copy( buffer, sizeof(buffer) );
+		
+		memset( buffer, 0, sizeof(buffer) );
 
     ::Crypto_KeySeedFromLaser( buffer, &seed );
 }

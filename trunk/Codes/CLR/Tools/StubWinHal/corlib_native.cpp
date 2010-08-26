@@ -11,11 +11,11 @@ Library_corlib_native_System_TimeSpan::GetValuePtr( struct CLR_RT_HeapBlock & )
     return NULL;
 }
 
-__int64*
-Library_corlib_native_System_DateTime::GetValuePtr( struct CLR_RT_HeapBlock & )
-{
-    return NULL;
-}
+//__int64*
+//Library_corlib_native_System_DateTime::GetValuePtr( struct CLR_RT_HeapBlock & )
+//{
+//    return NULL;
+//}
 
 HRESULT
 Library_corlib_native_System_Exception::CreateInstance(

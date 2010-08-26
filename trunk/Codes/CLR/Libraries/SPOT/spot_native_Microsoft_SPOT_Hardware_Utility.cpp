@@ -142,7 +142,7 @@ HRESULT Library_spot_native_Microsoft_SPOT_Hardware_Utility::Piezo___STATIC__VOI
 
     CLR_RT_HeapBlock* pArgs = &(stack.Arg0());
 
-    ::Piezo_Tone( pArgs[ 0 ].NumericByRef().u4, pArgs[ 1 ].NumericByRef().u4 );
+    //::Piezo_Tone( pArgs[ 0 ].NumericByRef().u4, pArgs[ 1 ].NumericByRef().u4 );
 
     TINYCLR_NOCLEANUP_NOLABEL();
 }

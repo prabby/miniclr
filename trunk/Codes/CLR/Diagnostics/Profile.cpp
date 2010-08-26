@@ -78,21 +78,22 @@ volatile CLR_UINT64        CLR_PROF_Handler::s_time_adjusted;
 
 static CLR_UINT64 GetPerformanceCounter()
 {
-    NATIVE_PROFILE_CLR_DIAGNOSTICS();
-#if defined(PLATFORM_WINDOWS) || defined(PLATFORM_WINCE)
-    return HAL_Windows_GetPerformanceTicks();
-#else
-    static CLR_UINT32 rollover  = 0;
-    static CLR_UINT32 lastValue = 0;
-
-    CLR_UINT32 value = ::Time_PerformanceCounter();
-
-    if(lastValue > value) rollover++;
-
-    lastValue = value;
-
-    return ((CLR_UINT64)rollover << 32) | (CLR_UINT64)value;
-#endif
+//    NATIVE_PROFILE_CLR_DIAGNOSTICS();
+//#if defined(PLATFORM_WINDOWS) || defined(PLATFORM_WINCE)
+//    return HAL_Windows_GetPerformanceTicks();
+//#else
+//    static CLR_UINT32 rollover  = 0;
+//    static CLR_UINT32 lastValue = 0;
+//
+//    CLR_UINT32 value = ::Time_PerformanceCounter();
+//
+//    if(lastValue > value) rollover++;
+//
+//    lastValue = value;
+//
+//    return ((CLR_UINT64)rollover << 32) | (CLR_UINT64)value;
+//#endif
+		return 0;
 }
 
 //--//

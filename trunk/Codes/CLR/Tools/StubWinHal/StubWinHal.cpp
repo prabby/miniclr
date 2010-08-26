@@ -18,19 +18,19 @@ BOOL Watchdog_GetSetEnabled( BOOL enabled, BOOL fSet )
     return TRUE;
 }
 
-void Watchdog_ResetCounter() {}
+//void Watchdog_ResetCounter() {}
 
 void CPU_Reset() {}
 
-unsigned int Events_MaskedRead( unsigned int ) { return 0; }
+//unsigned int Events_MaskedRead( unsigned int ) { return 0; }
 
-void CLR_RT_EmulatorHooks::Notify_ExecutionStateChanged( void ) {}
+//void CLR_RT_EmulatorHooks::Notify_ExecutionStateChanged( void ) {}
 
-unsigned int Events_WaitForEvents( unsigned int powerLevel, unsigned int,unsigned int ) { return 0; }
+//unsigned int Events_WaitForEvents( unsigned int powerLevel, unsigned int,unsigned int ) { return 0; }
+//
+//void Events_SetBoolTimer( int *,unsigned int ) {}
 
-void Events_SetBoolTimer( int *,unsigned int ) {}
-
-int DebuggerPort_Flush( int ) { return 0; }
+//int DebuggerPort_Flush( int ) { return 0; }
 
 // ----------------------------------------------------------
 
@@ -77,10 +77,10 @@ void __cdecl HAL_Windows_Debug_Print( char * txt )
     std::cerr << txt << std::endl;
 }
 
-UINT32 LCD_ConvertColor( UINT32 color )
-{
-    return color;
-}
+//UINT32 LCD_ConvertColor( UINT32 color )
+//{
+//    return color;
+//}
 
 
 // ----------------------------------------------------------

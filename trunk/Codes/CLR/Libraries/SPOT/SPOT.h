@@ -13,6 +13,8 @@
 
 #include <TinyCLR_Version.h>
 
+#include <tinyhal_releaseinfo.h>
+
 #include <SPOT_native.h>
 #include <CorLib_native.h>
 

@@ -105,107 +105,107 @@ void CLR_HW_Hardware::PrepareForGC()
 
 void CLR_HW_Hardware::ProcessActivity()
 {
-    NATIVE_PROFILE_CLR_HARDWARE();
-    HAL_CONTINUATION::Dequeue_And_Execute();
-
-    TINYCLR_FOREACH_MESSAGING(msg)
-    {
-        msg.PurgeCache();
-    }
-    TINYCLR_FOREACH_MESSAGING_END();
-    
-    TINYCLR_FOREACH_DEBUGGER(dbg)
-    {
-        dbg.PurgeCache();
-    }
-    TINYCLR_FOREACH_DEBUGGER_END();
-
-    UINT32 events    = ::Events_Get( m_wakeupEvents );    
-    UINT32 eventsCLR = 0;
-
-    if(events & m_MessagingEventsMask)
-    {
-        TINYCLR_FOREACH_MESSAGING(msg)
-        {
-            msg.ProcessCommands();
-        }
-        TINYCLR_FOREACH_MESSAGING_END();
-    }
-
-    if(events & m_DebuggerEventsMask)
-    {
-        TINYCLR_FOREACH_DEBUGGER(dbg)
-        {
-            dbg.ProcessCommands();
-        }
-        TINYCLR_FOREACH_DEBUGGER_END();
-
-#if defined(PLATFORM_ARM)
-        if(CLR_EE_DBG_IS(RebootPending))
-        {
-#if !defined(BUILD_RTM)
-            CLR_Debug::Printf( "Rebooting...\r\n" );
-#endif
-
-            if(!CLR_EE_REBOOT_IS(ClrOnly))
-            {
-                CLR_RT_ExecutionEngine::Reboot( true );
-            }
-        }
-#endif
-    }
-
-    if( events & (SYSTEM_EVENT_FLAG_COM_IN | SYSTEM_EVENT_FLAG_COM_OUT) )
-    {
-        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_SerialPort;
-    }
-
-    if(events & SYSTEM_EVENT_I2C_XACTION)
-    {                    
-        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_I2C;
-    }
-
-    if((events & SYSTEM_EVENT_HW_INTERRUPT)
-#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
-        || (!CLR_EE_DBG_IS(Stopped) && !g_CLR_HW_Hardware.m_interruptData.m_applicationQueue.IsEmpty())
-#endif //#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
-        )
-    {
-        ProcessInterrupts();
-    }
-
-    if(events & SYSTEM_EVENT_FLAG_SOCKET)
-    {
-        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_Socket;
-    }
-
-    if(events & SYSTEM_EVENT_FLAG_IO)
-    {
-        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_IO;
-    }
-
-    if(events & SYSTEM_EVENT_FLAG_CHARGER_CHANGE)
-    {
-        static UINT32 lastStatus;
-        UINT32        status;
-
-        if(::Charger_Status( status ))
-        {
-            status &= CHARGER_STATUS_ON_AC_POWER;
-
-            if(lastStatus != status)
-            {
-                lastStatus = status;
-
-                eventsCLR |= CLR_RT_ExecutionEngine::c_Event_Battery;
-            }
-        }
-    }
-
-    if(eventsCLR)
-    {
-        g_CLR_RT_ExecutionEngine.SignalEvents( eventsCLR );
-    }
+//    NATIVE_PROFILE_CLR_HARDWARE();
+//    HAL_CONTINUATION::Dequeue_And_Execute();
+//
+//    TINYCLR_FOREACH_MESSAGING(msg)
+//    {
+//        msg.PurgeCache();
+//    }
+//    TINYCLR_FOREACH_MESSAGING_END();
+//    
+//    TINYCLR_FOREACH_DEBUGGER(dbg)
+//    {
+//        dbg.PurgeCache();
+//    }
+//    TINYCLR_FOREACH_DEBUGGER_END();
+//
+//    UINT32 events    = ::Events_Get( m_wakeupEvents );    
+//    UINT32 eventsCLR = 0;
+//
+//    if(events & m_MessagingEventsMask)
+//    {
+//        TINYCLR_FOREACH_MESSAGING(msg)
+//        {
+//            //msg.ProcessCommands();
+//        }
+//        TINYCLR_FOREACH_MESSAGING_END();
+//    }
+//
+//    if(events & m_DebuggerEventsMask)
+//    {
+//        TINYCLR_FOREACH_DEBUGGER(dbg)
+//        {
+//            //dbg.ProcessCommands();
+//        }
+//        TINYCLR_FOREACH_DEBUGGER_END();
+//
+//#if defined(PLATFORM_ARM)
+//        if(CLR_EE_DBG_IS(RebootPending))
+//        {
+//#if !defined(BUILD_RTM)
+//            CLR_Debug::Printf( "Rebooting...\r\n" );
+//#endif
+//
+//            if(!CLR_EE_REBOOT_IS(ClrOnly))
+//            {
+//                CLR_RT_ExecutionEngine::Reboot( true );
+//            }
+//        }
+//#endif
+//    }
+//
+//    if( events & (SYSTEM_EVENT_FLAG_COM_IN | SYSTEM_EVENT_FLAG_COM_OUT) )
+//    {
+//        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_SerialPort;
+//    }
+//
+//    if(events & SYSTEM_EVENT_I2C_XACTION)
+//    {                    
+//        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_I2C;
+//    }
+//
+//    if((events & SYSTEM_EVENT_HW_INTERRUPT)
+//#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
+//        || (!CLR_EE_DBG_IS(Stopped) && !g_CLR_HW_Hardware.m_interruptData.m_applicationQueue.IsEmpty())
+//#endif //#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
+//        )
+//    {
+//        ProcessInterrupts();
+//    }
+//
+//    if(events & SYSTEM_EVENT_FLAG_SOCKET)
+//    {
+//        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_Socket;
+//    }
+//
+//    if(events & SYSTEM_EVENT_FLAG_IO)
+//    {
+//        eventsCLR |= CLR_RT_ExecutionEngine::c_Event_IO;
+//    }
+//
+//    if(events & SYSTEM_EVENT_FLAG_CHARGER_CHANGE)
+//    {
+//        static UINT32 lastStatus;
+//        UINT32        status;
+//
+//        if(::Charger_Status( status ))
+//        {
+//            status &= CHARGER_STATUS_ON_AC_POWER;
+//
+//            if(lastStatus != status)
+//            {
+//                lastStatus = status;
+//
+//                eventsCLR |= CLR_RT_ExecutionEngine::c_Event_Battery;
+//            }
+//        }
+//    }
+//
+//    if(eventsCLR)
+//    {
+//        g_CLR_RT_ExecutionEngine.SignalEvents( eventsCLR );
+//    }
 }
 
 //--//

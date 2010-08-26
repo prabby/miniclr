@@ -127,7 +127,7 @@ HRESULT CLR_RT_ExecutionEngine::ExecutionEngine_Initialize()
 
     TINYCLR_CHECK_HRESULT(CLR_Messaging::CreateInstance());
     
-    TINYCLR_CHECK_HRESULT(CLR_DBG_Debugger::CreateInstance());
+    //TINYCLR_CHECK_HRESULT(CLR_DBG_Debugger::CreateInstance());
 
 #if defined(TINYCLR_PROFILE_NEW)
     TINYCLR_CHECK_HRESULT(CLR_PRF_Profiler::CreateInstance());
@@ -256,7 +256,7 @@ void CLR_RT_ExecutionEngine::ExecutionEngine_Cleanup()
     m_scratchPadArray = NULL;
     m_breakpointsNum = 0;
 
-    CLR_DBG_Debugger::DeleteInstance();
+    //CLR_DBG_Debugger::DeleteInstance();
 #endif //#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
 
 #if defined(TINYCLR_PROFILE_NEW)
@@ -762,8 +762,8 @@ HRESULT CLR_RT_ExecutionEngine::Execute( LPWSTR entryPointArgs, int maxContextSw
 #endif
 
     //By skipping the whole CLRStartup routine, the Monitor_Program_Exit message never gets sent to clients.
-    CLR_EE_DBG_EVENT_BROADCAST(CLR_DBG_Commands::c_Monitor_ProgramExit,0,NULL,WP_Flags::c_NonCritical);
-    WaitForDebugger();
+    //CLR_EE_DBG_EVENT_BROADCAST(CLR_DBG_Commands::c_Monitor_ProgramExit,0,NULL,WP_Flags::c_NonCritical);
+    //WaitForDebugger();
 #endif
 
     TINYCLR_CLEANUP_END();
