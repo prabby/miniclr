@@ -1,0 +1,21 @@
+<Project DefaultTargets="TinyCLR_Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.Targets"/>
+
+  <PropertyGroup>
+    <BuildDependsOn>$(BuildDependsOn);CryptoCopy</BuildDependsOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CryptoFilesToPropagate Include="$(MSBuildProjectDirectory)\dll\crypto.dll" />
+    <CryptoFilesToPropogate Include="$(MSBuildProjectDirectory)\dll\crypto.pdb" />
+    <PropagateCryptoDestinationFiles Include="@(CryptoFilesToPropagate->'$(SPOCLIENT)\tools\bin\%(Filename)%(Extension)')" />
+  </ItemGroup>
+  
+  <Target Name="CryptoCopy">
+    <Message Text="Will copy to %(PropagateCryptoDestinationFiles.identity)" />
+    <Exec Command="Attrib -R %(PropagateCryptoDestinationFiles.identity)" />
+    <Copy SourceFiles="@(CryptoFilesToPropagate)" DestinationFolder="$(BUILD_TREE_SERVER)\dll" SkipUnchangedFiles="true"/>
+    <Copy SourceFiles="@(CryptoFilesToPropagate)" DestinationFolder="$(SPOCLIENT)\tools\bin"/>
+  </Target>
+  
+</Project>

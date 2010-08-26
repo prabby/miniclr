@@ -2,25 +2,28 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h""
+#include "stdafx.h"
 
-UINT64 HAL_Time_CurrentTicks()
+//--//
+
+HRESULT Watchdog_Enable( UINT32 TimeoutMilliseconds, WATCHDOG_INTERRUPT_CALLBACK callback, void* context )
 {
-    return 0; //This method is currently not implemented
+	return 0;
+    //return EmulatorNative::GetIWatchdogDriver()->Enable( TimeoutMilliseconds );
 }
 
-INT64 HAL_Time_TicksToTime( UINT64 Ticks )
+void Watchdog_Disable()
 {
-    return 0;
+    //EmulatorNative::GetIWatchdogDriver()->Disable();
 }
 
-INT64 HAL_Time_CurrentTime()
+void Watchdog_ResetCpu()
 {
-    return HAL_Time_TicksToTime( HAL_Time_CurrentTicks() );
+    //EmulatorNative::GetIWatchdogDriver()->ResetCpu();
 }
 
-unsigned __int64 HAL_Windows_GetPerformanceTicks( void )
+void Watchdog_ResetCounter()
 {
-    return 0;
+    //EmulatorNative::GetIWatchdogDriver()->ResetCounter();
 }
 

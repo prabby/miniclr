@@ -33,7 +33,7 @@
 
 //--//
 
-#if defined(__arm) && !defined(PLATFORM_ARM_OS_PORT)
+#if defined(__arm__) && !defined(PLATFORM_ARM_OS_PORT)
 
 // we include this to error at link time if we use any of the C semihosted stuff
 #pragma import(__use_no_semihosting_swi)
@@ -74,7 +74,7 @@
 #define FORCEINLINE __forceinline
 
 
-#elif defined(arm) || defined(__arm)
+#elif defined(arm) || defined(__arm__)
 
 #define PLATFORM_ARM
 #define ADS_PACKED __packed

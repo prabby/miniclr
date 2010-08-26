@@ -2,25 +2,22 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h""
+#include "stdafx.h"
 
-UINT64 HAL_Time_CurrentTicks()
-{
-    return 0; //This method is currently not implemented
-}
+//using namespace Microsoft::SPOT::Emulator;
 
-INT64 HAL_Time_TicksToTime( UINT64 Ticks )
+INT32 HAL_TIMESERVICE_GetTimeFromSNTPServer(UINT8* serverIP, SYSTEMTIME* systemTime)
 {
+    /// We don't contact SNTP server for real, rather assuming desktop had been
+    /// doing this already, so we retrieve desktops system time as UTC.
+    ::GetSystemTime(systemTime);
+
     return 0;
 }
 
-INT64 HAL_Time_CurrentTime()
+INT32 HAL_TIMESERVICE_GetTimeFromSNTPServerList(UINT8* serverIP, INT32 serverNum, SYSTEMTIME* systemTime)
 {
-    return HAL_Time_TicksToTime( HAL_Time_CurrentTicks() );
-}
+    ::GetSystemTime(systemTime);
 
-unsigned __int64 HAL_Windows_GetPerformanceTicks( void )
-{
     return 0;
 }
-
