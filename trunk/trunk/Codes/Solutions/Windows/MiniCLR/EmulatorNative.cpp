@@ -89,11 +89,11 @@ HRESULT Settings::System_Start()
     // 
     // the runtime is by default using a watchdog 
     // 
-    Watchdog_GetSetTimeout ( WATCHDOG_TIMEOUT , TRUE );
-    Watchdog_GetSetBehavior( WATCHDOG_BEHAVIOR, TRUE );
-    Watchdog_GetSetEnabled ( WATCHDOG_ENABLE  , TRUE );
+    //Watchdog_GetSetTimeout ( WATCHDOG_TIMEOUT , TRUE );
+    //Watchdog_GetSetBehavior( WATCHDOG_BEHAVIOR, TRUE );
+    //Watchdog_GetSetEnabled ( WATCHDOG_ENABLE  , TRUE );
     
-    TimeService_Initialize();
+    //TimeService_Initialize();
 
     BlockStorageList::Initialize();
 
@@ -101,11 +101,11 @@ HRESULT Settings::System_Start()
 
     BlockStorageList::InitializeDevices();
 
-    FileSystemVolumeList::Initialize();
+    //FileSystemVolumeList::Initialize();
 
-    FS_AddVolumes();
+    //FS_AddVolumes();
 
-    FileSystemVolumeList::InitializeVolumes();
+    //FileSystemVolumeList::InitializeVolumes();
 
     /*
     PalEvent_Initialize();

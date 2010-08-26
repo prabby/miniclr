@@ -73,7 +73,7 @@ HRESULT Library_corlib_native_System_Resources_ResourceManager::GetObjectInterna
 
                 ptr = top.Dereference();
 
-                TINYCLR_SET_AND_LEAVE(CLR_GFX_Bitmap::CreateInstance( ptr[ CLR_GFX_Bitmap::FIELD__m_bitmap ], buf, size, pAssm ));
+                //TINYCLR_SET_AND_LEAVE(CLR_GFX_Bitmap::CreateInstance( ptr[ CLR_GFX_Bitmap::FIELD__m_bitmap ], buf, size, pAssm ));
             }
             break;
 
@@ -85,7 +85,7 @@ HRESULT Library_corlib_native_System_Resources_ResourceManager::GetObjectInterna
 
                 ptr = top.Dereference();
 
-                TINYCLR_SET_AND_LEAVE(CLR_GFX_Font::CreateInstance( ptr[ CLR_GFX_Font::FIELD__m_font ], buf, pAssm ));                
+                //TINYCLR_SET_AND_LEAVE(CLR_GFX_Font::CreateInstance( ptr[ CLR_GFX_Font::FIELD__m_font ], buf, pAssm ));                
             }
             break;
         case CLR_RECORD_RESOURCE::RESOURCE_Binary:

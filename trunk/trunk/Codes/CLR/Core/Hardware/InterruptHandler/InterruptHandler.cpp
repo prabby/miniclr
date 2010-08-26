@@ -65,57 +65,59 @@ HRESULT CLR_HW_Hardware::TransferAllInterruptsToApplicationQueue()
 {
     NATIVE_PROFILE_CLR_HARDWARE();
     TINYCLR_HEADER();
+		
+		TINYCLR_RETURN();
 
-    while(true)
-    {
-        HalInterruptRecord* rec;
+    //while(true)
+    //{
+    //    HalInterruptRecord* rec;
 
-        {
-            GLOBAL_LOCK(irq1);
+    //    {
+    //        GLOBAL_LOCK(irq1);
 
-            rec = m_interruptData.m_HalQueue.Peek();
-        }
+    //        rec = m_interruptData.m_HalQueue.Peek();
+    //    }
 
-        if(rec == NULL) break;
+    //    if(rec == NULL) break;
 
-        CLR_RT_ApplicationInterrupt* queueRec = (CLR_RT_ApplicationInterrupt*)CLR_RT_Memory::Allocate_And_Erase( sizeof(CLR_RT_ApplicationInterrupt), CLR_RT_HeapBlock::HB_CompactOnFailure );  CHECK_ALLOCATION(queueRec);
+    //    CLR_RT_ApplicationInterrupt* queueRec = (CLR_RT_ApplicationInterrupt*)CLR_RT_Memory::Allocate_And_Erase( sizeof(CLR_RT_ApplicationInterrupt), CLR_RT_HeapBlock::HB_CompactOnFailure );  CHECK_ALLOCATION(queueRec);
 
-        queueRec->m_interruptPortInterrupt.m_data1   =                                          rec->m_data1;
-        queueRec->m_interruptPortInterrupt.m_data2   =                                          rec->m_data2;
-        queueRec->m_interruptPortInterrupt.m_data3   =                                          rec->m_data3;
-        queueRec->m_interruptPortInterrupt.m_time    =                                          rec->m_time;
-        queueRec->m_interruptPortInterrupt.m_context = (CLR_RT_HeapBlock_NativeEventDispatcher*)rec->m_context;
+    //    queueRec->m_interruptPortInterrupt.m_data1   =                                          rec->m_data1;
+    //    queueRec->m_interruptPortInterrupt.m_data2   =                                          rec->m_data2;
+    //    queueRec->m_interruptPortInterrupt.m_data3   =                                          rec->m_data3;
+    //    queueRec->m_interruptPortInterrupt.m_time    =                                          rec->m_time;
+    //    queueRec->m_interruptPortInterrupt.m_context = (CLR_RT_HeapBlock_NativeEventDispatcher*)rec->m_context;
 
-        m_interruptData.m_applicationQueue.LinkAtBack( queueRec ); ++m_interruptData.m_queuedInterrupts;
+    //    m_interruptData.m_applicationQueue.LinkAtBack( queueRec ); ++m_interruptData.m_queuedInterrupts;
 
-        {
-            GLOBAL_LOCK(irq2);
-            
-            m_interruptData.m_HalQueue.Pop();
-        }
-    }
+    //    {
+    //        GLOBAL_LOCK(irq2);
+    //        
+    //        m_interruptData.m_HalQueue.Pop();
+    //    }
+    //}
 
-    if(m_interruptData.m_queuedInterrupts == 0)
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_NO_INTERRUPT);
-    }
+    //if(m_interruptData.m_queuedInterrupts == 0)
+    //{
+    //    TINYCLR_SET_AND_LEAVE(CLR_E_NO_INTERRUPT);
+    //}
 
-    TINYCLR_CLEANUP();
+    //TINYCLR_CLEANUP();
 
-    if(CLR_E_OUT_OF_MEMORY == hr)
-    {
-        // if there is no memory left discard all interrupts to avoid getting into a death spiral of OOM exceptions
-        {
-            GLOBAL_LOCK(irq3);
+    //if(CLR_E_OUT_OF_MEMORY == hr)
+    //{
+    //     if there is no memory left discard all interrupts to avoid getting into a death spiral of OOM exceptions
+    //    {
+    //        GLOBAL_LOCK(irq3);
 
-            while(!m_interruptData.m_HalQueue.IsEmpty())
-            {
-                m_interruptData.m_HalQueue.Pop();
-            }
-        }
-    }    
-    
-    TINYCLR_CLEANUP_END();
+    //        while(!m_interruptData.m_HalQueue.IsEmpty())
+    //        {
+    //            m_interruptData.m_HalQueue.Pop();
+    //        }
+    //    }
+    //}    
+    //
+    //TINYCLR_CLEANUP_END();
 }
 
 HRESULT CLR_HW_Hardware::ProcessInterrupts()

@@ -11,91 +11,93 @@ HRESULT CLR_RT_FileStream::CreateInstance( CLR_RT_HeapBlock& ref, LPCSTR path, i
 {
     NATIVE_PROFILE_CLR_IO();
     TINYCLR_HEADER();
+		
+		TINYCLR_RETURN();
 
-    CLR_RT_HeapBlock_BinaryBlob* blob;
-    CLR_UINT32                   blobSize = sizeof(CLR_RT_FileStream);
-    CLR_RT_FileStream*           fs;
-    UnicodeString                pathW;
+    //CLR_RT_HeapBlock_BinaryBlob* blob;
+    //CLR_UINT32                   blobSize = sizeof(CLR_RT_FileStream);
+    //CLR_RT_FileStream*           fs;
+    //UnicodeString                pathW;
 
-    LPCSTR     nameSpace;
-    LPCSTR     relativePath;
-    CLR_UINT32 nameSpaceLength;    
+    //LPCSTR     nameSpace;
+    //LPCSTR     relativePath;
+    //CLR_UINT32 nameSpaceLength;    
 
-    int inputBufferSize  = 0;
-    int outputBufferSize = 0;
+    //int inputBufferSize  = 0;
+    //int outputBufferSize = 0;
 
-    FileSystemVolume*        driver;
-    STREAM_DRIVER_DETAILS*   sdd;
+    //FileSystemVolume*        driver;
+    //STREAM_DRIVER_DETAILS*   sdd;
 
-    TINYCLR_CHECK_HRESULT(CLR_RT_FileStream::SplitFilePath( path, &nameSpace, &nameSpaceLength, &relativePath ));
+    //TINYCLR_CHECK_HRESULT(CLR_RT_FileStream::SplitFilePath( path, &nameSpace, &nameSpaceLength, &relativePath ));
 
-    /// Retrieve appropriate driver that handles this namespace.
-    if((driver = FileSystemVolumeList::FindVolume( nameSpace, nameSpaceLength )) == NULL)
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_VOLUME_NOT_FOUND);
-    }
+    ///// Retrieve appropriate driver that handles this namespace.
+    ////if((driver = FileSystemVolumeList::FindVolume( nameSpace, nameSpaceLength )) == NULL)
+    ////{
+    ////    TINYCLR_SET_AND_LEAVE(CLR_E_VOLUME_NOT_FOUND);
+    ////}
 
-    if(!(driver->ValidateStreamDriver()))
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_INVALID_DRIVER);
-    }
+    //if(!(driver->ValidateStreamDriver()))
+    //{
+    //    TINYCLR_SET_AND_LEAVE(CLR_E_INVALID_DRIVER);
+    //}
 
-    sdd = driver->DriverDetails();
+    //sdd = driver->DriverDetails();
 
-    if(sdd->bufferingStrategy == SYSTEM_BUFFERED_IO)
-    {
-        if(bufferSize == 0)
-        {
-            inputBufferSize  = (sdd->inputBufferSize  > 0) ? sdd->inputBufferSize  : FS_DEFAULT_BUFFER_SIZE;
-            outputBufferSize = (sdd->outputBufferSize > 0) ? sdd->outputBufferSize : FS_DEFAULT_BUFFER_SIZE;
-        }
-        else
-        {
-            inputBufferSize  = bufferSize;
-            outputBufferSize = bufferSize;
-        }
+    //if(sdd->bufferingStrategy == SYSTEM_BUFFERED_IO)
+    //{
+    //    if(bufferSize == 0)
+    //    {
+    //        inputBufferSize  = (sdd->inputBufferSize  > 0) ? sdd->inputBufferSize  : FS_DEFAULT_BUFFER_SIZE;
+    //        outputBufferSize = (sdd->outputBufferSize > 0) ? sdd->outputBufferSize : FS_DEFAULT_BUFFER_SIZE;
+    //    }
+    //    else
+    //    {
+    //        inputBufferSize  = bufferSize;
+    //        outputBufferSize = bufferSize;
+    //    }
 
-        blobSize += inputBufferSize + outputBufferSize;
-    }
+    //    blobSize += inputBufferSize + outputBufferSize;
+    //}
 
-    TINYCLR_CHECK_HRESULT(CLR_RT_HeapBlock_BinaryBlob::CreateInstance( ref, blobSize, NULL, CLR_RT_FileStream::RelocationHandler, 0 ));
+    //TINYCLR_CHECK_HRESULT(CLR_RT_HeapBlock_BinaryBlob::CreateInstance( ref, blobSize, NULL, CLR_RT_FileStream::RelocationHandler, 0 ));
 
-    blob = ref.DereferenceBinaryBlob();
-    fs   = (CLR_RT_FileStream*)blob->GetData();
+    //blob = ref.DereferenceBinaryBlob();
+    //fs   = (CLR_RT_FileStream*)blob->GetData();
 
-    // Clear the memory
-    CLR_RT_Memory::ZeroFill( fs, blobSize );
+    //// Clear the memory
+    //CLR_RT_Memory::ZeroFill( fs, blobSize );
 
-    fs->m_driver        = driver;
-    fs->m_driverDetails = sdd;
+    //fs->m_driver        = driver;
+    //fs->m_driverDetails = sdd;
 
-    switch(sdd->bufferingStrategy)
-    {
-        case SYSTEM_BUFFERED_IO: // I/O is asynchronous from a PAL level buffer: the runtime will alocate the necesary memory
-            {
-                BYTE* inputBuffer = (BYTE*)&(fs[ 1 ]);
-                BYTE* outputBuffer = inputBuffer + inputBufferSize;
+    //switch(sdd->bufferingStrategy)
+    //{
+    //    case SYSTEM_BUFFERED_IO: // I/O is asynchronous from a PAL level buffer: the runtime will alocate the necesary memory
+    //        {
+    //            BYTE* inputBuffer = (BYTE*)&(fs[ 1 ]);
+    //            BYTE* outputBuffer = inputBuffer + inputBufferSize;
 
-                TINYCLR_CHECK_HRESULT(fs->AssignStorage( inputBuffer, inputBufferSize, outputBuffer, outputBufferSize ));
-            }
-            break;
-            
-        case DRIVER_BUFFERED_IO: // I/O is asynchronous from a HAL level or HW buffer: the runtime will just handle the existing memory
-            if((sdd->inputBuffer  == NULL && sdd->canRead ) ||
-               (sdd->outputBuffer == NULL && sdd->canWrite))
-            {
-                TINYCLR_SET_AND_LEAVE(CLR_E_INVALID_DRIVER);
-            }
+    //            TINYCLR_CHECK_HRESULT(fs->AssignStorage( inputBuffer, inputBufferSize, outputBuffer, outputBufferSize ));
+    //        }
+    //        break;
+    //        
+    //    case DRIVER_BUFFERED_IO: // I/O is asynchronous from a HAL level or HW buffer: the runtime will just handle the existing memory
+    //        if((sdd->inputBuffer  == NULL && sdd->canRead ) ||
+    //           (sdd->outputBuffer == NULL && sdd->canWrite))
+    //        {
+    //            TINYCLR_SET_AND_LEAVE(CLR_E_INVALID_DRIVER);
+    //        }
 
-            TINYCLR_CHECK_HRESULT(fs->AssignStorage( sdd->inputBuffer,  sdd->inputBufferSize, 
-                                                     sdd->outputBuffer, sdd->outputBufferSize ));
-            break;
-    }
+    //        TINYCLR_CHECK_HRESULT(fs->AssignStorage( sdd->inputBuffer,  sdd->inputBufferSize, 
+    //                                                 sdd->outputBuffer, sdd->outputBufferSize ));
+    //        break;
+    //}
 
-    TINYCLR_CHECK_HRESULT(pathW.Assign( relativePath ));
-    TINYCLR_CHECK_HRESULT(driver->Open( pathW, &(fs->m_handle) ));
+    //TINYCLR_CHECK_HRESULT(pathW.Assign( relativePath ));
+    //TINYCLR_CHECK_HRESULT(driver->Open( pathW, &(fs->m_handle) ));
 
-    TINYCLR_NOCLEANUP();
+    //TINYCLR_NOCLEANUP();
 }
 
 void CLR_RT_FileStream::Relocate()
@@ -249,82 +251,84 @@ HRESULT CLR_RT_FindFile::CreateInstance( CLR_RT_HeapBlock& ref, LPCSTR path, LPC
 {
     NATIVE_PROFILE_CLR_IO();
     TINYCLR_HEADER();
+		
+		TINYCLR_RETURN();
 
-    CLR_RT_HeapBlock_BinaryBlob* blob;
-    CLR_RT_FindFile*             ff;
-    UnicodeString                pathW;
-    CLR_UINT32                   size;
-    CLR_UINT32                   i, j;
-    CLR_UINT32                   fullPathBufferSize;
+    //CLR_RT_HeapBlock_BinaryBlob* blob;
+    //CLR_RT_FindFile*             ff;
+    //UnicodeString                pathW;
+    //CLR_UINT32                   size;
+    //CLR_UINT32                   i, j;
+    //CLR_UINT32                   fullPathBufferSize;
 
-    LPCSTR     nameSpace;
-    LPCSTR     relativePath;
-    LPCWSTR    relativePathW;
-    CLR_UINT32 nameSpaceLength;
+    //LPCSTR     nameSpace;
+    //LPCSTR     relativePath;
+    //LPCWSTR    relativePathW;
+    //CLR_UINT32 nameSpaceLength;
 
-    // We will support only the "*" search pattern for now
-    if(hal_strncmp_s( searchPattern, "*", 2 ) != 0)
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_NOT_SUPPORTED);
-    }
+    //// We will support only the "*" search pattern for now
+    //if(hal_strncmp_s( searchPattern, "*", 2 ) != 0)
+    //{
+    //    TINYCLR_SET_AND_LEAVE(CLR_E_NOT_SUPPORTED);
+    //}
 
-    TINYCLR_CHECK_HRESULT(CLR_RT_FileStream::SplitFilePath( path, &nameSpace, &nameSpaceLength, &relativePath ));
-    TINYCLR_CHECK_HRESULT(pathW.Assign( relativePath ));
+    //TINYCLR_CHECK_HRESULT(CLR_RT_FileStream::SplitFilePath( path, &nameSpace, &nameSpaceLength, &relativePath ));
+    //TINYCLR_CHECK_HRESULT(pathW.Assign( relativePath ));
 
-    relativePathW = (LPCWSTR)pathW;
+    //relativePathW = (LPCWSTR)pathW;
 
-    fullPathBufferSize = FS_MAX_PATH_LENGTH + nameSpaceLength + 1; // '\' before the namespace
+    //fullPathBufferSize = FS_MAX_PATH_LENGTH + nameSpaceLength + 1; // '\' before the namespace
 
-    size = sizeof(CLR_RT_FindFile) + fullPathBufferSize * sizeof(UINT16);  
+    //size = sizeof(CLR_RT_FindFile) + fullPathBufferSize * sizeof(UINT16);  
 
-    TINYCLR_CHECK_HRESULT(CLR_RT_HeapBlock_BinaryBlob::CreateInstance( ref, size, NULL, CLR_RT_FindFile::RelocationHandler, 0 ));
+    //TINYCLR_CHECK_HRESULT(CLR_RT_HeapBlock_BinaryBlob::CreateInstance( ref, size, NULL, CLR_RT_FindFile::RelocationHandler, 0 ));
 
-    blob = ref.DereferenceBinaryBlob();
-    ff   = (CLR_RT_FindFile*)blob->GetData();
+    //blob = ref.DereferenceBinaryBlob();
+    //ff   = (CLR_RT_FindFile*)blob->GetData();
 
-    // Clear the memory
-    CLR_RT_Memory::ZeroFill( ff, sizeof(CLR_RT_FindFile) );
+    //// Clear the memory
+    //CLR_RT_Memory::ZeroFill( ff, sizeof(CLR_RT_FindFile) );
 
 
-    /// Retrieve appropriate driver that handles this namespace.    
-    if((ff->m_driver = FileSystemVolumeList::FindVolume( nameSpace, nameSpaceLength )) == NULL)
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_VOLUME_NOT_FOUND);
-    }
+    ///// Retrieve appropriate driver that handles this namespace.    
+    //if((ff->m_driver = FileSystemVolumeList::FindVolume( nameSpace, nameSpaceLength )) == NULL)
+    //{
+    //    TINYCLR_SET_AND_LEAVE(CLR_E_VOLUME_NOT_FOUND);
+    //}
 
-    // Validate all the find related function are present in the driver
-    if(!(ff->m_driver->ValidateFind()))
-    {
-        TINYCLR_SET_AND_LEAVE(CLR_E_NOT_SUPPORTED);
-    }
+    //// Validate all the find related function are present in the driver
+    //if(!(ff->m_driver->ValidateFind()))
+    //{
+    //    TINYCLR_SET_AND_LEAVE(CLR_E_NOT_SUPPORTED);
+    //}
 
-    ff->m_fullPath = (UINT16*)(&ff[ 1 ]);
-    ff->m_fullPathBufferSize = fullPathBufferSize;
+    //ff->m_fullPath = (UINT16*)(&ff[ 1 ]);
+    //ff->m_fullPathBufferSize = fullPathBufferSize;
 
-    // Copy the '\' and nameSpace
-    for(i = 0; i < nameSpaceLength + 1; i++)
-    {
-        ff->m_fullPath[ i ] = path[ i ];
-    }
+    //// Copy the '\' and nameSpace
+    //for(i = 0; i < nameSpaceLength + 1; i++)
+    //{
+    //    ff->m_fullPath[ i ] = path[ i ];
+    //}
 
-    // Copy the rest of the path from the UTF16 buffer
-    for(j = 0; i < fullPathBufferSize && relativePathW[ j ] != 0; i++, j++)
-    {
-        ff->m_fullPath[ i ] = relativePathW[ j ];
-    }
+    //// Copy the rest of the path from the UTF16 buffer
+    //for(j = 0; i < fullPathBufferSize && relativePathW[ j ] != 0; i++, j++)
+    //{
+    //    ff->m_fullPath[ i ] = relativePathW[ j ];
+    //}
 
-    // Make sure we always ends with '\\'
-    if(ff->m_fullPath[ i - 1 ] != '\\')
-    {
-        ff->m_fullPath[ i++ ] = '\\';
-    }
+    //// Make sure we always ends with '\\'
+    //if(ff->m_fullPath[ i - 1 ] != '\\')
+    //{
+    //    ff->m_fullPath[ i++ ] = '\\';
+    //}
 
-    ff->m_fi.FileName = &(ff->m_fullPath[ i ]);
-    ff->m_fi.FileNameSize = fullPathBufferSize - i;
+    //ff->m_fi.FileName = &(ff->m_fullPath[ i ]);
+    //ff->m_fi.FileNameSize = fullPathBufferSize - i;
 
-    TINYCLR_CHECK_HRESULT(ff->m_driver->FindOpen( relativePathW, &(ff->m_handle) ));
+    //TINYCLR_CHECK_HRESULT(ff->m_driver->FindOpen( relativePathW, &(ff->m_handle) ));
 
-    TINYCLR_NOCLEANUP();
+    //TINYCLR_NOCLEANUP();
 }
 
 void CLR_RT_FindFile::Relocate()

@@ -871,7 +871,7 @@ static void GetClrReleaseInfo(CLR_DBG_Commands::Debugging_Execution_QueryCLRCapa
 MfReleaseInfo::Init( clrInfo.m_clrReleaseInfo, VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD, VERSION_REVISION, OEMSTR(OEMSYSTEMINFOSTRING), hal_strlen_s(OEMSTR(OEMSYSTEMINFOSTRING)) );
 #undef OEMSTR(str)
 #else
-    MfReleaseInfo::Init( clrInfo.m_clrReleaseInfo, VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD, VERSION_REVISION, OEMSYSTEMINFOSTRING, hal_strlen_s(OEMSYSTEMINFOSTRING) );
+    MfReleaseInfo::Init( clrInfo.m_clrReleaseInfo, VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD, VERSION_REVISION, "OEMSYSTEMINFOSTRING", hal_strlen_s("OEMSYSTEMINFOSTRING") );
 #endif
 
     if ( g_CLR_RT_TypeSystem.m_assemblyMscorlib &&

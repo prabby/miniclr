@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="crypto.lib"
+				AdditionalDependencies="crypto.lib comsuppw.lib"
 				OutputFile="..\Bin\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="..\..\..\Crypto\LIB\x86"
@@ -685,10 +685,6 @@
 			Name="StubWinHal"
 			>
 			<File
-				RelativePath="..\..\..\CLR\Tools\StubWinHal\corlib_native.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\..\CLR\Tools\StubWinHal\minheap.cpp"
 				>
 			</File>
@@ -1025,6 +1021,50 @@
 				</File>
 				<File
 					RelativePath="..\..\..\CLR\Libraries\SPOT\SPOT_Serialization\SPOT_Serialization.h"
+					>
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="Messaging"
+			>
+			<File
+				RelativePath="..\..\..\CLR\Messaging\Messaging.cpp"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="PAL"
+			>
+			<Filter
+				Name="BlockStorage"
+				>
+				<File
+					RelativePath="..\..\..\DeviceCode\pal\BlockStorage\blockstoragelist.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Time"
+				>
+				<File
+					RelativePath="..\..\..\DeviceCode\pal\time\time_driver.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\DeviceCode\pal\time\time_driver.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\..\DeviceCode\pal\time\time_functions.cpp"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="SimpleHeap"
+				>
+				<File
+					RelativePath="..\..\..\DeviceCode\pal\SimpleHeap\SimpleHeap.cpp"
 					>
 				</File>
 			</Filter>
