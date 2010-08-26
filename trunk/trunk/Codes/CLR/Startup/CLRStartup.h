@@ -7,14 +7,14 @@
 
 /////////////////////////////////////////////////////////////////////////////
 
-#include <MiniCLR_Runtime.h>
-#include <MiniCLR_Checks.h>
-#include <MiniCLR_Diagnostics.h>
-#include <MiniCLR_Graphics.h>
-#include <MiniCLR_Hardware.h>
-#include <MiniCLR_Application.h>
+#include <TinyCLR_Runtime.h>
+#include <TinyCLR_Checks.h>
+#include <TinyCLR_Diagnostics.h>
+#include <TinyCLR_Graphics.h>
+#include <TinyCLR_Hardware.h>
+#include <TinyCLR_Application.h>
 
-#include <MiniCLR_Version.h>
+#include <TinyCLR_Version.h>
 
 #include <CorLib_Native.h>
 #include <SPOT_Native.h>
