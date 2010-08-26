@@ -18,10 +18,10 @@
 
 #include <CorLib_Native.h>
 #include <SPOT_Native.h>
-#include <SPOT_Graphics_Native.h>
-#include <SPOT_Hardware_Native.h>
-#include <SPOT_Net_Native.h>
-#include <SPOT_Net_Security_Native.h>
+//#include <SPOT_Graphics_Native.h>
+//#include <SPOT_Hardware_Native.h>
+//#include <SPOT_Net_Native.h>
+//#include <SPOT_Net_Security_Native.h>
 
 /////////////////////////////////////////////////////////////////////////////
 

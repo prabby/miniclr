@@ -39,7 +39,7 @@ inline void* hal_memcpy( void* dst, const void* src, size_t len )
 #undef NULL
 #endif
 
-#if defined(__arm) || defined(PLATFORM_BLACKFIN) || defined(__GNUC__) || defined(_ARC) || defined(__RENESAS__)
+#if defined(__arm__) || defined(PLATFORM_BLACKFIN) || defined(__GNUC__) || defined(_ARC) || defined(__RENESAS__)
 
 #undef UNICODE
 
@@ -86,7 +86,7 @@ typedef wchar_t            WCHAR;
 typedef WCHAR*             LPWSTR;
 typedef const WCHAR*       LPCWSTR;
 
-#endif //defined(__arm) || defined(PLATFORM_BLACKFIN) || defined(__GNUC__) || defined(_ARC) || defined(__RENESAS__) 
+#endif //defined(__arm__) || defined(PLATFORM_BLACKFIN) || defined(__GNUC__) || defined(_ARC) || defined(__RENESAS__) 
 
 #define ARRAYSIZE_CONST_EXPR(x) (sizeof(x)/sizeof(x[0]))
 #if (!defined(_WIN32) && !defined(WIN32) && !defined(_WIN32_WCE))
