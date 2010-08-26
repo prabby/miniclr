@@ -6,7 +6,7 @@
 
 #if defined(PLATFORM_WINDOWS)
 
-#include<MiniCLR_ParseOptions.h>
+#include<TinyCLR_ParseOptions.h>
 
 #endif
 
