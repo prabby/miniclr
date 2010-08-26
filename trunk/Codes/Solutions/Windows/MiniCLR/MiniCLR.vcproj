@@ -277,10 +277,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\Various.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\VirtualKey.cpp"
 				>
 			</File>
