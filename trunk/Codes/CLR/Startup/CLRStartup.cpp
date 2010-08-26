@@ -622,7 +622,7 @@ void ClrStartup( CLR_SETTINGS params )
         CLR_RT_Assembly::InitString();
 
 #if !defined(BUILD_RTM)
-        CLR_Debug::Printf( "\r\nTinyCLR (Build %d.%d.%d.%d)\r\n\r\n", VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD, VERSION_REVISION );
+        CLR_Debug::Printf( "\r\nMiniCLR (Build %d.%d.%d.%d)\r\n\r\n", VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD, VERSION_REVISION );
 #endif
 
         CLR_RT_Memory::Reset         ();
