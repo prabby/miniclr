@@ -565,7 +565,6 @@ static Settings s_ClrSettings;
 
 void ClrExit()
 {
-    NATIVE_PROFILE_CLR_STARTUP();
     CLR_EE_DBG_SET(ExitPending);
 }
 
@@ -610,7 +609,6 @@ bool ClrIsDebuggerStopped()
 
 void ClrStartup( CLR_SETTINGS params )
 {
-    NATIVE_PROFILE_CLR_STARTUP();
     //Settings settings;
     ASSERT(sizeof(CLR_RT_HeapBlock_Raw) == sizeof(CLR_RT_HeapBlock));
     bool softReboot;
