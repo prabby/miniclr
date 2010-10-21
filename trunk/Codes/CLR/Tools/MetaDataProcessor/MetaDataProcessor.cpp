@@ -1188,6 +1188,8 @@ struct Settings : CLR_RT_ParseOptions
 
 //--//
 
+const CLR_RT_NativeAssemblyData *g_CLR_InteropAssembliesNativeData[1];
+
 int _tmain(int argc, _TCHAR* argv[])
 {
     TINYCLR_HEADER();

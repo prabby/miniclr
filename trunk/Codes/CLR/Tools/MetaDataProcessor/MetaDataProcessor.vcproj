@@ -42,14 +42,14 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(SolutionDir)Support\Include&quot;;&quot;$(SolutionDir)CRT\include&quot;;&quot;$(SolutionDir)DeviceCode\include&quot;;&quot;$(SolutionDir)DeviceCode\Cores\arm&quot;;&quot;$(SolutionDir)DeviceCode\Targets\OS\Windows\DeviceCode&quot;;&quot;$(SolutionDir)CLR\include&quot;;&quot;$(SolutionDir)CLR\tools\include&quot;;&quot;$(SolutionDir)Crypto\inc&quot;;&quot;$(SolutionDir)Solutions\Windows2&quot;;&quot;$(SolutionDir)DeviceCode\Targets\OS\Windows&quot;;&quot;$(SolutionDir)DeviceCode\Targets\OS\Windows\DeviceCode\EmuLib&quot;"
+				AdditionalIncludeDirectories="..\..\..\Support\Include;..\..\..\CRT\include;..\..\..\DeviceCode\include;..\..\..\DeviceCode\Cores\arm;..\..\..\DeviceCode\Targets\OS\Windows\DeviceCode;..\..\..\CLR\tools\include;..\..\..\CLR\include;..\..\..\CLR\libraries\corlib;..\..\..\Crypto\inc;..\..\..\DeviceCode\Targets\OS\Windows\DeviceCode\EmuLib;..\..\..\DeviceCode\Targets\OS\Windows;..\..\..\Solutions\Windows;..\..\..\CLR\libraries\SPOT;..\..\..\CLR\libraries\SPOT_Hardware;..\..\..\CLR\libraries\SPOT_Graphics;..\..\..\CLR\libraries\SPOT_IO;..\..\..\CLR\libraries\SPOT_Net;..\..\..\CLR\libraries\SPOT_Net_Security;..\..\..\Clr\Core"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				StringPooling="true"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				EnableFunctionLevelLinking="true"
-				UsePrecompiledHeader="2"
+				UsePrecompiledHeader="0"
 				WarningLevel="3"
 				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
@@ -66,12 +66,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/DEBUGTYPE:cv,fixup /nxcompat"
-				AdditionalDependencies="dbghelp.lib crypto.lib "
+				AdditionalDependencies="dbghelp.lib crypto.lib comsuppw.lib"
 				OutputFile="$(OutDir)/MetaDataProcessor.exe"
 				LinkIncremental="0"
-				AdditionalLibraryDirectories="$(SolutionDir)Crypto\lib\x86"
-				IgnoreDefaultLibraryNames=""
+				AdditionalLibraryDirectories="..\..\..\Crypto\lib\x86"
+				IgnoreDefaultLibraryNames="MSVCRT.lib"
 				AddModuleNamesToAssembly=""
 				EmbedManagedResourceFile=""
 				DelayLoadDLLs="dbghelp.dll"
@@ -204,11 +203,423 @@
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
 			>
 			<File
+				RelativePath="..\Parser\AssemblyParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\AssemblyParserDump.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\AssemblyReparser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\AVLTree.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Battery.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Serialization\BinaryFormatter.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\BlockStorage.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\ByteCodeParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\ByteCodeParser_Load.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\ByteCodeParser_Save.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Cache.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Cache_Win32.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Checks.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_DblLinkedList.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Array.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_ArrayList.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_BinaryBlob.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Delegate.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Delegate_List.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\RPC\CLR_RT_HeapBlock_EndPoint.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Finalizer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\IOPort\CLR_RT_HeapBlock_IOPort.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Lock.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_LockRequest.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Node.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Queue.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Stack.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_String.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_Timer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapBlock_WaitForObject.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_HeapCluster.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_Interop.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_Memory.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_MemoryRange.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_ObjectToEvent_Destination.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_ObjectToEvent_Source.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_RuntimeMemory.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_StackFrame.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_SystemAssembliesTable.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\CLR_RT_UnicodeHelper.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Com.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Support\WireProtocol\Compression.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Core.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\CorHelper\corhlpr.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\StubWinHal\corlib_native.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Support\crc\CRC.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Debugger\Debugger_stub.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Events.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Execution.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\FileStore_Win32.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Stream\FileStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\FS.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\GarbageCollector.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\GarbageCollector_Compaction.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\GarbageCollector_ComputeReachabilityGraph.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\GarbageCollector_Info.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\GPIO.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Hardware\Hardware_stub.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\HeapPersistence\Heap_Persistence_stub.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\I2C.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\I2C\i2c_stub.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\Info.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\Info_Win32.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Interpreter.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Hardware\InterruptHandler\InterruptHandler.cpp"
+				>
+			</File>
+			<File
 				RelativePath="KeyGen.cpp"
 				>
 			</File>
 			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Lcd.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\Linker.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\ManagedElementTypes_Win32.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Memory.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Messaging\Messaging.cpp"
+				>
+			</File>
+			<File
 				RelativePath="MetaDataProcessor.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\StubWinHal\minheap.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\StubWinHal\mintime.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\NetAssemblyInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\ParseOptions_Win32.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\Profile.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\Profiler.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Random.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Serial.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\DeviceCode\pal\SimpleHeap\SimpleHeap.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Sockets.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\SPI.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Ssl.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Streams.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\StringTable.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\StubWinHal\StubWinHal.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Parser\Support.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Thread.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Time.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\DeviceCode\pal\time\time_driver.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\DeviceCode\pal\time\time_functions.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\TimeService.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\TouchPanel.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\TypeSystem.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\TypeSystemLookup.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\UI.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Usb.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Various.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\Various.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\VirtualKey.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\WatchDog.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Support\WireProtocol\WireProtocol.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\XmlUtil.cpp"
 				>
 			</File>
 		</Filter>
@@ -217,11 +628,39 @@
 			Filter="h;hpp;hxx;hm;inl;inc"
 			>
 			<File
+				RelativePath="..\..\Core\Core.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Core\corhdr_private.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Diagnostics\Diagnostics.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\EmulatorNative.h"
+				>
+			</File>
+			<File
 				RelativePath="KeyGen.h"
 				>
 			</File>
 			<File
+				RelativePath="..\..\Diagnostics\ManagedElementTypes_Win32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\Solutions\Windows\MiniCLR\platform_selector.h"
+				>
+			</File>
+			<File
 				RelativePath="stdafx.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\DeviceCode\pal\time\time_driver.h"
 				>
 			</File>
 			<File
@@ -233,10 +672,6 @@
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 			>
-			<File
-				RelativePath="..\..\..\VersionResource.rc"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>
