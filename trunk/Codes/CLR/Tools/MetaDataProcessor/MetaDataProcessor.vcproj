@@ -599,10 +599,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\..\Solutions\Windows\MiniCLR\Various.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\Core\Various.cpp"
 				>
 			</File>
