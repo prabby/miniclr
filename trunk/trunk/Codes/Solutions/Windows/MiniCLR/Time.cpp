@@ -4,11 +4,27 @@
 
 #include "stdafx.h"
 
+inline __declspec(naked) __int64 RDTSC()
+{
+	_asm
+	{
+		RDTSC
+			ret
+	}
+}
+
+__int64 GetRDTSC()
+{
+	return RDTSC();
+}
+
+INT64 rdtscStart, rdtscEnd;
+
 //using namespace Microsoft::SPOT::Emulator;
 
 UINT64 HAL_Time_CurrentTicks()
 {
-	return 0;
+	return GetTickCount();
     //return EmulatorNative::GetITimeDriver()->CurrentTicks();
 }
 
@@ -23,7 +39,7 @@ INT64 HAL_Time_TicksToTime( UINT64 Ticks )
        
 INT64 HAL_Time_CurrentTime()
 {
-	return 0;
+	return GetTickCount();
     //return EmulatorNative::GetITimeDriver()->CurrentTime();
 }
 
