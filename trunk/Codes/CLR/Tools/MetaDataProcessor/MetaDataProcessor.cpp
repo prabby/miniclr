@@ -1199,9 +1199,11 @@ int _tmain(int argc, _TCHAR* argv[])
     CLR_RT_StringVector vec;
     Settings            st;
 
+		Time_Initialize();
+
     ::CoInitialize( 0 );
 
-    TINYCLR_CHECK_HRESULT(HAL_Windows::Memory_Resize( 4 * 1024 * 1024 ));
+    TINYCLR_CHECK_HRESULT(HAL_Windows::Memory_Resize( 8 * 1024 * 1024 ));
     HAL_Init_Custom_Heap();
 
     CLR_RT_Memory::Reset         ();    
