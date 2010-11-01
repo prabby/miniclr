@@ -56,16 +56,6 @@ struct Settings
         CLR_Debug::Printf( "Created EE.\r\n" );
 #endif
 
-#if !defined(BUILD_RTM)
-        if(params.WaitForDebugger)
-        {
-#if defined(PLATFORM_WINDOWS)
-            CLR_EE_DBG_SET( Enabled );
-#endif
-            CLR_EE_DBG_SET( Stopped );
-        }
-#endif
-
         TINYCLR_CHECK_HRESULT(g_CLR_RT_ExecutionEngine.StartHardware());
 #if !defined(BUILD_RTM)
         CLR_Debug::Printf( "Started Hardware.\r\n" );
@@ -647,47 +637,6 @@ void ClrStartup( CLR_SETTINGS params )
 #endif
             }
         }
-
-//        if( CLR_EE_DBG_IS_NOT( RebootPending ))
-//        {
-//#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
-//            CLR_EE_DBG_SET_MASK(State_ProgramExited, State_Mask);
-//            CLR_EE_DBG_EVENT_BROADCAST(CLR_DBG_Commands::c_Monitor_ProgramExit, 0, NULL, WP_Flags::c_NonCritical);
-//#endif //#if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
-//
-//            if(params.EnterDebuggerLoopAfterExit)
-//            {
-//                CLR_DBG_Debugger::Debugger_WaitForCommands();
-//            }
-//        }
-//
-//        // DO NOT USE 'ELSE IF' here because the state can change in Debugger_WaitForCommands() call
-//        
-//        if( CLR_EE_DBG_IS( RebootPending ))
-//        {
-//            if(CLR_EE_REBOOT_IS( ClrOnly ))
-//            {
-//                softReboot = true;
-//
-//                params.WaitForDebugger = CLR_EE_REBOOT_IS(ClrOnlyStopDebugger);
-//                
-//                SmartPtr_IRQ::ForceDisabled();
-//
-//                s_ClrSettings.Cleanup();
-//
-//                HAL_Uninitialize();
-//
-//                //re-init the hal for the reboot (initially it is called in bootentry)
-//                HAL_Initialize();
-//
-//                // make sure interrupts are back on
-//                SmartPtr_IRQ::ForceEnabled();
-//            }
-//            else
-//            {
-//                CPU_Reset();
-//            }
-//        }
     } while( softReboot );
 }
 

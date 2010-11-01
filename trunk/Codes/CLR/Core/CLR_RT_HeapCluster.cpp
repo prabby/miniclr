@@ -11,7 +11,7 @@ void CLR_RT_HeapCluster::HeapCluster_Initialize( CLR_UINT32 size )
     NATIVE_PROFILE_CLR_CORE();
     GenericNode_Initialize();
 
-    size = (size - sizeof(*this)) / sizeof(CLR_RT_HeapBlock);
+		size = (size - sizeof(*this)) / sizeof(CLR_RT_HeapBlock);
 
     m_freeList.DblLinkedList_Initialize();                            // CLR_RT_DblLinkedList    m_freeList;
     m_payloadStart = (CLR_RT_HeapBlock_Node*)&this[ 1 ];              // CLR_RT_HeapBlock_Node*  m_payloadStart;
