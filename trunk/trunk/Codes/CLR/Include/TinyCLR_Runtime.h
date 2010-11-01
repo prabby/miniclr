@@ -2899,7 +2899,7 @@ struct CLR_RT_ExecutionEngine
     
     CLR_INT64                           m_currentMachineTime;
     CLR_INT64                           m_currentLocalTime;
-	CLR_INT64                           m_startTime;  
+		CLR_INT64                           m_startTime;  
     CLR_INT32                           m_lastTimeZoneOffset;
     CLR_INT64                           m_currentNextActivityTime;
     bool                                m_timerCache;

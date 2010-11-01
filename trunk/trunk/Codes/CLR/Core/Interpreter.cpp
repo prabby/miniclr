@@ -833,14 +833,14 @@ Execute_RestartDecoding:
             //
             //
 #if defined(PLATFORM_WINDOWS)
-            if(s_CLR_RT_fTrace_SimulateSpeed > c_CLR_RT_Trace_None)
-            {
-                CLR_PROF_Handler::SuspendTime();
+            //if(s_CLR_RT_fTrace_SimulateSpeed > c_CLR_RT_Trace_None)
+            //{
+            //    CLR_PROF_Handler::SuspendTime();
 
-                HAL_Windows_FastSleep( g_HAL_Configuration_Windows.TicksPerOpcode );                    
+            //    HAL_Windows_FastSleep( g_HAL_Configuration_Windows.TicksPerOpcode );                    
 
-                CLR_PROF_Handler::ResumeTime();
-            }
+            //    CLR_PROF_Handler::ResumeTime();
+            //}
 #endif
             //
             //

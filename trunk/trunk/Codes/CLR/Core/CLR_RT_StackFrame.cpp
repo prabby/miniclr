@@ -22,14 +22,14 @@ HRESULT CLR_RT_StackFrame::Push( CLR_RT_Thread* th, const CLR_RT_MethodDef_Insta
     CLR_UINT32                       sizeEvalStack;
 
 #if defined(PLATFORM_WINDOWS)
-    if(s_CLR_RT_fTrace_SimulateSpeed > c_CLR_RT_Trace_None)
-    {
-        CLR_PROF_Handler::SuspendTime();
+    //if(s_CLR_RT_fTrace_SimulateSpeed > c_CLR_RT_Trace_None)
+    //{
+    //    CLR_PROF_Handler::SuspendTime();
 
-        HAL_Windows_FastSleep( g_HAL_Configuration_Windows.TicksPerMethodCall );
+    //    HAL_Windows_FastSleep( g_HAL_Configuration_Windows.TicksPerMethodCall );
 
-        CLR_PROF_Handler::ResumeTime();
-    }
+    //    CLR_PROF_Handler::ResumeTime();
+    //}
 #endif
 
     assm          = callInstPtr->m_assm;

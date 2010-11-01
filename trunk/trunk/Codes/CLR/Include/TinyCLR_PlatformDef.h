@@ -62,11 +62,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // WINDOWS
 #if defined(PLATFORM_WINDOWS)
-#define TINYCLR_GC_VERBOSE
-#define TINYCLR_TRACE_MEMORY_STATS
-#define TINYCLR_PROFILE_NEW
-#define TINYCLR_PROFILE_NEW_CALLS
-#define TINYCLR_PROFILE_NEW_ALLOCATIONS
+//#define TINYCLR_GC_VERBOSE
+//#define TINYCLR_TRACE_MEMORY_STATS
+//#define TINYCLR_PROFILE_NEW
+//#define TINYCLR_PROFILE_NEW_CALLS
+//#define TINYCLR_PROFILE_NEW_ALLOCATIONS
 #if defined(DEBUG) || defined(_DEBUG)
 #define TINYCLR_VALIDATE_HEAP                   TINYCLR_VALIDATE_HEAP_2_DblLinkedList
 #define TINYCLR_FILL_MEMORY_WITH_DIRTY_PATTERN
@@ -76,7 +76,7 @@
 #else //RELEASE
 #define TINYCLR_VALIDATE_HEAP TINYCLR_VALIDATE_HEAP_0_None
 #endif
-#define TINYCLR_ENABLE_SOURCELEVELDEBUGGING
+//#define TINYCLR_ENABLE_SOURCELEVELDEBUGGING
 #endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
