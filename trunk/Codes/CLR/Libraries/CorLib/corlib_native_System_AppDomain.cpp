@@ -212,6 +212,16 @@ HRESULT Library_corlib_native_System_AppDomain::GetAppDomain( CLR_RT_HeapBlock& 
 
     TINYCLR_NOCLEANUP();
 }
+
+HRESULT Library_corlib_native_System_AppDomain::Load___SystemReflectionAssembly__STRING( CLR_RT_StackFrame& stack )
+{
+	NATIVE_PROFILE_CLR_CORE();
+	TINYCLR_HEADER();
+
+	TINYCLR_SET_AND_LEAVE(stack.NotImplementedStub());
+
+	TINYCLR_NOCLEANUP();
+}
 #else  //#if defined(TINYCLR_APPDOMAINS)
 
 HRESULT Library_corlib_native_System_AppDomain::GetAssemblies___SZARRAY_SystemReflectionAssembly( CLR_RT_StackFrame& stack )
@@ -234,15 +244,7 @@ HRESULT Library_corlib_native_System_AppDomain::LoadInternal___SystemReflectionA
     TINYCLR_NOCLEANUP();
 }
 
-HRESULT Library_corlib_native_System_AppDomain::Load___SystemReflectionAssembly__STRING( CLR_RT_StackFrame& stack )
-{
-    NATIVE_PROFILE_CLR_CORE();
-    TINYCLR_HEADER();
 
-    TINYCLR_SET_AND_LEAVE(stack.NotImplementedStub());
-
-    TINYCLR_NOCLEANUP();
-}
 
 HRESULT Library_corlib_native_System_AppDomain::CreateDomain___STATIC__SystemAppDomain__STRING( CLR_RT_StackFrame& stack )
 {
