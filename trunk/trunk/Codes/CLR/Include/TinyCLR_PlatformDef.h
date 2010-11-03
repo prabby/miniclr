@@ -46,9 +46,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // FEATURES
-#define TINYCLR_APPDOMAINS           // enables application doman support
-#define TINYCLR_TRACE_EXCEPTIONS     // enables exception dump support
-#define TINYCLR_TRACE_ERRORS         // enables rich exception dump support
+//#define TINYCLR_APPDOMAINS           // enables application doman support
+//#define TINYCLR_TRACE_EXCEPTIONS     // enables exception dump support
+//#define TINYCLR_TRACE_ERRORS         // enables rich exception dump support
 #if defined(DEBUG) || defined(_DEBUG)
 #define TINYCLR_TRACE_STACK          // enables rich eval stack tracing  
 #endif
@@ -62,7 +62,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // WINDOWS
 #if defined(PLATFORM_WINDOWS)
-//#define TINYCLR_GC_VERBOSE
+#define TINYCLR_GC_VERBOSE
 //#define TINYCLR_TRACE_MEMORY_STATS
 //#define TINYCLR_PROFILE_NEW
 //#define TINYCLR_PROFILE_NEW_CALLS
@@ -72,7 +72,7 @@
 #define TINYCLR_FILL_MEMORY_WITH_DIRTY_PATTERN
 #define TINYCLR_TRACE_EARLYCOLLECTION
 #define TINYCLR_DELEGATE_PRESERVE_STACK
-#define TINYCLR_VALIDATE_APPDOMAIN_ISOLATION
+//#define TINYCLR_VALIDATE_APPDOMAIN_ISOLATION
 #else //RELEASE
 #define TINYCLR_VALIDATE_HEAP TINYCLR_VALIDATE_HEAP_0_None
 #endif

@@ -638,7 +638,7 @@ HRESULT CLR_RT_ExecutionEngine::Execute( LPWSTR entryPointArgs, int maxContextSw
         TINYCLR_SET_AND_LEAVE(CLR_E_ENTRYPOINT_NOT_FOUND);
     }
 
-    TINYCLR_CHECK_HRESULT(WaitForDebugger());
+    //TINYCLR_CHECK_HRESULT(WaitForDebugger());
 
 #if defined(TINYCLR_ENABLE_SOURCELEVELDEBUGGING)
     CLR_EE_DBG_SET_MASK(State_ProgramRunning,State_Mask);
@@ -674,7 +674,7 @@ HRESULT CLR_RT_ExecutionEngine::Execute( LPWSTR entryPointArgs, int maxContextSw
     }
 
     //To debug static constructors, the thread should be created after the entrypoint thread.
-    TINYCLR_CHECK_HRESULT(WaitForDebugger());
+    //TINYCLR_CHECK_HRESULT(WaitForDebugger());
     
     // m_cctorThread is NULL before call and inialized by the SpawnStaticConstructor
     SpawnStaticConstructor( m_cctorThread );

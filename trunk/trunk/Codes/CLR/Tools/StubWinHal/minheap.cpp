@@ -32,7 +32,7 @@ HAL_SYSTEM_CONFIG HalSystemConfig =
 };
 
 static UINT8* s_Memory_Start  = NULL;
-static UINT32 s_Memory_Length = 1024 * 1024 * 10;
+static UINT32 s_Memory_Length = 1024 * 8/*1024 * 1024 * 10*/; //8KÄÚ´æ
 
 void HeapLocation( UINT8*& BaseAddress, UINT32& SizeInBytes )
 {
